@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jorie Butler Project</string>
+    <string name="patient_label">Patient</string>
+    <string name="caregiver_label">Caregiver</string>
+    <string name="careprovider_label">Care Provider</string>
+    <string name="apptitle_label">Jorie Butler Project</string>
+</resources>
