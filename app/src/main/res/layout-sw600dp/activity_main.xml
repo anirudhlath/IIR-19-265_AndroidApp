@@ -41,6 +41,7 @@
                 android:background="@drawable/customroundedbutton"
                 android:backgroundTint="#434152B3"
                 android:contentDescription="@string/patient_label"
+                android:onClick="goToPatientActivity"
                 android:paddingStart="25dp"
                 android:paddingEnd="25dp"
                 android:paddingBottom="10dp"
