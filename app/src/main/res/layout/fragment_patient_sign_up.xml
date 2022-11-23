@@ -18,17 +18,22 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
             android:background="@drawable/customroundedbutton"
             android:contentDescription="Change your profile picture"
-            android:padding="10dp"
-            tools:src="@tools:sample/avatars" />
+            android:foregroundGravity="center"
+            android:padding="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_person_add_alt_1_24" />
 
         <TextView
             android:id="@+id/textViewEditProfilePicture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:paddingBottom="24dp"
             android:text="Please add a profile picture"
             android:textAlignment="center" />
@@ -82,7 +87,7 @@
 
         <Spinner
             android:id="@+id/spinnerTravel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="How did you travel to clinic today?"
             android:entries="@array/travel_array"
