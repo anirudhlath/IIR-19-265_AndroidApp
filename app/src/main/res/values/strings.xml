@@ -4,4 +4,7 @@
     <string name="caregiver_label">Caregiver</string>
     <string name="careprovider_label">Care Provider</string>
     <string name="apptitle_label">Jorie Butler Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_photo">Profile Photo</string>
 </resources>

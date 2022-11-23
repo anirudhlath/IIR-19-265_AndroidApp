@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender_array">
+        <item>Please select your gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="travel_array">
+        <item>How did you travel to clinic today?</item>
+        <item>Public Transport</item>
+        <item>Personal Vehicle</item>
+    </string-array>
+</resources>
