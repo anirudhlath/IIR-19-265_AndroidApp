@@ -16,6 +16,26 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <TextView
+            android:id="@+id/textViewPatientProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Your Profile"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:text="Please fill in the appropriate details below. Please make sure to take a profile picture and fill in all the required details."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
@@ -87,11 +107,18 @@
 
         <Spinner
             android:id="@+id/spinnerTravel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="How did you travel to clinic today?"
             android:entries="@array/travel_array"
             android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/buttonFinishPatientProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Finish" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
