@@ -33,7 +33,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/patientButton"
+                android:id="@+id/imagesButton"
                 style="@android:style/Widget.Material.ImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <ImageButton
-                android:id="@+id/caregiverButton"
+                android:id="@+id/openEndedQuestionsButton"
                 style="@android:style/Widget.Material.ImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <ImageButton
-                android:id="@+id/careproviderButton"
+                android:id="@+id/surveysButton"
                 style="@android:style/Widget.Material.ImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/paitentTextView"
+                android:id="@+id/imagesTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -93,7 +93,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
-                android:id="@+id/careproviderTextView"
+                android:id="@+id/openEndedQuestionsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -102,7 +102,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
-                android:id="@+id/caregiverTextView"
+                android:id="@+id/SurveysTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

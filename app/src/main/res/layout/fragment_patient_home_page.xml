@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientHomePageFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/totalProgressBar"
+                    style="@android:style/Widget.Material.ProgressBar.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imagesButton"
+                    style="@android:style/Widget.Material.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#43FFFFFF"
+                    android:contentDescription="@string/patient_label"
+                    android:cropToPadding="false"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="10dp"
+                    app:srcCompat="@drawable/ic_baseline_add_a_photo_144"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/openEndedQuestionsButton"
+                    style="@android:style/Widget.Material.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#43FFFFFF"
+                    android:contentDescription="@string/caregiver_label"
+                    android:cropToPadding="false"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="10dp"
+                    app:srcCompat="@drawable/ic_outline_question_answer_144"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/surveysButton"
+                    style="@android:style/Widget.Material.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#43FFFFFF"
+                    android:contentDescription="@string/careprovider_label"
+                    android:cropToPadding="false"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="10dp"
+                    app:srcCompat="@drawable/i_exam_multiple_choice"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/imagesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:text="Images"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/openEndedQuestionsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:text="Open-Ended Questions"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/SurveysTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_weight="1"
+                    android:text="Surveys"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
