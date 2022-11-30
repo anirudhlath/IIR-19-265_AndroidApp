@@ -8,11 +8,10 @@ import android.view.ViewGroup
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PatientHomePageFragment.newInstance] factory method to
+ * Use the [NoticeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PatientHomePageFragment : Fragment() {
-
+class NoticeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +23,8 @@ class PatientHomePageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_patient_home_page, container, false)
+        return inflater.inflate(R.layout.fragment_notice, container, false)
     }
+
 
 }
