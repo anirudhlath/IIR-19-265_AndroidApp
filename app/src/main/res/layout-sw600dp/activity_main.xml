@@ -9,10 +9,11 @@
     <TextView
         android:id="@+id/apptitleTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
         android:text="@string/apptitle_label"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"

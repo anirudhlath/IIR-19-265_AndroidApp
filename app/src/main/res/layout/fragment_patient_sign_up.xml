@@ -29,7 +29,7 @@
                 android:layout_marginTop="50dp"
                 android:text="Your Profile"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
                 android:textStyle="bold" />
 
             <TextView
@@ -185,6 +185,11 @@
                 android:layout_marginTop="50dp"
                 android:onClick="onClick"
                 android:text="Finish" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
 
         </LinearLayout>
     </ScrollView>

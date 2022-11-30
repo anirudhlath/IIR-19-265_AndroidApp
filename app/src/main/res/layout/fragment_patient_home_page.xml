@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Patient Portal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
