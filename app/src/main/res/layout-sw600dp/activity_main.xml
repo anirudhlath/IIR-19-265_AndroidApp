@@ -76,6 +76,7 @@
                 android:backgroundTint="#43FFFFFF"
                 android:contentDescription="@string/careprovider_label"
                 android:cropToPadding="false"
+                android:onClick="goToCareproviderActivity"
                 android:paddingStart="25dp"
                 android:paddingEnd="25dp"
                 android:paddingBottom="10dp"

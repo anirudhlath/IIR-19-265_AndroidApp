@@ -27,7 +27,7 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_caregiver_sign_up, container, false)
-        val button = rootView.findViewById<Button>(R.id.buttonFinishCaregiverProfile)
+        val button = rootView.findViewById<Button>(R.id.buttonCaregiverFinishProfile)
         button.setOnClickListener(this)
         return rootView
     }
@@ -40,7 +40,7 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.buttonFinishCaregiverProfile -> {
+                R.id.buttonCaregiverFinishProfile -> {
                     Log.d("UI", "Profile finish button clicked.")
                     parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
                 }

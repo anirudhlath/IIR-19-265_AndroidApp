@@ -6,101 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".CaregiverSignUpFragment" >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
-            android:id="@+id/textViewPatientProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Your Profile"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:maxLines="2"
-            android:singleLine="false"
-            android:text="Please fill in the appropriate details below. Please make sure to take a profile picture and fill in all the required details."
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:background="@drawable/customroundedbutton"
-            android:contentDescription="Change your profile picture"
-            android:foregroundGravity="center"
-            android:padding="24dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_add_a_photo_24" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewEditProfilePicture"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="24dp"
-            android:text="Please add a profile picture"
-            android:textAlignment="center" />
 
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="personName"
-            android:ems="10"
-            android:hint="Full Name"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textViewPatientProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="Your Profile"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editTextRelationship"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="Relationship with Patient"
-            android:inputType="number"
-            android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="Please fill in the appropriate details below. Please make sure to take a profile picture and fill in all the required details."
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-        <Spinner
-            android:id="@+id/spinnerGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/location_array"
-            android:minHeight="48dp"
-            android:spinnerMode="dropdown" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="@drawable/customroundedbutton"
+                android:contentDescription="Change your profile picture"
+                android:foregroundGravity="center"
+                android:padding="24dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_add_a_photo_24" />
 
-        <Spinner
-            android:id="@+id/spinnerTravel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="How did you travel to clinic today?"
-            android:entries="@array/travel_array"
-            android:minHeight="48dp" />
+            <TextView
+                android:id="@+id/textViewEditProfilePicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="24dp"
+                android:text="Please add a profile picture"
+                android:textAlignment="center" />
 
-        <Button
-            android:id="@+id/buttonFinishCaregiverProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:onClick="onClick"
-            android:text="Finish" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldFullName"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name">
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldRelationship"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Relationship with Patient">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/menuLocation"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Where do you live?">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/location_array"
+                    />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/menuFrequencyOfContact"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="How often does the patient contact you?">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/frequency_of_contact_array"
+                    />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/buttonCaregiverFinishProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:onClick="onClick"
+                android:text="Finish" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

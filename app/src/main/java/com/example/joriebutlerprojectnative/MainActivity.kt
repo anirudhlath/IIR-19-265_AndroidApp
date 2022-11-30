@@ -24,4 +24,8 @@ class MainActivity : AppCompatActivity() {
     fun goToCaregiverActivity(view: View) {
         startActivity(Intent(this@MainActivity, CaregiverActivity::class.java))
     }
+
+    fun goToCareproviderActivity(view: View) {
+        startActivity(Intent(this@MainActivity, CareproviderActivity::class.java))
+    }
 }
