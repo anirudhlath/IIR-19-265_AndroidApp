@@ -115,11 +115,11 @@
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/buttonFinishPatientProfile"
+            android:id="@+id/buttonPatientFinishProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:onClick="finishSetup"
+            android:onClick="onClick"
             android:text="Finish" />
 
     </LinearLayout>

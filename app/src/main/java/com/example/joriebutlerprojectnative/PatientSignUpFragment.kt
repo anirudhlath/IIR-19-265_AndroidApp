@@ -1,7 +1,6 @@
 package com.example.joriebutlerprojectnative
 
 import android.os.Bundle
-import android.os.Debug
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +8,6 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.joriebutlerprojectnative.databinding.ActivityMainBinding
-import com.example.joriebutlerprojectnative.databinding.ActivityPatientBinding
 
 
 /**
@@ -35,7 +32,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_patient_sign_up, container, false)
-        val button = rootView.findViewById<Button>(R.id.buttonFinishPatientProfile)
+        val button = rootView.findViewById<Button>(R.id.buttonPatientFinishProfile)
         button.setOnClickListener(this)
         return rootView
     }
@@ -48,7 +45,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
-                R.id.buttonFinishPatientProfile -> {
+                R.id.buttonPatientFinishProfile -> {
                     Log.d("UI", "Profile finish button clicked.")
 //                    val fragment = PatientHomePageFragment()
                     parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, PatientHomePageFragment()).commit()

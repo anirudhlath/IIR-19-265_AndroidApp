@@ -1,24 +1,24 @@
 package com.example.joriebutlerprojectnative
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 
-
 /**
  * A simple [Fragment] subclass.
- * Use the [CaregiverSignUpFragment.newInstance] factory method to
+ * Use the [CaregiverHomePageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
+class CaregiverHomePageFragment : Fragment(), OnClickListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -26,9 +26,8 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_caregiver_sign_up, container, false)
-        val button = rootView.findViewById<Button>(R.id.buttonFinishCaregiverProfile)
-        button.setOnClickListener(this)
+        val rootView = inflater.inflate(R.layout.fragment_caregiver_home_page, container, false)
+
         return rootView
     }
 
@@ -38,16 +37,7 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
      * @param v The view that was clicked.
      */
     override fun onClick(v: View?) {
-        if (v != null) {
-            when (v.id) {
-                R.id.buttonFinishCaregiverProfile -> {
-                    Log.d("UI", "Profile finish button clicked.")
-                    parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
-                }
-
-            }
-        }
+        TODO("Not yet implemented")
     }
-
 
 }
