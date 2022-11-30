@@ -1,9 +1,13 @@
 package com.example.joriebutlerprojectnative
 
 import android.os.Bundle
+import android.os.Debug
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.databinding.ActivityMainBinding
 import com.example.joriebutlerprojectnative.databinding.ActivityPatientBinding
@@ -14,7 +18,7 @@ import com.example.joriebutlerprojectnative.databinding.ActivityPatientBinding
  * Use the [PatientSignUpFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PatientSignUpFragment : Fragment() {
+class PatientSignUpFragment : Fragment(), OnClickListener {
 
 
 
@@ -28,14 +32,30 @@ class PatientSignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_patient_sign_up, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_patient_sign_up, container, false)
+        val button = rootView.findViewById<Button>(R.id.buttonFinishPatientProfile)
+        button.setOnClickListener(this)
+        return rootView
     }
 
-    fun finishSetup(view: View) {
-        val fragment = PatientHomePageFragment()
-        parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment)
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    override fun onClick(v: View?) {
+        if (v != null) {
+            when (v.id) {
+                R.id.buttonFinishPatientProfile -> {
+                    Log.d("UI", "Profile finish button clicked.")
+//                    val fragment = PatientHomePageFragment()
+                    parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, PatientHomePageFragment()).commit()-
+                }
 
+            }
+        }
     }
 
 
