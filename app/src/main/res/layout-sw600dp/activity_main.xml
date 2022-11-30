@@ -57,6 +57,7 @@
                 android:backgroundTint="#43FFFFFF"
                 android:contentDescription="@string/caregiver_label"
                 android:cropToPadding="false"
+                android:onClick="goToCaregiverActivity"
                 android:paddingStart="25dp"
                 android:paddingEnd="25dp"
                 android:paddingBottom="10dp"

@@ -11,4 +11,16 @@
         <item>Public Transport</item>
         <item>Personal Vehicle</item>
     </string-array>
+    <string-array name="location_array">
+        <item>Where do you live?</item>
+        <item>I stay with the patient.</item>
+        <item>I stay in the same locality as the patient.</item>
+        <item>I stay in a different locality from the patient.</item>
+    </string-array>
+    <string-array name="frequency_of_contact_array">
+        <item>How frequently does the patient contact you?</item>
+        <item>Daily</item>
+        <item>Once in a week</item>
+        <item>More than twice in a week</item>
+    </string-array>
 </resources>

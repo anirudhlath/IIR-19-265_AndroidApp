@@ -20,4 +20,8 @@ class MainActivity : AppCompatActivity() {
     fun goToPatientActivity(view: View) {
         startActivity(Intent(this@MainActivity, PatientActivity::class.java))
     }
+
+    fun goToCaregiverActivity(view: View) {
+        startActivity(Intent(this@MainActivity, CaregiverActivity::class.java))
+    }
 }

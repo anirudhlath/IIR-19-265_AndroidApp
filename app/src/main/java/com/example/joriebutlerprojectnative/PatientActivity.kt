@@ -11,7 +11,4 @@ class PatientActivity : AppCompatActivity() {
 
     }
 
-//    fun finishSetup(view: View) {
-//
-//    }
 }
