@@ -13,9 +13,9 @@
     </string-array>
     <string-array name="location_array">
 
-        <item>I stay with the patient.</item>
-        <item>I stay in the same locality as the patient.</item>
-        <item>I stay in a different locality from the patient.</item>
+        <item>I stay with the patient</item>
+        <item>I stay in the same locality as the patient</item>
+        <item>I stay in a different locality from the patient</item>
     </string-array>
     <string-array name="frequency_of_contact_array">
 
