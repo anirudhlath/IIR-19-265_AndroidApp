@@ -20,16 +20,16 @@
             android:id="@+id/textViewPatientProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:text="Your Profile"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="24dp"
             android:maxLines="2"
             android:singleLine="false"
             android:text="Please fill in the appropriate details below. Please make sure to take a profile picture and fill in all the required details."
@@ -47,7 +47,7 @@
             android:foregroundGravity="center"
             android:padding="24dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_person_add_alt_1_24" />
+            android:src="@drawable/ic_baseline_add_a_photo_24" />
 
         <TextView
             android:id="@+id/textViewEditProfilePicture"
@@ -95,7 +95,8 @@
             android:ems="10"
             android:hint="Last 4 digits of MRN"
             android:inputType="number"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:autofillHints="" />
 
         <Spinner
             android:id="@+id/spinnerGender"

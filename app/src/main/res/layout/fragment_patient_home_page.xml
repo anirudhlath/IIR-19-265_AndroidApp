@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Patient Portal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
 
             <FrameLayout
                 android:id="@+id/frameLayout"
@@ -151,7 +151,7 @@
                         android:layout_weight="1"
                         android:text="Images"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <TextView
                         android:id="@+id/openEndedQuestionsTextView"
@@ -161,7 +161,7 @@
                         android:layout_weight="1"
                         android:text="Open-Ended Questions"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                     <TextView
                         android:id="@+id/SurveysTextView"
@@ -171,7 +171,7 @@
                         android:layout_weight="1"
                         android:text="Surveys"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
                 </TableRow>
 
             </TableLayout>

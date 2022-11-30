@@ -51,7 +51,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                 R.id.buttonFinishPatientProfile -> {
                     Log.d("UI", "Profile finish button clicked.")
 //                    val fragment = PatientHomePageFragment()
-                    parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, PatientHomePageFragment()).commit()-
+                    parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, PatientHomePageFragment()).commit()
                 }
 
             }
