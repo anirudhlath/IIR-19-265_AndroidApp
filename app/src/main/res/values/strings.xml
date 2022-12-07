@@ -7,6 +7,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_photo">Profile Photo</string>
+    <string name="patientData">com.gapp.joriebutlernative.patientData</string>
+    <string name="caregiverData">com.gapp.joriebutlernative.caregiverData</string>
+
     <string name="careprovider_notice">Hello,\nYour patient Eusebius Montague is participating in a study with Dr Jorie Butler (IIR 19-265 “Enhancing Geriatric Pain Care with Contextual Patient Generated Data Profiles”).\n\nThe purpose of the study is to give clinicians relevant information (e.g., photographs of the home and information on functional status and pain) to help inform your encounter with the patient.\n\nThank you for taking time to review the presented information, you will receive a brief set of questions from the study team after the patient visit about this study.
     </string>
 </resources>

@@ -74,7 +74,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
 
                 <Space
                     android:layout_width="0dp"
@@ -93,7 +94,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
 
                 <Space
                     android:layout_width="0dp"
@@ -103,15 +105,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textFieldDob"
+
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Date of Birth">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textFieldDob"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="date" />
 
                 <Space
                     android:layout_width="0dp"
@@ -129,7 +136,9 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4" />
 
                 <Space
                     android:layout_width="0dp"
