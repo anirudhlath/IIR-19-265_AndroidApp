@@ -43,18 +43,21 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-            <ImageButton
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:background="@drawable/customroundedbutton"
+                android:background="#EDE7F6"
+                android:clickable="true"
                 android:contentDescription="Change your profile picture"
+                android:cropToPadding="true"
                 android:foregroundGravity="center"
-                android:padding="24dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_add_a_photo_24" />
+                android:src="@drawable/ic_baseline_add_a_photo_24"
+                app:contentPadding="24dp"
+                app:shapeAppearance="@style/circular"
+                app:shapeAppearanceOverlay="@style/circular" />
 
             <TextView
                 android:id="@+id/textViewEditProfilePicture"

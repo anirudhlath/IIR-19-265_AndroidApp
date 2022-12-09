@@ -1,7 +1,19 @@
 package com.example.joriebutlerprojectnative
 
+import android.app.Activity
+import android.app.Activity.RESULT_OK
+import android.content.ActivityNotFoundException
+import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.hardware.camera2.CameraManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +21,28 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
+import androidx.camera.core.Camera
+import androidx.camera.core.CameraProvider
+import androidx.camera.core.CameraX
+import androidx.camera.core.ImageCapture
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
+import com.example.joriebutlerprojectnative.databinding.FragmentPatientSignUpBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.squareup.picasso.Picasso
+import java.io.File
+import java.text.DateFormat.getDateInstance
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.jar.Manifest
 
 
 /**
@@ -29,10 +58,48 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
     private var mrnEditText: TextInputLayout? = null
     private var genderMenu: TextInputLayout? = null
     private var travelMenu: TextInputLayout? = null
+    private var _binding: FragmentPatientSignUpBinding? = null
+    private val binding get() = _binding!!
+    private var currentImagePath: String = ""
+
+    private var uri: Uri? = null
+
+    private var getCameraImage: ActivityResultLauncher<Uri>? = null
+
+    private val requestMultiplePermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { resultsMap ->
+        resultsMap.forEach {
+            Log.i(TAG, "Permission: ${it.key}, granted: ${it.value}")
+        }
+    }
 
 
+
+
+
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        uri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", createImageFile("patient_profile_picture"))
+
+        getCameraImage = registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
+                Log.d("Capture Image", "Got image at: $uri")
+
+                binding.imageButton.setContentPadding(0, 0, 0, 0)
+
+                Picasso.get().load(uri).into(binding.imageButton)
+
+                val sharedPref = requireActivity().getSharedPreferences(
+                    getString(R.string.patientData), Context.MODE_PRIVATE
+                )
+                val editor = sharedPref.edit()
+                editor.putString("profilePhotoURI", uri.toString())
+                editor.apply()
+
+            }
+        }
 
 
     }
@@ -41,16 +108,18 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentPatientSignUpBinding.inflate(inflater, container, false)
+        val rootView = _binding!!.root
 
-        // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_patient_sign_up, container, false)
         val button = rootView?.findViewById<Button>(R.id.buttonPatientFinishProfile)
         fNameEditText = rootView?.findViewById(R.id.textFieldFirstName)
         lNameEditText = rootView?.findViewById(R.id.textFieldLastName)
         dobEditText = rootView?.findViewById(R.id.textFieldDob)
         mrnEditText = rootView?.findViewById(R.id.textFieldMrn)
         genderMenu = rootView?.findViewById(R.id.menuGender)
-        travelMenu = rootView?.findViewById(R.id.menuTravel)
+        travelMenu = rootView.findViewById(R.id.menuTravel)
+
+        val imageButton = binding.imageButton
 
         fNameEditText?.setOnClickListener(this)
         lNameEditText?.setOnClickListener(this)
@@ -59,9 +128,64 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
         genderMenu?.setOnClickListener(this)
         travelMenu?.setOnClickListener(this)
         button?.setOnClickListener(this)
+        imageButton.setOnClickListener(this)
+
+        // Image Capture
+        if (!hasCameraPermission() || hasStoragePermission() || hasReadStoragePermission()) {
+            requestMultiplePermissionLauncher.launch(
+                arrayOf(
+                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                    android.Manifest.permission.CAMERA
+                )
+            )
+        }
+
+
+
+
+
+
 
         return rootView
     }
+
+    // Check if device has permissions
+    private fun hasCameraPermission() = ContextCompat.checkSelfPermission(
+        requireContext(),
+        android.Manifest.permission.CAMERA
+    ) == PackageManager.PERMISSION_GRANTED
+
+    private fun hasStoragePermission() = ContextCompat.checkSelfPermission(
+        requireContext(),
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+    ) == PackageManager.PERMISSION_GRANTED
+    private fun hasReadStoragePermission() = ContextCompat.checkSelfPermission(
+        requireContext(),
+        android.Manifest.permission.READ_EXTERNAL_STORAGE
+    ) == PackageManager.PERMISSION_GRANTED
+
+    // Destroy binding at fragment destroy
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    // Create image file
+    fun createImageFile(filename: String): File {
+
+        val timeStamp: String = getDateInstance().format(Date())
+        val storageDir = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+
+        return File.createTempFile(
+            filename + timeStamp,
+            ".png",
+            storageDir
+        ).apply {
+            currentImagePath = absolutePath
+        }
+    }
+
 
     /**
      * Called when a view has been clicked.
@@ -71,6 +195,13 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
+                R.id.imageButton -> {
+                    uri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", createImageFile("patient_profile_picture"))
+
+
+                    getCameraImage!!.launch(uri)
+
+                }
                 R.id.buttonPatientFinishProfile -> {
                     Log.d("UI", "Profile finish button clicked.")
                     val sharedPref = requireActivity().getSharedPreferences(
@@ -159,7 +290,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                     )
 
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView, PatientHomePageFragment()).commit()
+                        .replace(R.id.constraintLayout, PatientHomePageFragment()).commit()
                 }
 
                 R.id.textFieldFirstName -> {
@@ -195,6 +326,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
             }
         }
+
     }
 
 
