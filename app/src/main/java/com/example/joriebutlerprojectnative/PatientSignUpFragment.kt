@@ -52,22 +52,6 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
         genderMenu = rootView?.findViewById(R.id.menuGender)
         travelMenu = rootView?.findViewById(R.id.menuTravel)
 
-//        dobEditText?.setOnClickListener {
-//            Log.d("OnClick", "Date Picker init")
-//            val datePicker =
-//                MaterialDatePicker.Builder.datePicker()
-//                    .setTitleText("Select your birth date")
-//                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-//                    .build()
-//
-//            datePicker.show(parentFragmentManager, "DOB_picker")
-//            datePicker.addOnPositiveButtonClickListener {
-//                dobEditText?.setText(datePicker.headerText)
-//            }
-//            return@setOnClickListener
-//        }
-
-
         fNameEditText?.setOnClickListener(this)
         lNameEditText?.setOnClickListener(this)
         dobEditText?.setOnClickListener(this)
