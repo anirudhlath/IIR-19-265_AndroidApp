@@ -201,12 +201,16 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
                     getCameraImage!!.launch(uri)
 
+                    return
+
                 }
                 R.id.buttonPatientFinishProfile -> {
                     Log.d("UI", "Profile finish button clicked.")
                     val sharedPref = requireActivity().getSharedPreferences(
                         getString(R.string.patientData), Context.MODE_PRIVATE
                     )
+
+
 
                     // Save data
                     if (!fNameEditText?.editText?.text.isNullOrEmpty() &&
@@ -252,6 +256,16 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                         editor.putString("gender", genderMenu?.editText?.text.toString())
                         editor.putString("travel", travelMenu?.editText?.text.toString())
                         editor.apply()
+
+                        if(sharedPref.getString("profilePhotoURI", "").isNullOrEmpty()) {
+                            val contextView = requireView()
+                            Snackbar.make(
+                                contextView,
+                                "Please add a profile picture.",
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+                            return
+                        }
                     } else {
                         val contextView = requireView()
                         Snackbar.make(
@@ -291,6 +305,8 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.constraintLayout, PatientHomePageFragment()).commit()
+
+                    return
                 }
 
                 R.id.textFieldFirstName -> {
@@ -311,6 +327,8 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                     datePicker.addOnPositiveButtonClickListener {
                         dobEditText?.setText(datePicker.headerText)
                     }
+
+                    return
 
 
                 }
