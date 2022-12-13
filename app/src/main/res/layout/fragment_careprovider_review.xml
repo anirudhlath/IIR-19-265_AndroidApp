@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
+            android:gravity="center_horizontal"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -291,52 +292,308 @@
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Outlined"
                     android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp" />
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Outlined"
                     android:layout_width="100dp"
-                    android:layout_height="100dp" />
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            style="@style/TextAppearance.Material3.TitleMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Caregiver Details" />
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Caregiver Name"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/caregiverFullNameLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Lorem Ipsum" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Relationship"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/caregiverRelationshipLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Lorem Ipsum" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Location"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/caregiverLocationLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Lorem Ipsum" />
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Frequency of Contact"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/caregiverFrequencyLabel"
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Lorem Ipsum" />
+                            </TableRow>
+
+                        </TableLayout>
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Caregiver Workload" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center"
+                            android:text="Function" />
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="ADLS" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="iADLS" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Patient-Caregiver Relationship" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleMedium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center"
+                            android:text="Context" />
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Difficulty Getting Medication" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Difficulty Getting to Clinic" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Difficulty Affording Care" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            style="@style/TextAppearance.Material3.TitleSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="Health Literacy" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/linearProgressIndicator5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
