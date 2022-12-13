@@ -52,6 +52,7 @@ import java.util.jar.Manifest
  */
 class PatientSignUpFragment : Fragment(), OnClickListener {
 
+    // TODO: Fix preview orientation.
     private var fNameEditText: TextInputLayout? = null
     private var lNameEditText: TextInputLayout? = null
     private var dobEditText: TextInputEditText? = null
@@ -71,6 +72,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
             Log.i(TAG, "Permission: ${it.key}, granted: ${it.value}")
         }
     }
+
 
 
 
