@@ -287,19 +287,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp" />
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        tools:src="@tools:sample/backgrounds/scenic" />
+                </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Outlined"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="600dp"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="10dp" />
 
             </LinearLayout>
