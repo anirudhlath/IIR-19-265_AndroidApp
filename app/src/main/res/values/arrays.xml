@@ -23,4 +23,12 @@
         <item>Once in a week</item>
         <item>More than twice in a week</item>
     </string-array>
+
+<!--    Questionnaire Responses-->
+    <string-array name="STAI_responses_array">
+        <item>Not at all</item>
+        <item>Somewhat</item>
+        <item>Moderately so</item>
+        <item>Very much so</item>
+    </string-array>
 </resources>
