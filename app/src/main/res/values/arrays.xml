@@ -56,4 +56,10 @@
         <item>To a great degree</item>
         <item>All the time</item>
     </string-array>
+
+    <string-array name="LonelinessScale_responses_array">
+        <item>Hardly Ever</item>
+        <item>Some of the time</item>
+        <item>Often</item>
+    </string-array>
 </resources>
