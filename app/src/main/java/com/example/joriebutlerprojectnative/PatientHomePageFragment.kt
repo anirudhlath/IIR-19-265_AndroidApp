@@ -37,6 +37,7 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
         val imagesButton = binding.imagesButton
 
         imagesButton.setOnClickListener(this)
+        binding.surveysButton.setOnClickListener(this)
 
 
         return rootView
@@ -48,6 +49,13 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
                 R.id.imagesButton -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.constraintLayout, PatientImageSurveyFragment()).commit()
+
+                    return
+                }
+
+                R.id.surveysButton -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
 
                     return
                 }

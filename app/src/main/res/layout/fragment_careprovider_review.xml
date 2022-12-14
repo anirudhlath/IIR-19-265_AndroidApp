@@ -29,8 +29,7 @@
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -41,6 +40,7 @@
                             android:id="@+id/imageView"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
+                            android:scaleType="centerCrop"
                             tools:src="@tools:sample/avatars" />
 
                         <TableLayout
@@ -161,6 +161,7 @@
                             android:text="Anxiety" />
 
                         <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/anxietyProgress"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="24dp"
@@ -294,9 +295,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="400dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <com.smarteist.autoimageslider.SliderView
                         android:id="@+id/imageSlider"
@@ -316,13 +316,13 @@
                         app:sliderScrollTimeInSec="1"
                         app:sliderStartAutoCycle="true" />
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView2"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:adjustViewBounds="true"-->
-<!--                        android:scaleType="fitXY"-->
-<!--                        tools:src="@tools:sample/backgrounds/scenic" />-->
+                    <!--                    <ImageView-->
+                    <!--                        android:id="@+id/imageView2"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:adjustViewBounds="true"-->
+                    <!--                        android:scaleType="fitXY"-->
+                    <!--                        tools:src="@tools:sample/backgrounds/scenic" />-->
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -341,8 +341,7 @@
                 <com.google.android.material.card.MaterialCardView
                     style="@style/Widget.Material3.CardView.Elevated"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
