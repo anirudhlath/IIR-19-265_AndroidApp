@@ -38,4 +38,14 @@
         <item>More than half of the days</item>
         <item>Nearly every day</item>
     </string-array>
+
+    <integer-array name="PSEQ_responses_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
 </resources>
