@@ -48,4 +48,12 @@
         <item>5</item>
         <item>6</item>
     </integer-array>
+
+    <string-array name="ThoughtsAboutPain_responses_array">
+        <item>Not at all</item>
+        <item>To a slight degree</item>
+        <item>To a moderate degree</item>
+        <item>To a great degree</item>
+        <item>All the time</item>
+    </string-array>
 </resources>
