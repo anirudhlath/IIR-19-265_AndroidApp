@@ -71,4 +71,36 @@
         <item>5 to 8</item>
         <item>More than 9</item>
     </string-array>
+
+    <string-array name="Adls_q1_responses_array">
+        <item>Bathes self completely or needs help in bathing only a single part of the body such as the back, genital area or disabled extremity.</item>
+        <item>Need help with bathing more than one part of the body, getting in or out of the tub or shower. Requires total bathing.</item>
+    </string-array>
+
+    <string-array name="Adls_q2_responses_array">
+        <item>Get clothes from closets and drawers and puts on clothes and outer garments complete with fasteners. May have help tying shoes.</item>
+        <item>Needs help with dressing self or needs to be completely dressed.</item>
+    </string-array>
+
+    <string-array name="Adls_q3_responses_array">
+        <item>Goes to toilet, gets on and off, arranges clothes, cleans genital area without help </item>
+        <item>Needs help transferring to the toilet, cleaning self or uses bedpan or commode.</item>
+    </string-array>
+
+    <string-array name="Adls_q4_responses_array">
+        <item>Moves in and out of bed or chair unassisted. Mechanical transfer aids are acceptable.</item>
+        <item>Needs help in moving from bed to chair or requires a complete transfer.</item>
+    </string-array>
+
+    <string-array name="Adls_q5_responses_array">
+        <item>Exercises complete self- control over urination and defecation.</item>
+        <item>Is partially or totally incontinent of bowel or bladder.</item>
+    </string-array>
+
+    <string-array name="Adls_q6_responses_array">
+        <item>Gets food from plate into mouth without help. Preparation of food may be done by another person.</item>
+        <item>Needs partial or total help with feeding or requires parenteral feeding.</item>
+    </string-array>
+
+
 </resources>
