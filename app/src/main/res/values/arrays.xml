@@ -62,4 +62,13 @@
         <item>Some of the time</item>
         <item>Often</item>
     </string-array>
+
+    <string-array name="LSNS6_responses_array">
+        <item>None</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3 or 4</item>
+        <item>5 to 8</item>
+        <item>More than 9</item>
+    </string-array>
 </resources>

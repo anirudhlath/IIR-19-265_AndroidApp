@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LubbenSocialNetworkScaleFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/heading"
+                style="@style/TextAppearance.MaterialComponents.Headline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="Lubben Social Network Scale (LSNS-6)"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="LSNS-6 is a validated instrument designed to gauge social isolation in older adults by measuring the number and frequency of social contacts with friends and family members and the perceived social support received from these sources." />
+
+            <TextView
+                android:id="@+id/instructions2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="FAMILY: Considering the people to whom you are related by birth, marriage, adoption, etc."
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 1" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How many relatives do you see or hear from at least once a month? " />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q1LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 2" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How many relatives do you feel at ease with that you can talk about private matters?" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q2LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 3" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How many relatives do you feel close to such that you could call on them for help?" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q3LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/instructions3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="FRIENDSHIPS: Considering all of your friends including those who live in your neighborhood"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 4" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How many of your friends do you see or hear from at least once a month?" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q4LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 5" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text='How many friends do you feel at ease with that you can talk about private matters?' />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q5LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 6" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="How many friends do you feel close to such that you could call on them for help?" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/q6LSNS6"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Tap here to select your response">
+
+                        <AutoCompleteTextView
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            app:simpleItems="@array/LSNS6_responses_array" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <Button
+                android:id="@+id/buttonSubmitSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:onClick="onClick"
+                android:text="Finish" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
