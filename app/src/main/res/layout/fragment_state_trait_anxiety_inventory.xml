@@ -340,6 +340,17 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <Button
+                android:id="@+id/buttonSubmitSurvey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:onClick="onClick"
+                android:text="Finish" />
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
