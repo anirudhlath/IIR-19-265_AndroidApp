@@ -23,7 +23,7 @@ class StateTraitAnxietyInventoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_state_trait_anxiety_inventory, container, false)
+        return inflater.inflate(R.layout.questionnaire_state_trait_anxiety_inventory, container, false)
     }
 
 }
