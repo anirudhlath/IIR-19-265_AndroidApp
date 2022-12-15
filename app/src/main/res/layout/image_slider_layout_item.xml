@@ -8,7 +8,8 @@
         android:id="@+id/iv_auto_image_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY" />
+        android:background="#000000"
+        android:scaleType="centerInside" />
 
 
     <ImageView
@@ -29,9 +30,12 @@
             android:id="@+id/tv_auto_image_slider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="25dp"
             android:padding="6dp"
+            android:shadowColor="#000000"
+            android:shadowRadius="3"
             android:textColor="#FFF"
             android:textSize="18sp" />
 

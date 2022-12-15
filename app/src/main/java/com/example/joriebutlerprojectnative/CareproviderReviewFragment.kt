@@ -15,6 +15,9 @@ import androidx.core.view.isNotEmpty
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
 import com.google.android.material.snackbar.Snackbar
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
+import com.smarteist.autoimageslider.SliderView
 import com.squareup.picasso.Picasso
 
 
@@ -53,6 +56,25 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         updateLonelinessScoreProgressBar(sharedPref)
         updateSocialIsolationProgressBar(sharedPref)
         updateAdlsProgressBar(sharedPref)
+
+        val sliderView = binding.imageSlider
+        val adapter = ImageSliderAdapter(requireContext())
+        val labelArray = arrayOf("What matters the most to me", "Where I keep my medicine", "Front of my house", "Second entry door", "Bedroom #1", "Bedroom #2", "My kitchen", "My bathroom", "Medical Equipment #1", "Medical Equipment #2")
+
+        // Add images to slider
+        for (i in 1..10) {
+            if(!sharedPref.getString("photo$i", "").isNullOrEmpty()) {
+                adapter.addItem(SliderItem(labelArray[i - 1], sharedPref.getString("photo$i", "")))
+            }
+        }
+        sliderView.setSliderAdapter(adapter)
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
+        sliderView.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
+        sliderView.indicatorSelectedColor = Color.WHITE
+        sliderView.indicatorUnselectedColor = Color.GRAY
+        sliderView.scrollTimeInSec = 4
+        sliderView.startAutoCycle()
 
 
         return rootView
