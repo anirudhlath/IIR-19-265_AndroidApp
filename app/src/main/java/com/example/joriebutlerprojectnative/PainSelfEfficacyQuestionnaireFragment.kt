@@ -1,32 +1,26 @@
 package com.example.joriebutlerprojectnative
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.joriebutlerprojectnative.databinding.QuestionnairePainSelfEfficacyQuestionnaireBinding
+import com.example.joriebutlerprojectnative.databinding.QuestionnairePhq2Binding
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputLayout
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PainSelfEfficacyQuestionnaireFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PainSelfEfficacyQuestionnaireFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: QuestionnairePainSelfEfficacyQuestionnaireBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -34,30 +28,107 @@ class PainSelfEfficacyQuestionnaireFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(
-            R.layout.questionnaire_pain_self_efficacy_questionnaire,
-            container,
-            false
-        )
+        _binding =
+            QuestionnairePainSelfEfficacyQuestionnaireBinding.inflate(inflater, container, false)
+        val rootView = _binding!!.root
+
+        binding.buttonSubmitSurvey.setOnClickListener {
+            submitSurvey()
+        }
+
+
+        return rootView
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PainSelfEfficacyQuestionnaireFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PainSelfEfficacyQuestionnaireFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun submitSurvey() {
+        if (!binding.q1Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q2Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q3Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q4Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q5Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q6Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q7Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q8Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q9Pseq.editText?.text.isNullOrEmpty()
+            && !binding.q10Pseq.editText?.text.isNullOrEmpty()
+        ) {
+            val sharedPref = requireActivity().getSharedPreferences(
+                getString(R.string.patientData), Context.MODE_PRIVATE
+            )
+
+            val score =
+                calculateScore(
+                    binding.q1Pseq
+                ) + calculateScore(
+                    binding.q2Pseq
+                ) + calculateScore(
+                    binding.q3Pseq
+                ) + calculateScore(
+                    binding.q4Pseq
+                ) + calculateScore(
+                    binding.q5Pseq
+                ) + calculateScore(
+                    binding.q6Pseq
+                ) + calculateScore(
+                    binding.q7Pseq
+                ) + calculateScore(
+                    binding.q8Pseq
+                ) + calculateScore(
+                    binding.q9Pseq
+                ) + calculateScore(
+                    binding.q10Pseq
+                )
+
+            val editor = sharedPref.edit()
+            editor.putInt("PseqScore", score)
+            editor.apply()
+
+            Log.d("SharedPreferences", "Loading the save data...")
+            Log.d(
+                "SharedPreferences",
+                "PHQ2 Score: " + sharedPref.getInt("PseqScore", -1).toString()
+            )
+        } else {
+            val contextView = requireView()
+            Snackbar.make(
+                contextView,
+                "Please complete all the fields.",
+                Snackbar.LENGTH_SHORT
+            ).show()
+            return
+        }
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        return
+
     }
+
+    private fun calculateScore(textInputLayout: TextInputLayout): Int {
+        when (textInputLayout.editText?.text.toString()) {
+            "0" -> {
+                return 0
+            }
+            "1" -> {
+                return 1
+            }
+            "2" -> {
+                return 2
+            }
+            "3" -> {
+                return 3
+            }
+            "4" -> {
+                return 4
+            }
+            "5" -> {
+                return 5
+            }
+            "6" -> {
+                return 6
+            }
+
+        }
+        return 0
+    }
+
 }

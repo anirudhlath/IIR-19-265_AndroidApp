@@ -292,6 +292,7 @@
                                 android:text="Pain" />
 
                             <TextView
+                                android:id="@+id/selfEfficacyLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -301,6 +302,7 @@
                                 android:tooltipText="Patient has not completed this task." />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/selfEfficacyProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"
