@@ -40,7 +40,8 @@
             android:id="@+id/frameLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:visibility="gone">
 
             <com.marvel999.acr.ArcProgress
                 android:id="@+id/taskCounterProgressBar"
@@ -71,7 +72,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="50dp"
-            android:text="Tasks Completed" />
+            android:text="Tasks Completed"
+            android:visibility="gone" />
 
         <TableLayout
             android:id="@+id/tableLayout2"
@@ -98,6 +100,7 @@
                     android:paddingStart="25dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="10dp"
+                    android:visibility="gone"
                     app:srcCompat="@drawable/ic_baseline_add_a_photo_144"
                     tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -115,6 +118,7 @@
                     android:paddingStart="25dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="10dp"
+                    android:visibility="gone"
                     app:srcCompat="@drawable/ic_outline_question_answer_144"
                     tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -148,7 +152,8 @@
                     android:layout_weight="1"
                     android:text="Images"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/openEndedQuestionsTextView"
@@ -158,7 +163,8 @@
                     android:layout_weight="1"
                     android:text="Open-Ended Questions"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/SurveysTextView"
