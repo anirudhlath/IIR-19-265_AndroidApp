@@ -29,7 +29,7 @@
         tools:targetApi="30">
         
         <activity
-            android:name=".CareproviderActivity"
+            android:name=".careprovider.CareproviderActivity"
             android:exported="false"
             android:screenOrientation="landscape">
             <meta-data
@@ -37,7 +37,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PatientActivity"
+            android:name=".patient.PatientActivity"
             android:exported="false"
             android:screenOrientation="landscape">
             <meta-data
@@ -45,7 +45,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".CaregiverActivity"
+            android:name=".caregiver.CaregiverActivity"
             android:exported="false"
             android:screenOrientation="landscape">
             <meta-data

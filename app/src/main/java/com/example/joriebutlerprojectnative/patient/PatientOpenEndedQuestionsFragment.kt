@@ -1,4 +1,4 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.patient
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
-import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientOpenEndedQuestionsBinding
 import com.google.android.material.snackbar.Snackbar
 

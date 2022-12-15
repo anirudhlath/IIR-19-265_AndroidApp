@@ -1,4 +1,4 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.surveys
 
 import android.content.Context
 import android.os.Bundle
@@ -7,24 +7,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireLonelinessBinding
-import com.example.joriebutlerprojectnative.databinding.QuestionnaireLubbenSocialNetworkScaleBinding
+import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
-
 /**
  * A simple [Fragment] subclass.
- * Use the [LubbenSocialNetworkScaleFragment.newInstance] factory method to
+ * Use the [LonelinessFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LubbenSocialNetworkScaleFragment : Fragment() {
+class LonelinessFragment : Fragment() {
 
-    private var _binding: QuestionnaireLubbenSocialNetworkScaleBinding? = null
+    private var _binding: QuestionnaireLonelinessBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -32,7 +33,7 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding =
-            QuestionnaireLubbenSocialNetworkScaleBinding.inflate(inflater, container, false)
+            QuestionnaireLonelinessBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
 
         binding.buttonSubmitSurvey.setOnClickListener {
@@ -45,55 +46,40 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
 
     private fun calculateScore(textInputLayout: TextInputLayout): Int {
         when (textInputLayout.editText?.text.toString()) {
-            "None" -> {
-                return 0
-            }
-            "1" -> {
+            "Hardly Ever" -> {
                 return 1
             }
-            "2" -> {
+            "Some of the time" -> {
                 return 2
             }
-            "3 or 4" -> {
+            "Often" -> {
                 return 3
-            }
-            "5 to 8" -> {
-                return 4
-            }
-            "More than 9" -> {
-                return 5
             }
         }
         return 0
     }
 
     private fun submitSurvey() {
-        if(!binding.q1LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q2LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q3LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q4LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q5LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q6LSNS6.editText?.text.isNullOrEmpty()
+        if(!binding.q1LonelinessScale.editText?.text.isNullOrEmpty()
+            &&!binding.q2LonelinessScale.editText?.text.isNullOrEmpty()
+            &&!binding.q3LonelinessScale.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
 
-            val score = calculateScore(binding.q1LSNS6) +
-                    calculateScore(binding.q2LSNS6) +
-                    calculateScore(binding.q3LSNS6) +
-                    calculateScore(binding.q4LSNS6) +
-                    calculateScore(binding.q5LSNS6) +
-                    calculateScore(binding.q6LSNS6)
+            val score = calculateScore(binding.q1LonelinessScale) +
+                    calculateScore(binding.q2LonelinessScale) +
+                    calculateScore(binding.q3LonelinessScale)
 
             val editor = sharedPref.edit()
-            editor.putInt("LSNS6Score", score)
+            editor.putInt("LonelinessScaleScore", score)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")
             Log.d(
                 "SharedPreferences",
-                "LSNS6 Score: " + sharedPref.getInt("LSNS6Score", -1).toString()
+                "Loneliness Scale Score: " + sharedPref.getInt("LonelinessScaleScore", -1).toString()
             )
         }
         else {

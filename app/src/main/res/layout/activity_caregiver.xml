@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaregiverActivity">
+    tools:context=".caregiver.CaregiverActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.example.joriebutlerprojectnative.CaregiverSignUpFragment"
+        android:name="com.example.joriebutlerprojectnative.caregiver.CaregiverSignUpFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

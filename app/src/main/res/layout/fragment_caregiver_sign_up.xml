@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaregiverSignUpFragment" >
+    tools:context=".caregiver.CaregiverSignUpFragment" >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,7 +54,8 @@
                 android:foregroundGravity="center"
                 android:padding="24dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_baseline_add_a_photo_24" />
+                android:src="@drawable/ic_baseline_add_a_photo_24"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/textViewEditProfilePicture"
@@ -63,7 +64,8 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="24dp"
                 android:text="Please add a profile picture"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:visibility="gone" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textFieldFullName"

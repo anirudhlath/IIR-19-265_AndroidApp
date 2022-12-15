@@ -1,4 +1,4 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.patient
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,8 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientHomePageBinding
-import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
-import com.example.joriebutlerprojectnative.databinding.FragmentPatientSignUpBinding
 
 /**
  * A simple [Fragment] subclass.

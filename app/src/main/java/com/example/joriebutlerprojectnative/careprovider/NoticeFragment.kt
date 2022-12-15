@@ -1,5 +1,5 @@
-package com.example.joriebutlerprojectnative
-import com.example.joriebutlerprojectnative.CareproviderReviewFragment.*
+package com.example.joriebutlerprojectnative.careprovider
+import com.example.joriebutlerprojectnative.careprovider.CareproviderReviewFragment.*
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
-import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentNoticeBinding
-import com.google.android.material.progressindicator.LinearProgressIndicator
 
 /**
  * A simple [Fragment] subclass.

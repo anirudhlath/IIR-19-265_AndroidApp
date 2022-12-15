@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CareproviderActivity">
+    tools:context=".careprovider.CareproviderActivity">
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/caregiverLoadingBar"
@@ -18,7 +18,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
-        android:name="com.example.joriebutlerprojectnative.NoticeFragment"
+        android:name="com.example.joriebutlerprojectnative.careprovider.NoticeFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

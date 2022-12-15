@@ -1,7 +1,8 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.careprovider
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.joriebutlerprojectnative.R
 
 class CareproviderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

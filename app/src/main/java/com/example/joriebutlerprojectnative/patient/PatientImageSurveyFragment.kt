@@ -1,4 +1,4 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.patient
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -19,10 +19,9 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
+import com.example.joriebutlerprojectnative.BuildConfig
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
-import com.squareup.picasso.Picasso
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.io.File
 import java.text.DateFormat
 import java.util.*

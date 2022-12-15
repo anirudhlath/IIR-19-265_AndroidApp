@@ -1,49 +1,32 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.patient
 
-import android.app.Activity
-import android.app.Activity.RESULT_OK
-import android.content.ActivityNotFoundException
-import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.hardware.camera2.CameraManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
-import androidx.camera.core.Camera
-import androidx.camera.core.CameraProvider
-import androidx.camera.core.CameraX
-import androidx.camera.core.ImageCapture
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.joriebutlerprojectnative.BuildConfig
+import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSignUpBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.squareup.picasso.Picasso
 import java.io.File
 import java.text.DateFormat.getDateInstance
-import java.text.SimpleDateFormat
 import java.util.*
-import java.util.jar.Manifest
 
 
 /**
@@ -68,11 +51,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
     private var getCameraImage: ActivityResultLauncher<Uri>? = null
 
-    private val requestMultiplePermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { resultsMap ->
-        resultsMap.forEach {
-            Log.i(TAG, "Permission: ${it.key}, granted: ${it.value}")
-        }
-    }
+
 
 
 
@@ -103,8 +82,6 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
             }
         }
-
-
     }
 
     override fun onCreateView(
@@ -133,40 +110,10 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
         button?.setOnClickListener(this)
         imageButton.setOnClickListener(this)
 
-        // Image Capture
-        if (!hasCameraPermission() || hasStoragePermission() || hasReadStoragePermission()) {
-            requestMultiplePermissionLauncher.launch(
-                arrayOf(
-                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    android.Manifest.permission.READ_EXTERNAL_STORAGE,
-                    android.Manifest.permission.CAMERA
-                )
-            )
-        }
-
-
-
-
-
-
-
         return rootView
     }
 
-    // Check if device has permissions
-    private fun hasCameraPermission() = ContextCompat.checkSelfPermission(
-        requireContext(),
-        android.Manifest.permission.CAMERA
-    ) == PackageManager.PERMISSION_GRANTED
 
-    private fun hasStoragePermission() = ContextCompat.checkSelfPermission(
-        requireContext(),
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE
-    ) == PackageManager.PERMISSION_GRANTED
-    private fun hasReadStoragePermission() = ContextCompat.checkSelfPermission(
-        requireContext(),
-        android.Manifest.permission.READ_EXTERNAL_STORAGE
-    ) == PackageManager.PERMISSION_GRANTED
 
     // Destroy binding at fragment destroy
     override fun onDestroyView() {
@@ -252,8 +199,8 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
 
                         val editor = sharedPref.edit()
-                        editor.putString("fName", fNameEditText?.editText?.text.toString())
-                        editor.putString("lName", lNameEditText?.editText?.text.toString())
+                        editor.putString("fName", fNameEditText?.editText?.text.toString().trim())
+                        editor.putString("lName", lNameEditText?.editText?.text.toString().trim())
                         editor.putString("dob", dobEditText?.text.toString())
                         editor.putString("mrn", mrnEditText?.editText?.text.toString())
                         editor.putString("gender", genderMenu?.editText?.text.toString())

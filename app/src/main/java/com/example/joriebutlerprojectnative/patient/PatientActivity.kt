@@ -1,9 +1,9 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.patient
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import com.example.joriebutlerprojectnative.R
 
 class PatientActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

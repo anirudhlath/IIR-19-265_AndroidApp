@@ -1,26 +1,24 @@
-package com.example.joriebutlerprojectnative
+package com.example.joriebutlerprojectnative.careprovider
 
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.view.isNotEmpty
 import com.bumptech.glide.Glide
+import com.example.joriebutlerprojectnative.ImageSliderAdapter
+import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.SliderItem
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
-import com.google.android.material.progressindicator.LinearProgressIndicator
-import com.google.android.material.snackbar.Snackbar
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
-import com.squareup.picasso.Picasso
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -62,6 +60,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
             updatePatientData(sharedPref)
+            updateCaregiverData()
             updateAnxietyProgressBar(sharedPref)
             updateDepressionProgressBar(sharedPref)
             updateSelfEfficacyProgressBar(sharedPref)
@@ -103,7 +102,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             }
         }
         sliderView.setSliderAdapter(adapter)
-        requireActivity().runOnUiThread{
+        requireActivity().runOnUiThread {
             sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
             sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
             sliderView.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
@@ -115,7 +114,13 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
     }
 
     private fun updatePatientData(sharedPref: SharedPreferences) {
-        requireActivity().runOnUiThread{ loadImage("profilePhotoURI", binding.imageView, sharedPref) }
+        requireActivity().runOnUiThread {
+            loadImage(
+                "profilePhotoURI",
+                binding.imageView,
+                sharedPref
+            )
+        }
         binding.patientFullNameLabel.text =
             sharedPref.getString("fName", "NIL") + " " + sharedPref.getString("lName", "NIL")
         binding.patientDobLabel.text = sharedPref.getString("dob", "NIL")
@@ -125,12 +130,26 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
     }
 
-    private fun loadImage(imageName: String, imageView: ImageView, sharedPreferences: SharedPreferences) {
+    private fun updateCaregiverData() {
+        val sharedPref = requireActivity().getSharedPreferences(
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
+        binding.caregiverFullNameLabel.text = sharedPref.getString("fullName", "NIL")
+        binding.caregiverRelationshipLabel.text = sharedPref.getString("relationship", "NIL")
+        binding.caregiverLocationLabel.text = sharedPref.getString("location", "NIL")
+        binding.caregiverFrequencyLabel.text = sharedPref.getString("frequency", "NIL")
+    }
+
+    private fun loadImage(
+        imageName: String,
+        imageView: ImageView,
+        sharedPreferences: SharedPreferences
+    ) {
         try {
 //            Picasso.get().load(sharedPreferences.getString(imageName, "")).resize(0, 100).into(imageView)
-            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside().into(imageView)
-        }
-        catch (e: Exception) {
+            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside()
+                .into(imageView)
+        } catch (e: Exception) {
             // Handling the null pointer exception
         }
     }
@@ -142,7 +161,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             binding.anxietyProgress.isIndeterminate = false
             binding.anxietyProgress.max = 80
             activity?.runOnUiThread {
-                ObjectAnimator.ofInt(binding.anxietyProgress, "progress", staiScore).setDuration(500).start()
+                ObjectAnimator.ofInt(binding.anxietyProgress, "progress", staiScore)
+                    .setDuration(500).start()
             }
 
             binding.anxietyProgress.tooltipText = "$staiScore/80"
