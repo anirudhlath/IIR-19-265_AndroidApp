@@ -180,9 +180,11 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
+                                android:id="@+id/depressionLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -192,13 +194,15 @@
                                 android:tooltipText="Patient has not completed this task." />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/depressionProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -241,7 +245,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -259,7 +264,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -301,7 +307,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -319,7 +326,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -332,7 +340,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:gravity="center"
                             android:orientation="vertical">
@@ -449,7 +457,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
 
@@ -492,7 +501,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/linearProgressIndicator2"
@@ -502,7 +512,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 android:id="@+id/textView18"
@@ -522,7 +533,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/linearProgressIndicator4"
@@ -532,7 +544,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -549,7 +562,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -592,7 +606,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -610,7 +625,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 android:id="@+id/textView19"
@@ -630,7 +646,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -650,7 +667,8 @@
                                 android:indeterminate="false"
                                 android:indeterminateBehavior="cycle"
                                 android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint" />
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>

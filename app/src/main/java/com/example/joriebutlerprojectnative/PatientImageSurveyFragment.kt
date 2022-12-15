@@ -31,6 +31,7 @@ import java.util.*
  */
 class PatientImageSurveyFragment : Fragment(), OnClickListener {
 
+    // Private global variables
     private var _binding: FragmentPatientImageSurveyBinding? = null
     private val binding get() = _binding!!
     private var uri: Uri? = null

@@ -47,6 +47,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
         updatePatientData(sharedPref)
         updateAnxietyProgressBar(sharedPref)
+        updateDepressionProgressBar(sharedPref)
 
 
         return rootView
@@ -92,6 +93,30 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                 }
                 else -> {
                     binding.anxietyProgress.setIndicatorColor(Color.parseColor("#FF0D0D"))
+                }
+            }
+        }
+    }
+
+    private fun updateDepressionProgressBar(sharedPref: SharedPreferences) {
+        val score = sharedPref.getInt("Phq2Score", -1)
+
+        if (score != -1) {
+            val progressBar = binding.depressionProgressBar
+            val label = binding.depressionLabel
+
+            progressBar.isIndeterminate = false
+            progressBar.max = 6
+            progressBar.progress = score
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                in 0..2 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
+                }
+                in 3..6 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
                 }
             }
         }

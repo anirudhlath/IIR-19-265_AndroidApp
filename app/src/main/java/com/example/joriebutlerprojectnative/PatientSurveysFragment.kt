@@ -7,7 +7,6 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import com.example.joriebutlerprojectnative.databinding.FragmentPatientHomePageBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSurveysBinding
 
 
@@ -41,6 +40,15 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
         val rootView = _binding!!.root
 
         binding.buttonSTAI.setOnClickListener(this)
+        binding.buttonPHQ.setOnClickListener(this)
+        binding.buttonPSEQ.setOnClickListener(this)
+        binding.buttonThoughtsAboutPain.setOnClickListener(this)
+        binding.buttonLoneliness.setOnClickListener(this)
+        binding.buttonIsolation.setOnClickListener(this)
+        binding.buttonActivitiesOfDailyLifeScale.setOnClickListener(this)
+        binding.buttonInstrumentalActivitiesOfDailyLifeScale.setOnClickListener(this)
+        binding.buttonContext.setOnClickListener(this)
+        binding.buttonHealthLiteracy.setOnClickListener(this)
 
         return rootView
     }
@@ -50,7 +58,67 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
             when (v.id) {
                 R.id.buttonSTAI -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, StateTraitAnxietyInventoryFragment()).commit()
+                        .replace(R.id.constraintLayout, StateTraitAnxietyInventoryFragment())
+                        .commit()
+
+                    return
+                }
+
+                R.id.buttonPHQ -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
+
+                    return
+                }
+
+                R.id.buttonPSEQ -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, PainSelfEfficacyQuestionnaireFragment()).commit()
+
+                    return
+                }
+                R.id.buttonThoughtsAboutPain -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, ThoughtsAboutPainFragment()).commit()
+
+                    return
+                }
+                R.id.buttonLoneliness -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, LonelinessFragment()).commit()
+
+                    return
+                }
+                R.id.buttonIsolation -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, LubbenSocialNetworkScaleFragment()).commit()
+
+                    return
+                }
+                R.id.buttonActivitiesOfDailyLifeScale -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, AcitivitiesOfDailyLifeScaleFragment()).commit()
+
+                    return
+                }
+                R.id.buttonInstrumentalActivitiesOfDailyLifeScale -> {
+                    // TODO
+//                    parentFragmentManager.beginTransaction()
+//                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
+
+                    return
+                }
+                R.id.buttonContext -> {
+                    // TODO
+//                    parentFragmentManager.beginTransaction()
+//                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
+
+                    return
+                }
+                R.id.buttonHealthLiteracy -> {
+                    // TODO
+//                    parentFragmentManager.beginTransaction()
+//                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
 
                     return
                 }

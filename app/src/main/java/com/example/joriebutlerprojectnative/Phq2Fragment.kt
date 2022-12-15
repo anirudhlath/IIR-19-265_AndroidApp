@@ -1,15 +1,18 @@
 package com.example.joriebutlerprojectnative
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import com.example.joriebutlerprojectnative.databinding.QuestionnairePhq2Binding
+import com.example.joriebutlerprojectnative.databinding.QuestionnaireStateTraitAnxietyInventoryBinding
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputLayout
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -17,43 +20,84 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class Phq2Fragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: QuestionnairePhq2Binding? = null
+    private val binding get() = _binding!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.questionnaire_phq2, container, false)
+        _binding =
+            QuestionnairePhq2Binding.inflate(inflater, container, false)
+        val rootView = _binding!!.root
+
+        binding.buttonSubmitSurvey.setOnClickListener {
+            submitSurvey()
+        }
+
+
+        return rootView
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Phq2Fragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Phq2Fragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun calculateScore(textInputLayout: TextInputLayout): Int {
+        when (textInputLayout.editText?.text.toString()) {
+            "Not at all" -> {
+                return 0
             }
+            "Several days" -> {
+                return 1
+            }
+            "More than half of the days" -> {
+                return 2
+            }
+            "Nearly every day" -> {
+                return 3
+            }
+
+        }
+        return 0
     }
+
+    private fun submitSurvey() {
+        if(!binding.q1phq2.editText?.text.isNullOrEmpty()
+            &&!binding.q2phq2.editText?.text.isNullOrEmpty()
+        ) {
+            val sharedPref = requireActivity().getSharedPreferences(
+                getString(R.string.patientData), Context.MODE_PRIVATE
+            )
+
+            val score = calculateScore(binding.q1phq2) + calculateScore(binding.q2phq2)
+
+            val editor = sharedPref.edit()
+            editor.putInt("Phq2Score", score)
+            editor.apply()
+
+            Log.d("SharedPreferences", "Loading the save data...")
+            Log.d(
+                "SharedPreferences",
+                "PHQ2 Score: " + sharedPref.getInt("Phq2Score", -1).toString()
+            )
+        }
+        else {
+            val contextView = requireView()
+            Snackbar.make(
+                contextView,
+                "Please complete all the fields.",
+                Snackbar.LENGTH_SHORT
+            ).show()
+            return
+        }
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        return
+
+    }
+
 }
