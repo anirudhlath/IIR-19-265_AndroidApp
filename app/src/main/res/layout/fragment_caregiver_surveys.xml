@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient.PatientSurveysFragment">
+    tools:context=".caregiver.CaregiverSurveysFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,9 +42,8 @@
                 android:gravity="center"
                 android:text="Please complete all the given surveys." />
 
-
             <Button
-                android:id="@+id/buttonSTAI"
+                android:id="@+id/buttonCBS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
@@ -50,57 +51,19 @@
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
                 android:onClick="onClick"
-                android:text="State-Trait Anxitety Inventory" />
+                android:text="Caregiver Burden Scale" />
 
             <Button
-                android:id="@+id/buttonPHQ"
+                android:id="@+id/buttonSRI"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
+                android:enabled="false"
                 android:onClick="onClick"
-                android:text="PHQ-2" />
+                android:text="Social Relationship Index" />
 
-            <Button
-                android:id="@+id/buttonPSEQ"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:onClick="onClick"
-                android:text="Pain Self Efficacy Questionnaire" />
-
-            <Button
-                android:id="@+id/buttonThoughtsAboutPain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:onClick="onClick"
-                android:text="Thoughts About Pain" />
-
-            <Button
-                android:id="@+id/buttonLoneliness"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:onClick="onClick"
-                android:text="Loneliness" />
-
-            <Button
-                android:id="@+id/buttonIsolation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:onClick="onClick"
-                android:text="Isolation" />
 
             <Button
                 android:id="@+id/buttonActivitiesOfDailyLifeScale"
@@ -109,6 +72,7 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
+                android:enabled="false"
                 android:onClick="onClick"
                 android:text="Activities of Daily Life Scale" />
 
@@ -122,40 +86,6 @@
                 android:enabled="false"
                 android:onClick="onClick"
                 android:text="Instrumental Activities of Daily Life Scale" />
-
-            <Button
-                android:id="@+id/buttonSRI"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:enabled="false"
-                android:onClick="onClick"
-                android:text="Social Relationship Index" />
-
-            <Button
-                android:id="@+id/buttonContext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:enabled="false"
-                android:onClick="onClick"
-                android:text="Context" />
-
-
-            <Button
-                android:id="@+id/buttonHealthLiteracy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp"
-                android:enabled="false"
-                android:onClick="onClick"
-                android:text="Health Literacy" />
 
 
         </LinearLayout>

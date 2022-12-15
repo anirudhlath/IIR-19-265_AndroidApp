@@ -70,6 +70,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             updateAdlsProgressBar(sharedPref)
             updateOpenEndedQuestions(sharedPref)
             updateImageSlider(sharedPref)
+            updateCaregiverBurdenScaleProgressBar()
             requireActivity().runOnUiThread {
 //                requireActivity().findViewById<LinearProgressIndicator>(R.id.caregiverLoadingBar).visibility =
 //                    View.INVISIBLE
@@ -336,6 +337,35 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                 }
                 in 2 downTo 0 -> {
                     progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                }
+            }
+        }
+    }
+
+    private fun updateCaregiverBurdenScaleProgressBar() {
+        val sharedPref = requireActivity().getSharedPreferences(
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
+        val score = sharedPref.getInt("CBSScore", -1)
+
+        if (score != -1) {
+            val progressBar = binding.caregiverWorkloadProgressBar
+            val label = binding.caregiverWorkloadLabel
+
+            progressBar.isIndeterminate = false
+            progressBar.max = 88
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                in 0..17 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
+                }
+                in 18..88 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
                 }
             }
         }

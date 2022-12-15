@@ -156,6 +156,14 @@
         <item>b. Manages day-to-day purchases, but needs help with banking, major purchases, etc. </item>
     </string-array>
 
+    <string-array name="CBS_responses_array">
+        <item>Never</item>
+        <item>Rarely</item>
+        <item>Sometimes</item>
+        <item>Frequently</item>
+        <item>Nearly Always</item>
+    </string-array>
+
 
 
 
