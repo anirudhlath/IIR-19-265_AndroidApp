@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientHomePageBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSignUpBinding
@@ -42,6 +44,14 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
 
 
         return rootView
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_in)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
     override fun onClick(v: View?) {

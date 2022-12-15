@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.activity.OnBackPressedCallback
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientOpenEndedQuestionsBinding
 import com.google.android.material.snackbar.Snackbar
@@ -23,6 +26,12 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.constraintLayout, PatientHomePageFragment()).commit()
+            }
+        })
 
     }
 
@@ -40,6 +49,14 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
         return rootView
 
 
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
     private fun submitSurvey() {

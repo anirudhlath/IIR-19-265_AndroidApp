@@ -45,8 +45,14 @@ class NoticeFragment : Fragment(), OnClickListener {
                 R.id.floating_action_button -> {
 //                    requireActivity().findViewById<LinearProgressIndicator>(R.id.caregiverLoadingBar).visibility =
 //                        View.VISIBLE
-                    parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView3, CareproviderReviewFragment())
+                    val fragment = CareproviderReviewFragment()
+                    parentFragmentManager.beginTransaction().setCustomAnimations(
+                        R.anim.slide_in,
+                        R.anim.fade_out,
+                        R.anim.fade_in,
+                        R.anim.slide_out
+                    )
+                        .replace(R.id.fragmentContainerView3, fragment)
                         .commit()
 
                     return

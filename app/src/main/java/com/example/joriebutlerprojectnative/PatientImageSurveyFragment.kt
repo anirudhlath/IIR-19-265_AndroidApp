@@ -11,6 +11,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -19,6 +21,8 @@ import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.io.File
 import java.text.DateFormat
 import java.util.*
@@ -86,6 +90,27 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
         _binding = FragmentPatientImageSurveyBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
 
+
+
+        // Initialize all the camera launchers
+        photo1Launcher = setupPhotoActivityResultLauncher("photo1", binding.q1Preview)
+        photo2Launcher = setupPhotoActivityResultLauncher("photo2", binding.q2Preview)
+        photo3Launcher = setupPhotoActivityResultLauncher("photo3", binding.q3Preview)
+        photo4Launcher = setupPhotoActivityResultLauncher("photo4", binding.q4Preview)
+        photo5Launcher = setupPhotoActivityResultLauncher("photo5", binding.q5Preview)
+        photo6Launcher = setupPhotoActivityResultLauncher("photo6", binding.q6Preview)
+        photo7Launcher = setupPhotoActivityResultLauncher("photo7", binding.q7Preview)
+        photo8Launcher = setupPhotoActivityResultLauncher("photo8", binding.q8Preview)
+        photo9Launcher = setupPhotoActivityResultLauncher("photo9", binding.q9Preview)
+        photo10Launcher = setupPhotoActivityResultLauncher("photo10", binding.q10Preview)
+
+
+
+        return rootView
+    }
+
+    override fun onStart() {
+        super.onStart()
         binding.fab1.setOnClickListener(this)
         binding.fab2.setOnClickListener(this)
         binding.fab3.setOnClickListener(this)
@@ -112,20 +137,14 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
         loadImage("photo8", binding.q8Preview, sharedPref)
         loadImage("photo9", binding.q9Preview, sharedPref)
         loadImage("photo10", binding.q10Preview, sharedPref)
+    }
 
-        // Initialize all the camera launchers
-        photo1Launcher = setupPhotoActivityResultLauncher("photo1", binding.q1Preview)
-        photo2Launcher = setupPhotoActivityResultLauncher("photo2", binding.q2Preview)
-        photo3Launcher = setupPhotoActivityResultLauncher("photo3", binding.q3Preview)
-        photo4Launcher = setupPhotoActivityResultLauncher("photo4", binding.q4Preview)
-        photo5Launcher = setupPhotoActivityResultLauncher("photo5", binding.q5Preview)
-        photo6Launcher = setupPhotoActivityResultLauncher("photo6", binding.q6Preview)
-        photo7Launcher = setupPhotoActivityResultLauncher("photo7", binding.q7Preview)
-        photo8Launcher = setupPhotoActivityResultLauncher("photo8", binding.q8Preview)
-        photo9Launcher = setupPhotoActivityResultLauncher("photo9", binding.q9Preview)
-        photo10Launcher = setupPhotoActivityResultLauncher("photo10", binding.q10Preview)
-
-        return rootView
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
     override fun onClick(v: View?) {
