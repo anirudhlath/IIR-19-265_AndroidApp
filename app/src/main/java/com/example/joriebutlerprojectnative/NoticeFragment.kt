@@ -1,4 +1,5 @@
 package com.example.joriebutlerprojectnative
+import com.example.joriebutlerprojectnative.CareproviderReviewFragment.*
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,13 +9,14 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentNoticeBinding
+import com.google.android.material.progressindicator.LinearProgressIndicator
 
 /**
  * A simple [Fragment] subclass.
  * Use the [NoticeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class NoticeFragment : Fragment(), OnClickListener{
+class NoticeFragment : Fragment(), OnClickListener {
 
     private var _binding: FragmentNoticeBinding? = null
     private val binding get() = _binding!!
@@ -39,10 +41,16 @@ class NoticeFragment : Fragment(), OnClickListener{
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
+
                 R.id.floating_action_button -> {
+//                    requireActivity().findViewById<LinearProgressIndicator>(R.id.caregiverLoadingBar).visibility =
+//                        View.VISIBLE
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView3, CareproviderReviewFragment()).commit()
+                        .replace(R.id.fragmentContainerView3, CareproviderReviewFragment())
+                        .commit()
+
                     return
+
                 }
             }
         }

@@ -718,7 +718,19 @@
                             app:sliderIndicatorSelectedColor="#5A5A5A"
                             app:sliderIndicatorUnselectedColor="#FFF"
                             app:sliderScrollTimeInSec="1"
-                            app:sliderStartAutoCycle="true" />
+                            app:sliderStartAutoCycle="true">
+
+                            <TextView
+                                android:id="@+id/imageIndicator"
+                                style="@style/TextAppearance.Material3.HeadlineLarge"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="No Images"
+                                android:textStyle="bold">
+
+                            </TextView>
+                        </com.smarteist.autoimageslider.SliderView>
 
                         <!--                    <ImageView-->
                         <!--                        android:id="@+id/imageView2"-->
@@ -733,7 +745,295 @@
                         style="@style/Widget.Material3.CardView.Filled"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingBottom="24dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 1" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="What is important to you?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q1"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 2" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Is there something you like to do but are limited in doing?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q2"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 3" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Do you have competing responsibilities that make it difficult for you to get to your appoinments or follow your healhtcare plans?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q3"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 4" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="How do you feel about healthcare providers? How have your past experiences impacted this?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q4"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 5" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Do you have any spiritual or religious beliefs that influences your thoughts about your health?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q5"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
 

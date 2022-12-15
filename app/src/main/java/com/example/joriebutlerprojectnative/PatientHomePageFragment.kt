@@ -38,6 +38,7 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
 
         imagesButton.setOnClickListener(this)
         binding.surveysButton.setOnClickListener(this)
+        binding.openEndedQuestionsButton.setOnClickListener(this)
 
 
         return rootView
@@ -56,6 +57,13 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
                 R.id.surveysButton -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+
+                    return
+                }
+
+                R.id.openEndedQuestionsButton -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, PatientOpenEndedQuestionsFragment()).commit()
 
                     return
                 }

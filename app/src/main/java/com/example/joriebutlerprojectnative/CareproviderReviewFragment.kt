@@ -1,5 +1,6 @@
 package com.example.joriebutlerprojectnative
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
@@ -14,11 +15,14 @@ import android.widget.ImageView
 import androidx.core.view.isNotEmpty
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.snackbar.Snackbar
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 /**
@@ -44,44 +48,74 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             FragmentCareproviderReviewBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
 
-        val sharedPref = requireActivity().getSharedPreferences(
-            getString(R.string.patientData), Context.MODE_PRIVATE
-        )
 
-        updatePatientData(sharedPref)
-        updateAnxietyProgressBar(sharedPref)
-        updateDepressionProgressBar(sharedPref)
-        updateSelfEfficacyProgressBar(sharedPref)
-        updateThoughtsAboutPainProgressBar(sharedPref)
-        updateLonelinessScoreProgressBar(sharedPref)
-        updateSocialIsolationProgressBar(sharedPref)
-        updateAdlsProgressBar(sharedPref)
+        prepareReviewPage()
 
-        val sliderView = binding.imageSlider
-        val adapter = ImageSliderAdapter(requireContext())
-        val labelArray = arrayOf("What matters the most to me", "Where I keep my medicine", "Front of my house", "Second entry door", "Bedroom #1", "Bedroom #2", "My kitchen", "My bathroom", "Medical Equipment #1", "Medical Equipment #2")
-
-        // Add images to slider
-        for (i in 1..10) {
-            if(!sharedPref.getString("photo$i", "").isNullOrEmpty()) {
-                adapter.addItem(SliderItem(labelArray[i - 1], sharedPref.getString("photo$i", "")))
-            }
-        }
-        sliderView.setSliderAdapter(adapter)
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
-        sliderView.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
-        sliderView.indicatorSelectedColor = Color.WHITE
-        sliderView.indicatorUnselectedColor = Color.GRAY
-        sliderView.scrollTimeInSec = 4
-        sliderView.startAutoCycle()
 
 
         return rootView
     }
 
+    public fun prepareReviewPage() {
+        GlobalScope.launch {
+            val sharedPref = requireActivity().getSharedPreferences(
+                getString(R.string.patientData), Context.MODE_PRIVATE
+            )
+            updatePatientData(sharedPref)
+            updateAnxietyProgressBar(sharedPref)
+            updateDepressionProgressBar(sharedPref)
+            updateSelfEfficacyProgressBar(sharedPref)
+            updateThoughtsAboutPainProgressBar(sharedPref)
+            updateLonelinessScoreProgressBar(sharedPref)
+            updateSocialIsolationProgressBar(sharedPref)
+            updateAdlsProgressBar(sharedPref)
+            updateOpenEndedQuestions(sharedPref)
+            updateImageSlider(sharedPref)
+            requireActivity().runOnUiThread {
+//                requireActivity().findViewById<LinearProgressIndicator>(R.id.caregiverLoadingBar).visibility =
+//                    View.INVISIBLE
+            }
+        }
+    }
+
+
+    private fun updateImageSlider(sharedPref: SharedPreferences) {
+        val sliderView = binding.imageSlider
+        val adapter = ImageSliderAdapter(requireContext())
+        val labelArray = arrayOf(
+            "What matters the most to me",
+            "Where I keep my medicine",
+            "Front of my house",
+            "Second entry door",
+            "Bedroom #1",
+            "Bedroom #2",
+            "My kitchen",
+            "My bathroom",
+            "Medical Equipment #1",
+            "Medical Equipment #2"
+        )
+
+        // Add images to slider
+        for (i in 1..10) {
+            if (!sharedPref.getString("photo$i", "").isNullOrEmpty()) {
+                adapter.addItem(SliderItem(labelArray[i - 1], sharedPref.getString("photo$i", "")))
+                binding.imageIndicator.visibility = View.INVISIBLE
+            }
+        }
+        sliderView.setSliderAdapter(adapter)
+        requireActivity().runOnUiThread{
+            sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM)
+            sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION)
+            sliderView.autoCycleDirection = SliderView.AUTO_CYCLE_DIRECTION_RIGHT
+        }
+        sliderView.indicatorSelectedColor = Color.WHITE
+        sliderView.indicatorUnselectedColor = Color.GRAY
+        sliderView.scrollTimeInSec = 4
+        sliderView.startAutoCycle()
+    }
+
     private fun updatePatientData(sharedPref: SharedPreferences) {
-        loadImage("profilePhotoURI",binding.imageView, sharedPref)
+        requireActivity().runOnUiThread{ loadImage("profilePhotoURI", binding.imageView, sharedPref) }
         binding.patientFullNameLabel.text =
             sharedPref.getString("fName", "NIL") + " " + sharedPref.getString("lName", "NIL")
         binding.patientDobLabel.text = sharedPref.getString("dob", "NIL")
@@ -107,7 +141,10 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (staiScore != -1) {
             binding.anxietyProgress.isIndeterminate = false
             binding.anxietyProgress.max = 80
-            binding.anxietyProgress.progress = staiScore
+            activity?.runOnUiThread {
+                ObjectAnimator.ofInt(binding.anxietyProgress, "progress", staiScore).setDuration(500).start()
+            }
+
             binding.anxietyProgress.tooltipText = "$staiScore/80"
             binding.anxietyLabel.tooltipText = "$staiScore/80"
 
@@ -134,7 +171,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 6
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -158,7 +197,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 60
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -182,7 +223,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 52
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -206,7 +249,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 9
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -230,7 +275,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 30
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -254,7 +301,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             progressBar.isIndeterminate = false
             progressBar.max = 6
-            progressBar.progress = score
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
             progressBar.tooltipText = "$score/${progressBar.max}"
             label.tooltipText = "$score/${progressBar.max}"
 
@@ -270,6 +319,21 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                 }
             }
         }
+    }
+
+    private fun updateOpenEndedQuestions(sharedPref: SharedPreferences) {
+        val q1 = sharedPref.getString("openEndedQuestionnaireQ1", "No response yet")
+        val q2 = sharedPref.getString("openEndedQuestionnaireQ2", "No response yet")
+        val q3 = sharedPref.getString("openEndedQuestionnaireQ3", "No response yet")
+        val q4 = sharedPref.getString("openEndedQuestionnaireQ4", "No response yet")
+        val q5 = sharedPref.getString("openEndedQuestionnaireQ5", "No response yet")
+
+        binding.q1.hint = q1
+        binding.q2.hint = q2
+        binding.q3.hint = q3
+        binding.q4.hint = q4
+        binding.q5.hint = q5
+
     }
 
     override fun onClick(v: View?) {
