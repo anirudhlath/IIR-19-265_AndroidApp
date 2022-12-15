@@ -75,14 +75,21 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val staiScore = sharedPref.getInt("StaiScore", -1)
 
         if (staiScore != -1) {
-            binding.anxietyProgress.progress = staiScore
+            binding.anxietyProgress.isIndeterminate = false
             binding.anxietyProgress.max = 80
-            if (40 >= staiScore && staiScore >= 20) {
-                binding.anxietyProgress.setIndicatorColor(Color.parseColor("#69B34C"))
-            } else if (60 >= staiScore && staiScore >= 41) {
-                binding.anxietyProgress.setIndicatorColor(Color.parseColor("#FF8E15"))
-            } else {
-                binding.anxietyProgress.setIndicatorColor(Color.parseColor("#FF0D0D"))
+            binding.anxietyProgress.progress = staiScore
+            binding.anxietyProgress.tooltipText = "$staiScore/80"
+
+            when (staiScore) {
+                in 20..40 -> {
+                    binding.anxietyProgress.setIndicatorColor(Color.parseColor("#69B34C"))
+                }
+                in 41..60 -> {
+                    binding.anxietyProgress.setIndicatorColor(Color.parseColor("#FF8E15"))
+                }
+                else -> {
+                    binding.anxietyProgress.setIndicatorColor(Color.parseColor("#FF0D0D"))
+                }
             }
         }
     }
