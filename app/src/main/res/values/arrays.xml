@@ -102,5 +102,61 @@
         <item>b. Needs partial or total help with feeding or requires parenteral feeding.</item>
     </string-array>
 
+    <string-array name="iAdls_q1_responses_array">
+        <item>a. Operates telephone on own initiative-looks up and dials numbers, etc.</item>
+        <item>b. Dials a few well-known numbers</item>
+        <item>c. Answers telephone but does not dial</item>
+        <item>d. Does not use telephone at all</item>
+    </string-array>
+
+    <string-array name="iAdls_q2_responses_array">
+        <item>a. Takes care of all shopping needs independently</item>
+        <item>b. Shops independently for small purchases</item>
+        <item>c. Needs to be accompanied on any shopping trip</item>
+        <item>d. Completely unable to shop</item>
+    </string-array>
+
+    <string-array name="iAdls_q3_responses_array">
+        <item>a. Plans, prepares and serves adequate meals independently</item>
+        <item>b. Prepares adequate meals if supplied with ingredients</item>
+        <item>c. Heats, serves and prepares meals, or prepares meals, or prepares meals but does not maintain adequate diet</item>
+        <item>d. Needs to have meals prepared and served</item>
+    </string-array>
+
+    <string-array name="iAdls_q4_responses_array">
+        <item>a. Maintains house alone or with occasional assistance (e.g. "heavy work domestic help")</item>
+        <item>b. Performs light daily tasks such as dish washing, bed making</item>
+        <item>c. Performs light daily tasks but cannot maintain acceptable level of cleanliness</item>
+        <item>d. Needs help with all home maintenance tasks</item>
+        <item>e. Does not participate in any housekeeping</item>
+    </string-array>
+
+    <string-array name="iAdls_q5_responses_array">
+        <item>a. Does personal laundry completely</item>
+        <item>b. Launders small items-rinses stockings, etc.</item>
+        <item>c. All laundry must be done by others</item>
+    </string-array>
+
+    <string-array name="iAdls_q6_responses_array">
+        <item>a. Travels independently on public transportation or drives own car</item>
+        <item>b. Arranges own travel via taxi, but does not otherwise use public transportation</item>
+        <item>c. Travels on public transportation when accompanied by another</item>
+        <item>d. Travel limited to taxi or automobile with assistance of another</item>
+        <item>e. Does not travel at all</item>
+    </string-array>
+
+    <string-array name="iAdls_q7_responses_array">
+        <item>a. Is responsible for taking medication in correct dosages at correct time</item>
+        <item>b. Takes responsibility if medication is prepared in advance in separate dosage</item>
+        <item>c. Is not capable of dispensing own medication</item>
+    </string-array>
+
+    <string-array name="iAdls_q8_responses_array">
+        <item>a. Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects/keeps track of income</item>
+        <item>b. Manages day-to-day purchases, but needs help with banking, major purchases, etc. </item>
+    </string-array>
+
+
+
 
 </resources>
