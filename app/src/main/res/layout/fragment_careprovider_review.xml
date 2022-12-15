@@ -207,69 +207,6 @@
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-
-                    <com.google.android.material.card.MaterialCardView
-                        style="@style/Widget.Material3.CardView.Elevated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/TextAppearance.Material3.TitleMedium"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:gravity="center"
-                                android:text="Social" />
-
-                            <TextView
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Loneliness"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Social Isolation"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
                     <com.google.android.material.card.MaterialCardView
                         style="@style/Widget.Material3.CardView.Elevated"
                         android:layout_width="match_parent"
@@ -335,6 +272,71 @@
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Social" />
+
+                            <TextView
+                                android:id="@+id/LonelinessLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Loneliness"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/LonelinessProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Social Isolation"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
 
                     <com.google.android.material.card.MaterialCardView
                         style="@style/Widget.Material3.CardView.Elevated"
