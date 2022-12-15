@@ -11,6 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -21,667 +22,699 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:paddingBottom="50dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Filled"
+                <LinearLayout
+                    android:id="@+id/linearLayout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:scaleType="centerCrop"
-                            tools:src="@tools:sample/avatars" />
-
-                        <TableLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:gravity="center">
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Patient Name"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/patientFullNameLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Date of Birth"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/patientDobLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Last 4 Digits of MRN"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/patientMrnLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Travel to Clinic Today"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/patientTravelLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                        </TableLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center"
-                            android:text="Today" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Anxiety" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/anxietyProgress"
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Depression" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center"
-                            android:text="Pain" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Self-Efficacy" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Thoughts About Pain" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center"
-                            android:text="Social" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Loneliness" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Social Isolation" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.smarteist.autoimageslider.SliderView
-                        android:id="@+id/imageSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        app:sliderAnimationDuration="600"
-                        app:sliderAutoCycleDirection="back_and_forth"
-                        app:sliderAutoCycleEnabled="true"
-                        app:sliderIndicatorAnimationDuration="600"
-                        app:sliderIndicatorGravity="center_horizontal|bottom"
-                        app:sliderIndicatorMargin="15dp"
-                        app:sliderIndicatorOrientation="horizontal"
-                        app:sliderIndicatorPadding="3dp"
-                        app:sliderIndicatorRadius="2dp"
-                        app:sliderIndicatorSelectedColor="#5A5A5A"
-                        app:sliderIndicatorUnselectedColor="#FFF"
-                        app:sliderScrollTimeInSec="1"
-                        app:sliderStartAutoCycle="true" />
-
-                    <!--                    <ImageView-->
-                    <!--                        android:id="@+id/imageView2"-->
-                    <!--                        android:layout_width="wrap_content"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:adjustViewBounds="true"-->
-                    <!--                        android:scaleType="fitXY"-->
-                    <!--                        tools:src="@tools:sample/backgrounds/scenic" />-->
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Filled"
-                    android:layout_width="600dp"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="10dp" />
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </LinearLayout>
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:scaleType="centerCrop"
+                                tools:src="@tools:sample/avatars" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Patient Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/patientFullNameLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Date of Birth"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/patientDobLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Last 4 Digits of MRN"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/patientMrnLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Travel to Clinic Today"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/patientTravelLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                            </TableLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Today" />
+
+                            <TextView
+                                android:id="@+id/anxietyLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Anxiety"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/anxietyProgress"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Depression"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Social" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Loneliness"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Social Isolation"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Pain" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Self-Efficacy"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Thoughts About Pain"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Caregiver Details" />
+
+                            <TableLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center">
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Caregiver Name"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/caregiverFullNameLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Relationship"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/caregiverRelationshipLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Location"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/caregiverLocationLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Frequency of Contact"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/caregiverFrequencyLabel"
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="Lorem Ipsum" />
+                                </TableRow>
+
+                            </TableLayout>
+
+                            <TextView
+                                android:id="@+id/textView17"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Caregiver Workload" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Function" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="ADLS"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator2"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                android:id="@+id/textView18"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="iADLS"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator3"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator4"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Patient-Caregiver Relationship" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Context" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Getting Medication"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Getting to Clinic"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                android:id="@+id/textView19"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Affording Care"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator6"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                            <TextView
+                                android:id="@+id/textView20"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Health Literacy"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/linearProgressIndicator5"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/imageSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            app:sliderAnimationDuration="600"
+                            app:sliderAutoCycleDirection="back_and_forth"
+                            app:sliderAutoCycleEnabled="true"
+                            app:sliderIndicatorAnimationDuration="600"
+                            app:sliderIndicatorGravity="center_horizontal|bottom"
+                            app:sliderIndicatorMargin="15dp"
+                            app:sliderIndicatorOrientation="horizontal"
+                            app:sliderIndicatorPadding="3dp"
+                            app:sliderIndicatorRadius="2dp"
+                            app:sliderIndicatorSelectedColor="#5A5A5A"
+                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderScrollTimeInSec="1"
+                            app:sliderStartAutoCycle="true" />
+
+                        <!--                    <ImageView-->
+                        <!--                        android:id="@+id/imageView2"-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:adjustViewBounds="true"-->
+                        <!--                        android:scaleType="fitXY"-->
+                        <!--                        tools:src="@tools:sample/backgrounds/scenic" />-->
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView16"
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Caregiver Details" />
-
-                        <TableLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center">
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Caregiver Name"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/caregiverFullNameLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Relationship"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/caregiverRelationshipLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Location"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/caregiverLocationLabel"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Frequency of Contact"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/caregiverFrequencyLabel"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginEnd="16dp"
-                                    android:text="Lorem Ipsum" />
-                            </TableRow>
-
-                        </TableLayout>
-
-                        <TextView
-                            android:id="@+id/textView17"
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Caregiver Workload" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator"
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center"
-                            android:text="Function" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="ADLS" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            android:id="@+id/textView18"
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="iADLS" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Patient-Caregiver Relationship" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:gravity="center"
-                            android:text="Context" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Difficulty Getting Medication" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Difficulty Getting to Clinic" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            android:id="@+id/textView19"
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Difficulty Affording Care" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                        <TextView
-                            android:id="@+id/textView20"
-                            style="@style/TextAppearance.Material3.TitleSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:gravity="center"
-                            android:text="Health Literacy" />
-
-                        <com.google.android.material.progressindicator.LinearProgressIndicator
-                            android:id="@+id/linearProgressIndicator5"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="24dp"
-                            android:indeterminate="false"
-                            android:indeterminateBehavior="cycle"
-                            android:tooltipText="Patient has not completed this task."
-                            app:indeterminateAnimationType="disjoint" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 

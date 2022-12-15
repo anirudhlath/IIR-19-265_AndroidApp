@@ -32,6 +32,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSignUpBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
@@ -91,7 +92,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
                 binding.imageButton.setContentPadding(0, 0, 0, 0)
 
-                Picasso.get().load(uri).into(binding.imageButton)
+                Glide.with(this).load(uri).centerInside().override(200).into(binding.imageButton)
 
                 val sharedPref = requireActivity().getSharedPreferences(
                     getString(R.string.patientData), Context.MODE_PRIVATE

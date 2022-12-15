@@ -12,6 +12,7 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.view.isNotEmpty
+import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -64,7 +65,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
     private fun loadImage(imageName: String, imageView: ImageView, sharedPreferences: SharedPreferences) {
         try {
-            Picasso.get().load(sharedPreferences.getString(imageName, "")).resize(0, 100).into(imageView)
+//            Picasso.get().load(sharedPreferences.getString(imageName, "")).resize(0, 100).into(imageView)
+            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside().into(imageView)
         }
         catch (e: Exception) {
             // Handling the null pointer exception
@@ -79,6 +81,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             binding.anxietyProgress.max = 80
             binding.anxietyProgress.progress = staiScore
             binding.anxietyProgress.tooltipText = "$staiScore/80"
+            binding.anxietyLabel.tooltipText = "$staiScore/80"
 
             when (staiScore) {
                 in 20..40 -> {

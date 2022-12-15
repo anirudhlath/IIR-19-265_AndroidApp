@@ -16,6 +16,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
+import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -181,7 +182,9 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
                 Log.d("Capture Image", "Got image at: $uri")
 
 
-                Picasso.get().load(uri).resize(0,500).into(imageView)
+//                Picasso.get().load(uri).resize(0,500).into(imageView)
+                Glide.with(this).load(uri).centerInside().override(650).into(imageView)
+
 
                 val sharedPref = requireActivity().getSharedPreferences(
                     getString(R.string.patientData), Context.MODE_PRIVATE
@@ -202,7 +205,8 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
 
     private fun loadImage(imageName: String, imageView: ImageView, sharedPreferences: SharedPreferences) {
         try {
-            Picasso.get().load(sharedPreferences.getString(imageName, "")).resize(0, 500).into(imageView)
+            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside().override(650).into(imageView)
+
         }
         catch (e: Exception) {
             // Handling the null pointer exception
