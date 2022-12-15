@@ -101,6 +101,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
                     return
                 }
+                // TODO Patient Caregiver Relationship
                 R.id.buttonInstrumentalActivitiesOfDailyLifeScale -> {
                     // TODO
 //                    parentFragmentManager.beginTransaction()
