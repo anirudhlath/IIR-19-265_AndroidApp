@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireCaregiverBurdenScaleBinding
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
@@ -149,7 +150,7 @@ class CaregiverBurdenScaleFragment : Fragment() {
             return
         }
         parentFragmentManager.beginTransaction()
-            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+            .replace(R.id.fragmentContainerView2, CaregiverSurveysFragment()).commit()
         return
 
     }
