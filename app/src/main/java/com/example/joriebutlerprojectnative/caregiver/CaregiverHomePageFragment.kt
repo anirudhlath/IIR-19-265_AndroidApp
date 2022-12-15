@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
@@ -47,6 +49,13 @@ class CaregiverHomePageFragment : Fragment(), OnClickListener {
                         .replace(R.id.fragmentContainerView2, CaregiverSurveysFragment()).commit()
                 }
             }
+        }
+    }
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
         }
     }
 

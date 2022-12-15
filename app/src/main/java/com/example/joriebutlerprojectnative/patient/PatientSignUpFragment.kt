@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -295,6 +297,14 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
             }
         }
 
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
 

@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireLonelinessBinding
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
@@ -57,6 +59,14 @@ class LonelinessFragment : Fragment() {
             }
         }
         return 0
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
     private fun submitSurvey() {

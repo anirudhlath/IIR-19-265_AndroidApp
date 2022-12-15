@@ -3,6 +3,8 @@ package com.example.joriebutlerprojectnative.caregiver
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.R
 
 class CaregiverActivity : AppCompatActivity() {
@@ -21,4 +23,5 @@ class CaregiverActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
         }
     }
+
 }

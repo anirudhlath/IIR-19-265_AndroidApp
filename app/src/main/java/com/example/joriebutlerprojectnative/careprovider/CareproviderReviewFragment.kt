@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.ImageSliderAdapter
@@ -112,6 +114,14 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         sliderView.indicatorUnselectedColor = Color.GRAY
         sliderView.scrollTimeInSec = 4
         sliderView.startAutoCycle()
+    }
+
+    override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
+        return if (enter) {
+            AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
+        } else {
+            AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+        }
     }
 
     private fun updatePatientData(sharedPref: SharedPreferences) {
