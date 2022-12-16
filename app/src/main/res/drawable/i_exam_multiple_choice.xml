@@ -1,3 +1,11 @@
+<!--
+  ~ /**
+  ~  * Created by Anirudh Lath on 12/16/22, 11:37 AM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 12/16/22, 11:37 AM
+  ~  */
+  -->
+
 <vector android:height="96dp" android:viewportHeight="48"
     android:viewportWidth="48" android:width="96dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#333333" android:fillType="evenOdd" android:pathData="M39,13C37.343,13 36,14.343 36,16V18H42V16C42,14.343 40.657,13 39,13ZM42,20H36V36.5L39,41L42,36.5V20Z"/>

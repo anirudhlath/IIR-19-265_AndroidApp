@@ -1,4 +1,12 @@
 
+<!--
+  ~ /**
+  ~  * Created by Anirudh Lath on 12/16/22, 11:37 AM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 12/16/22, 11:37 AM
+  ~  */
+  -->
+
 <resources>
     <color name="seed">#6750A4</color>
     <color name="md_theme_light_primary">#6750A4</color>

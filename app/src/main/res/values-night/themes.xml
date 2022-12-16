@@ -1,4 +1,12 @@
 
+<!--
+  ~ /**
+  ~  * Created by Anirudh Lath on 12/16/22, 11:37 AM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 12/16/22, 11:37 AM
+  ~  */
+  -->
+
 <resources>
     <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
