@@ -77,6 +77,9 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             updateThoughtsAboutPainProgressBar(sharedPref)
             updateLonelinessScoreProgressBar(sharedPref)
             updateSocialIsolationProgressBar(sharedPref)
+            updateDifficultyGettingMedicationProgressBar(sharedPref)
+            updateDifficultyAffordingCareProgressBar(sharedPref)
+            updateDifficultyGettingToClinicProgressBar(sharedPref)
             updateAdlsProgressBar(sharedPref)
             updateHealthLiteracyProgressBar(sharedPref)
             updateOpenEndedQuestions(sharedPref)
@@ -389,6 +392,94 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             }
         }
     }
+
+    private fun updateDifficultyGettingMedicationProgressBar(sharedPref: SharedPreferences) {
+        val score = sharedPref.getInt("ContextScore1", -1)
+
+        if (score != -1) {
+            val progressBar = binding.DifficultyGettingMedicationProgressBar
+            val label = binding.DifficultyGettingMedicationLabel
+
+
+            progressBar.max = 3
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                1 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                }
+                2 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF8E15")) // Orange
+                }
+                3 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                }
+            }
+        }
+    }
+
+    private fun updateDifficultyGettingToClinicProgressBar(sharedPref: SharedPreferences) {
+        val score = sharedPref.getInt("ContextScore2", -1)
+
+        if (score != -1) {
+            val progressBar = binding.DifficultyGettingToClinicProgressBar
+            val label = binding.DifficultyGettingToClinicLabel
+
+
+            progressBar.max = 1
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", 1).setDuration(500).start()
+            }
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                0 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                }
+                1 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                }
+            }
+
+
+        }
+    }
+
+    private fun updateDifficultyAffordingCareProgressBar(sharedPref: SharedPreferences) {
+        val score = sharedPref.getInt("ContextScore3", -1)
+
+        if (score != -1) {
+            val progressBar = binding.DifficultyAffordingCareProgressBar
+            val label = binding.DifficultyAffordingCareLabel
+
+
+            progressBar.max = 3
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                1 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                }
+                2 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF8E15")) // Orange
+                }
+                3 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                }
+            }
+
+        }
+    }
+
 
     private fun updateCaregiverBurdenScaleProgressBar() {
         val sharedPref = requireActivity().getSharedPreferences(

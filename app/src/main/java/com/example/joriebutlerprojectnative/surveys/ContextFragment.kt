@@ -8,7 +8,9 @@
 
 package com.example.joriebutlerprojectnative.surveys
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,11 +18,11 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.databinding.QuestionnaireContextBinding
+import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputLayout
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -28,16 +30,14 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ContextFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var _binding: QuestionnaireContextBinding? = null
+    private val binding get() = _binding!!
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         return if (enter) {
@@ -51,27 +51,69 @@ class ContextFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.questionnaire_context, container, false)
+        _binding =
+            QuestionnaireContextBinding.inflate(inflater, container, false)
+        val rootView = _binding!!.root
+
+        binding.buttonSubmitSurvey.setOnClickListener {
+            submitSurvey()
+        }
+
+        return rootView
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ContextFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ContextFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun calculateScore(textInputLayout: TextInputLayout): Int {
+        when (textInputLayout.editText?.text.toString()) {
+            "Very hard" -> {
+                return 3
             }
+            "Somewhat hard" -> {
+                return 2
+            }
+            "Not hard at all" -> {
+                return 1
+            }
+            "Yes" -> {
+                return 1
+            }
+            "No" -> {
+                return 0
+            }
+        }
+        return 0
     }
+
+    private fun submitSurvey() {
+        if (!binding.q1.editText?.text.isNullOrEmpty()
+            && !binding.q2.editText?.text.isNullOrEmpty()
+            && !binding.q3.editText?.text.isNullOrEmpty()
+        ) {
+            val sharedPref = requireActivity().getSharedPreferences(
+                getString(R.string.patientData), Context.MODE_PRIVATE
+            )
+
+
+
+            val editor = sharedPref.edit()
+            editor.putInt("ContextScore1", calculateScore(binding.q1))
+            editor.putInt("ContextScore2", calculateScore(binding.q3))
+            editor.putInt("ContextScore3", calculateScore(binding.q2))
+            editor.apply()
+
+
+        } else {
+            val contextView = requireView()
+            Snackbar.make(
+                contextView,
+                "Please complete all the fields.",
+                Snackbar.LENGTH_SHORT
+            ).show()
+            return
+        }
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        return
+
+    }
+
 }
