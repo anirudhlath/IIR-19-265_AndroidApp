@@ -78,6 +78,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             updateLonelinessScoreProgressBar(sharedPref)
             updateSocialIsolationProgressBar(sharedPref)
             updateAdlsProgressBar(sharedPref)
+            updateHealthLiteracyProgressBar(sharedPref)
             updateOpenEndedQuestions(sharedPref)
             updateImageSlider(sharedPref)
             updateCaregiverBurdenScaleProgressBar()
@@ -208,7 +209,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.depressionProgressBar
             val label = binding.depressionLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 6
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -234,7 +235,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.selfEfficacyProgressBar
             val label = binding.selfEfficacyLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 60
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -260,7 +261,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.thoughtsAboutPainProgressBar
             val label = binding.thoughtsAboutPainLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 52
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -286,7 +287,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.LonelinessProgressBar
             val label = binding.LonelinessLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 9
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -312,7 +313,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.SocialIsolationProgressBar
             val label = binding.SocialIsolationLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 30
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -338,7 +339,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.patientAdlsProgressBar
             val label = binding.patientAdlsLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 6
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
@@ -360,6 +361,35 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         }
     }
 
+    private fun updateHealthLiteracyProgressBar(sharedPref: SharedPreferences) {
+        val score = sharedPref.getInt("BriefScore", -1)
+
+        if (score != -1) {
+            val progressBar = binding.HealthLiteracyProgressBar
+            val label = binding.HealthLiteracyLabel
+
+
+            progressBar.max = 20
+            requireActivity().runOnUiThread {
+                ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+            }
+            progressBar.tooltipText = "$score/${progressBar.max}"
+            label.tooltipText = "$score/${progressBar.max}"
+
+            when (score) {
+                in 17 .. 20 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                }
+                in 13..16 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF8E15")) // Orange
+                }
+                in 4..12 -> {
+                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                }
+            }
+        }
+    }
+
     private fun updateCaregiverBurdenScaleProgressBar() {
         val sharedPref = requireActivity().getSharedPreferences(
             getString(R.string.caregiverData), Context.MODE_PRIVATE
@@ -370,7 +400,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             val progressBar = binding.caregiverWorkloadProgressBar
             val label = binding.caregiverWorkloadLabel
 
-            progressBar.isIndeterminate = false
+
             progressBar.max = 88
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()

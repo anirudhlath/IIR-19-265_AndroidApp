@@ -137,9 +137,9 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                     return
                 }
                 R.id.buttonHealthLiteracy -> {
-                    // TODO
-//                    parentFragmentManager.beginTransaction()
-//                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
+
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, BriefHealthLiteracyScreeningToolFragment()).commit()
 
                     return
                 }

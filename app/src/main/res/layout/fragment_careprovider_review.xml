@@ -669,7 +669,7 @@
                                 app:trackCornerRadius="20dp" />
 
                             <TextView
-                                android:id="@+id/textView20"
+                                android:id="@+id/HealthLiteracyLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -679,7 +679,7 @@
                                 android:tooltipText="Patient has not completed this task." />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/linearProgressIndicator5"
+                                android:id="@+id/HealthLiteracyProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"
