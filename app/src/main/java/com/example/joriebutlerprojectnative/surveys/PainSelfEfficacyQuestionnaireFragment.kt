@@ -122,7 +122,7 @@ class PainSelfEfficacyQuestionnaireFragment : Fragment() {
     }
 
     private fun calculateScore(textInputLayout: TextInputLayout): Int {
-        when (textInputLayout.editText?.text.toString()) {
+        when (textInputLayout.editText?.text.toString()[0].toString()) {
             "0" -> {
                 return 0
             }

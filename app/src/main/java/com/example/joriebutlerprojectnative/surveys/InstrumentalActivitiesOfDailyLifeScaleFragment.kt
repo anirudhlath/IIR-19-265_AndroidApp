@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireAcitivitiesOfDailyLifeScaleBinding
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireInstrumentalActivitiesOfDailyLifeScaleBinding
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
@@ -97,9 +98,15 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
             &&!binding.q7.editText?.text.isNullOrEmpty()
             &&!binding.q8.editText?.text.isNullOrEmpty()
         ) {
-            val sharedPref = requireActivity().getSharedPreferences(
+            var sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
+
+            if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+                sharedPref = requireActivity().getSharedPreferences(
+                    getString(R.string.caregiverData), Context.MODE_PRIVATE
+                )
+            }
 
             val score = calculateScore(binding.q1) +
                     calculateScore(binding.q2) +
@@ -129,8 +136,14 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
             ).show()
             return
         }
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+
+        if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, CaregiverSurveysFragment()).commit()
+        } else {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        }
         return
 
     }

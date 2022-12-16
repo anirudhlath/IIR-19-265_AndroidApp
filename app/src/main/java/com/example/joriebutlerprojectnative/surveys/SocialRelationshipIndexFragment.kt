@@ -18,6 +18,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireSocialRelationshipIndexBinding
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
@@ -50,6 +51,10 @@ class SocialRelationshipIndexFragment : Fragment() {
 
         binding.buttonSubmitSurvey.setOnClickListener {
             submitSurvey()
+        }
+
+        if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+            binding.instructions.text = "For the patient you are assigned to take care of, please complete the following."
         }
 
         return rootView
@@ -85,9 +90,15 @@ class SocialRelationshipIndexFragment : Fragment() {
             && !binding.q2.editText?.text.isNullOrEmpty()
             && !binding.q3.editText?.text.isNullOrEmpty()
         ) {
-            val sharedPref = requireActivity().getSharedPreferences(
+            var sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
+
+            if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+                sharedPref = requireActivity().getSharedPreferences(
+                    getString(R.string.caregiverData), Context.MODE_PRIVATE
+                )
+            }
 
             // TODO: Cut offs seem wrong, discuss with Jorie
             val score = calculateScore(binding.q1) +
@@ -112,8 +123,13 @@ class SocialRelationshipIndexFragment : Fragment() {
             ).show()
             return
         }
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, CaregiverSurveysFragment()).commit()
+        } else {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        }
         return
 
     }

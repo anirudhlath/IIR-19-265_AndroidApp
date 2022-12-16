@@ -20,7 +20,10 @@ import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentCaregiverSurveysBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSurveysBinding
 import com.example.joriebutlerprojectnative.patient.PatientHomePageFragment
+import com.example.joriebutlerprojectnative.surveys.AcitivitiesOfDailyLifeScaleFragment
 import com.example.joriebutlerprojectnative.surveys.CaregiverBurdenScaleFragment
+import com.example.joriebutlerprojectnative.surveys.InstrumentalActivitiesOfDailyLifeScaleFragment
+import com.example.joriebutlerprojectnative.surveys.SocialRelationshipIndexFragment
 
 
 /**
@@ -53,6 +56,18 @@ class CaregiverSurveysFragment : Fragment() {
         binding.buttonCBS.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, CaregiverBurdenScaleFragment()).commit()
+        }
+        binding.buttonActivitiesOfDailyLifeScale.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, AcitivitiesOfDailyLifeScaleFragment()).commit()
+        }
+        binding.buttonInstrumentalActivitiesOfDailyLifeScale.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, InstrumentalActivitiesOfDailyLifeScaleFragment()).commit()
+        }
+        binding.buttonSRI.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, SocialRelationshipIndexFragment()).commit()
         }
 
         return rootView

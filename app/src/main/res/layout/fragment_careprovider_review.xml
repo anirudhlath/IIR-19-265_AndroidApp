@@ -524,7 +524,7 @@
                                 app:trackCornerRadius="20dp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/linearProgressIndicator2"
+                                android:id="@+id/caregiverAdlsProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"

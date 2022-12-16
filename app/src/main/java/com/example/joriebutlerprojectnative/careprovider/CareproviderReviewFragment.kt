@@ -323,48 +323,48 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val caregiverScore = sharedPref.getInt("SRIScore", -1)
 
         val label = binding.sriLabel
-        var progressBar = binding.sriPatientProgressBar
+        val patientProgressBar = binding.sriPatientProgressBar
+        val caregiverProgressBar = binding.sriCaregiverProgressBar
 
         if (patientScore != -1) {
-            progressBar.max = 18
+            patientProgressBar.max = 18
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(progressBar, "progress", patientScore).setDuration(500).start()
+                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500).start()
             }
             when (patientScore) {
                 in 14..18 -> {
-                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                    patientProgressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
                 }
                 in 3..13 -> {
-                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                    patientProgressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
                 }
             }
         }
 
 
         if (caregiverScore != -1) {
-            progressBar = binding.sriCaregiverProgressBar
-            progressBar.max = 18
+            caregiverProgressBar.max = 18
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(progressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
             }
             when (caregiverScore) {
                 in 14..18 -> {
-                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                    caregiverProgressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
                 }
                 in 3..13 -> {
-                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                    caregiverProgressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
                 }
             }
         }
 
         if(patientScore != -1 && caregiverScore!= -1) {
-            label.tooltipText = "Patient: $patientScore/${progressBar.max}\nCaregiver: $caregiverScore/${progressBar.max}"
+            label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${patientProgressBar.max}"
         }
         else if(patientScore != -1) {
-            label.tooltipText = "Patient: $patientScore/${progressBar.max}"
+            label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}"
         }
         else if(caregiverScore != -1) {
-            label.tooltipText = "Caregiver: $caregiverScore/${progressBar.max}"
+            label.tooltipText = "Caregiver: $caregiverScore/${patientProgressBar.max}"
         }
     }
 
@@ -397,36 +397,20 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             requireActivity().runOnUiThread {
                 ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500).start()
             }
-//            when (patientScore) {
-//                in 14..18 -> {
-//                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
-//                }
-//                in 3..13 -> {
-//                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
-//                }
-//            }
         }
 
         if (caregiverScore != -1) {
 
             if (caregiverGender == "Male") {
-                patientProgressBar.max = 5
+                caregiverProgressBar.max = 5
             }
             else {
-                patientProgressBar.max = 8
+                caregiverProgressBar.max = 8
             }
 
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(patientProgressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
             }
-//            when (patientScore) {
-//                in 14..18 -> {
-//                    progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
-//                }
-//                in 3..13 -> {
-//                    progressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
-//                }
-//            }
         }
 
 
@@ -482,7 +466,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         )
 
         val caregiverScore = sharedPref.getInt("AdlsScore", -1)
-        val caregiverProgressBar = binding.patientAdlsProgressBar
+        val caregiverProgressBar = binding.caregiverAdlsProgressBar
 
         if (patientScore != -1) {
             patientProgressBar.max = 6
@@ -508,19 +492,19 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (caregiverScore != -1) {
             caregiverProgressBar.max = 6
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(patientProgressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
             }
             caregiverProgressBar.tooltipText = "$caregiverProgressBar/${caregiverProgressBar.max}"
 
             when (caregiverScore) {
                 in 6 downTo 5 -> {
-                    patientProgressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
+                    caregiverProgressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
                 }
                 in 4 downTo 3 -> {
-                    patientProgressBar.setIndicatorColor(Color.parseColor("#FF8E15")) // Orange
+                    caregiverProgressBar.setIndicatorColor(Color.parseColor("#FF8E15")) // Orange
                 }
                 in 2 downTo 0 -> {
-                    patientProgressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
+                    caregiverProgressBar.setIndicatorColor(Color.parseColor("#FF0D0D")) // Red
                 }
             }
         }

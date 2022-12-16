@@ -9,6 +9,7 @@
 package com.example.joriebutlerprojectnative.surveys
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -17,7 +18,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.annotation.RequiresApi
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireAcitivitiesOfDailyLifeScaleBinding
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
@@ -74,6 +77,7 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
         return 0
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
     private fun submitSurvey() {
         if(!binding.q1Adls.editText?.text.isNullOrEmpty()
             &&!binding.q2Adls.editText?.text.isNullOrEmpty()
@@ -82,9 +86,18 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
             &&!binding.q5Adls.editText?.text.isNullOrEmpty()
             &&!binding.q6Adls.editText?.text.isNullOrEmpty()
         ) {
-            val sharedPref = requireActivity().getSharedPreferences(
+
+            Log.d("ActivityTag", requireActivity()::class.java.simpleName)
+            var sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
+
+            if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+                sharedPref = requireActivity().getSharedPreferences(
+                    getString(R.string.caregiverData), Context.MODE_PRIVATE
+                )
+            }
+
 
             val score = calculateScore(binding.q1Adls) +
                     calculateScore(binding.q2Adls) +
@@ -112,8 +125,15 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
             ).show()
             return
         }
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+
+        if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, CaregiverSurveysFragment()).commit()
+        } else {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.constraintLayout, PatientSurveysFragment()).commit()
+        }
+
         return
 
     }
