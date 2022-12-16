@@ -153,7 +153,8 @@
 
     <string-array name="iAdls_q8_responses_array">
         <item>a. Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects/keeps track of income</item>
-        <item>b. Manages day-to-day purchases, but needs help with banking, major purchases, etc. </item>
+        <item>b. Manages day-to-day purchases, but needs help with banking, major purchases, etc.</item>
+        <item>c. Incapable of handling money</item>
     </string-array>
 
     <string-array name="CBS_responses_array">
@@ -190,6 +191,34 @@
         <item>Very unpredictable</item>
         <item>Extremely unpredictable</item>
     </string-array>
+
+    <string-array name="Context_firstSet_responses_array">
+        <item>Not at all</item>
+        <item>Somewhat hard</item>
+        <item>Not hard at all</item>
+    </string-array>
+
+    <string-array name="Context_secondSet_responses_array">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="BRIEF_firstSet_responses_array">
+        <item>Always</item>
+        <item>Often</item>
+        <item>Sometimes</item>
+        <item>Occasionally</item>
+        <item>Never</item>
+    </string-array>
+
+    <string-array name="BRIEF_secondSet_responses_array">
+        <item>Not at all</item>
+        <item>A little bit</item>
+        <item>Somewhat</item>
+        <item>Quite a bit</item>
+        <item>Extremely</item>
+    </string-array>
+
 
 
 

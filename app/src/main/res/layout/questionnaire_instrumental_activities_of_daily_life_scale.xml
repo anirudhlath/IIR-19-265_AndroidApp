@@ -38,7 +38,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="Please rate how confident you are that you can do the following things at present, despite the pain." />
+                android:text="Please choose the responses that most closely resembles you in these areas." />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
@@ -66,7 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can enjoy things, despite the pain." />
+                        android:text="Ability to Use Telephone" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q1"
@@ -82,7 +82,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q1_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,7 +116,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can do most of the household chores (e.g; tidying-up, washing dishes, etc.) despite the pain." />
+                        android:text="Shopping" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q2"
@@ -132,7 +132,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q2_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -166,7 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can socialize with my friends or family members as often as I used to do, despite the pain." />
+                        android:text="Food Preparation" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q3"
@@ -182,7 +182,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q3_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,7 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can cope with my pain in most situations." />
+                        android:text="Housekeeping" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q4"
@@ -232,7 +232,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q4_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -266,7 +266,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text='I can do some form of work, despite the pain ("work" includes housework, paid and unpaid work).' />
+                        android:text='Laundry' />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q5"
@@ -282,7 +282,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q5_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -316,7 +316,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can still do many of the things I enjoy doing, such as hobbies or leisure activities, despite the pain." />
+                        android:text="Mode of Transportation" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q6"
@@ -332,7 +332,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q6_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -366,7 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can cope with my pain without medication." />
+                        android:text="Responsibility for Own Medications" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q7"
@@ -382,7 +382,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q7_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -416,7 +416,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can still accomplish most of my goals in life, despite the pain." />
+                        android:text="Ability to Handle Finances" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q8"
@@ -432,7 +432,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PSEQ_responses_array" />
+                            app:simpleItems="@array/iAdls_q8_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
