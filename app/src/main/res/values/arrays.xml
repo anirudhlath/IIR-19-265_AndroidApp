@@ -164,6 +164,34 @@
         <item>Nearly Always</item>
     </string-array>
 
+    <string-array name="SRI_q1_responses_array">
+        <item>Not at all helpful</item>
+        <item>A little helpful</item>
+        <item>Somewhat helpful</item>
+        <item>Moderately helpful</item>
+        <item>Very helpful</item>
+        <item>Extremely helpful</item>
+    </string-array>
+
+    <string-array name="SRI_q2_responses_array">
+        <item>Not at all upsetting</item>
+        <item>A little upsetting</item>
+        <item>Somewhat upsetting</item>
+        <item>Moderately upsetting</item>
+        <item>Very upsetting</item>
+        <item>Extremely upsetting</item>
+    </string-array>
+
+    <string-array name="SRI_q3_responses_array">
+        <item>Not at all unpredictable</item>
+        <item>A little unpredictable</item>
+        <item>Somewhat unpredictable</item>
+        <item>Moderately unpredictable</item>
+        <item>Very unpredictable</item>
+        <item>Extremely unpredictable</item>
+    </string-array>
+
+
 
 
 
