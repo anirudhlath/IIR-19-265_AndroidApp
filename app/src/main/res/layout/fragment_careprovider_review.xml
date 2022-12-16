@@ -535,7 +535,7 @@
                                 app:trackCornerRadius="20dp" />
 
                             <TextView
-                                android:id="@+id/textView18"
+                                android:id="@+id/iadlsLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -545,7 +545,7 @@
                                 android:tooltipText="Patient has not completed this task." />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/linearProgressIndicator3"
+                                android:id="@+id/iadlsPatientProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="5dp"
@@ -556,7 +556,7 @@
                                 app:trackCornerRadius="20dp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/linearProgressIndicator4"
+                                android:id="@+id/iadlsCaregiverProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"

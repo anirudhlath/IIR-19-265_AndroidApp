@@ -124,9 +124,9 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                 }
 
                 R.id.buttonInstrumentalActivitiesOfDailyLifeScale -> {
-                    // TODO
-//                    parentFragmentManager.beginTransaction()
-//                        .replace(R.id.constraintLayout, Phq2Fragment()).commit()
+
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, InstrumentalActivitiesOfDailyLifeScaleFragment()).commit()
 
                     return
                 }

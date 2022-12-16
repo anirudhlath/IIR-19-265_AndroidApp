@@ -95,13 +95,13 @@ class SocialRelationshipIndexFragment : Fragment() {
                     calculateScore(binding.q3)
 
             val editor = sharedPref.edit()
-            editor.putInt("pSRIScore", score)
+            editor.putInt("SRIScore", score)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")
             Log.d(
                 "SharedPreferences",
-                "SRI Score: " + sharedPref.getInt("pSRIScore", -1).toString()
+                "SRI Score: " + sharedPref.getInt("SRIScore", -1).toString()
             )
         } else {
             val contextView = requireView()
