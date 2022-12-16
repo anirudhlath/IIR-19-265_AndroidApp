@@ -61,6 +61,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
         binding.buttonInstrumentalActivitiesOfDailyLifeScale.setOnClickListener(this)
         binding.buttonContext.setOnClickListener(this)
         binding.buttonHealthLiteracy.setOnClickListener(this)
+        binding.buttonSRI.setOnClickListener(this)
 
         return rootView
     }
@@ -121,7 +122,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
                     return
                 }
-                // TODO Patient Caregiver Relationship
+
                 R.id.buttonInstrumentalActivitiesOfDailyLifeScale -> {
                     // TODO
 //                    parentFragmentManager.beginTransaction()
@@ -129,6 +130,14 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
                     return
                 }
+
+                R.id.buttonSRI -> {
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.constraintLayout, SocialRelationshipIndexFragment()).commit()
+
+                    return
+                }
+
                 R.id.buttonContext -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.constraintLayout, ContextFragment()).commit()

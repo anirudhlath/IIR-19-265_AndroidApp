@@ -567,6 +567,7 @@
                                 app:trackCornerRadius="20dp" />
 
                             <TextView
+                                android:id="@+id/sriLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -575,6 +576,18 @@
                                 android:text="Patient-Caregiver Relationship" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/sriPatientProgressBar"
+
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/sriCaregiverProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"
