@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="For the person who is assigned to take care of you, please complete the following." />
+                android:text="For the person who you designated as your caretaker, please complete the following." />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"

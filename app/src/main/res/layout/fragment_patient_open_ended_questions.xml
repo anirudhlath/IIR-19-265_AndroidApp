@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="Please read each question and respond as your please." />
+                android:text="Please read each question and respond as you please." />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
@@ -176,7 +176,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Do you have competing responsibilities that make it difficult for you to get to your appoinments or follow your healhtcare plans?" />
+                        android:text="Do you have competing responsibilities that make it difficult for you to get to your appointments or follow your healthcare plans?" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q3"

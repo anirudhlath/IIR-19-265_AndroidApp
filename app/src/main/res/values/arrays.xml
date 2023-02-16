@@ -141,7 +141,7 @@
 
     <string-array name="iAdls_q5_responses_array">
         <item>a. Does personal laundry completely</item>
-        <item>b. Launders small items-rinses stockings, etc.</item>
+        <item>b. Launders small items e.g. rinses stockings, etc.</item>
         <item>c. All laundry must be done by others</item>
     </string-array>
 

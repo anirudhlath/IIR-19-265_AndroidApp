@@ -73,7 +73,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="Tap on any of the prompt to add the relevant pictures. Once you have added all the pictures, just press the back button on your device to go back to the home page." />
+                android:text="Tap on any of the prompts to add the requested pictures. Once you have added all the pictures, just press the back button on your device to go back to the home page." />
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                 android:id="@+id/fab_1"
@@ -174,7 +174,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:contentDescription="What matters the most to you? For example, your grand kids. Please add a picture."
-                android:text="Please add a picture of your back door."
+                android:text="Please add a picture of your house's back door."
                 app:icon="@drawable/ic_baseline_add_a_photo_24" />
 
             <com.google.android.material.card.MaterialCardView

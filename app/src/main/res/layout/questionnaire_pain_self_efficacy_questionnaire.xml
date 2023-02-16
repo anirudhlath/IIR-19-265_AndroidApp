@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can do most of the household chores (e.g; tidying-up, washing dishes, etc.) despite the pain." />
+                        android:text="I can do most of the household chores (e.g. tidying-up, washing dishes, etc.) despite the pain." />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q2Pseq"
