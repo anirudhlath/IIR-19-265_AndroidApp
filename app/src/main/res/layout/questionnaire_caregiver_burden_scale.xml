@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="The following questions reflect how people sometimes feel when they are taking care of another person. After  each question, circle how often you feel that way: never, rarely, sometimes, frequently, or nearly always. There are no right or wrong answers." />
+                android:text="The following questions reflect how people sometimes feel when they are taking care of another person. After each question, select how often you feel that way: never, rarely, sometimes, frequently, or nearly always. There are no right or wrong answers." />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
@@ -133,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
-                        android:hint="Do you feel that because of the time you spend with your relative, you do not have enough time for yourself?">
+                        android:hint="Tap here to select your response">
 
                         <AutoCompleteTextView
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -774,7 +774,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Do you feel that you do not have enough money to care for your relative, in addition to the rest of your?" />
+                        android:text="Do you feel that you do not have enough money to care for your relative, in addition to the rest of your family?" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q15CBS"

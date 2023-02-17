@@ -54,7 +54,7 @@ class SocialRelationshipIndexFragment : Fragment() {
         }
 
         if (requireActivity()::class.java.simpleName == "CaregiverActivity") {
-            binding.instructions.text = "For the patient you are assigned to take care of, please complete the following."
+            binding.instructions.text = "For the person you are caretaker for, please complete the following."
         }
 
         return rootView
