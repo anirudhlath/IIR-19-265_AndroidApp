@@ -87,6 +87,7 @@ class Phq2Fragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("Phq2Score", score)
+            editor.putInt("Phq2Completed", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

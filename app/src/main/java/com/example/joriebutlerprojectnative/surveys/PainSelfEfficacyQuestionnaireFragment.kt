@@ -92,6 +92,7 @@ class PainSelfEfficacyQuestionnaireFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("PseqScore", score)
+            editor.putInt("PseqCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

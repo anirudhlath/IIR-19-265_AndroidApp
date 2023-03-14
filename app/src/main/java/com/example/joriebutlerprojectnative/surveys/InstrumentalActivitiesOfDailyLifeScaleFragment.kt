@@ -124,6 +124,7 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("IADLSScore", score)
+            editor.putInt("IADLSCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

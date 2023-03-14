@@ -92,6 +92,7 @@ class LonelinessFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("LonelinessScaleScore", score)
+            editor.putInt("LonelinessCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

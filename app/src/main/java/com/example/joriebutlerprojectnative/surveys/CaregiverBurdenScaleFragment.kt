@@ -150,6 +150,7 @@ class CaregiverBurdenScaleFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("CBSScore", score)
+            editor.putInt("CBSCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

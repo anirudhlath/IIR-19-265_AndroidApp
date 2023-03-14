@@ -107,6 +107,7 @@ class SocialRelationshipIndexFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("SRIScore", score)
+            editor.putInt("SRICompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

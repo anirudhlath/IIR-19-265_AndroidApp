@@ -99,6 +99,7 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("LSNS6Score", score)
+            editor.putInt("LSNSCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

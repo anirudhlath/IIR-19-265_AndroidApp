@@ -121,6 +121,7 @@ class ThoughtsAboutPainFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("ThoughtsAboutPainScore", score)
+            editor.putInt("ThoughtsAboutPainCompleted", 1)
             editor.apply()
 
             Log.d("SharedPreferences", "Loading the save data...")

@@ -8,6 +8,9 @@
 
 package com.example.joriebutlerprojectnative.caregiver
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,7 +18,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentCaregiverSurveysBinding
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSurveysBinding
@@ -70,7 +75,25 @@ class CaregiverSurveysFragment : Fragment() {
                 .replace(R.id.fragmentContainerView2, SocialRelationshipIndexFragment()).commit()
         }
 
+        val caregiverSharedPref = requireActivity().getSharedPreferences(
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
+
+        checkCompletion(caregiverSharedPref, "AdlsCompleted", binding.buttonActivitiesOfDailyLifeScale)
+        checkCompletion(caregiverSharedPref, "CBSCompleted", binding.buttonActivitiesOfDailyLifeScale)
+        checkCompletion(caregiverSharedPref, "IADLSCompleted", binding.buttonInstrumentalActivitiesOfDailyLifeScale)
+        checkCompletion(caregiverSharedPref, "SRICompleted", binding.buttonSRI)
+
         return rootView
+    }
+
+    private fun checkCompletion(sharedPref: SharedPreferences, string: String, button: Button) {
+        val completed = sharedPref.getInt(string, 0)
+        if(completed == 1) {
+            button.isEnabled = false
+            val img: Drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_check_24)!!
+            button.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null)
+        }
     }
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {

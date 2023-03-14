@@ -79,6 +79,7 @@ class StateTraitAnxietyInventoryFragment : Fragment(), View.OnClickListener {
                         )
                         val editor = sharedPref.edit()
                         editor.putInt("StaiScore", calculateScores())
+                        editor.putInt("StaiCompleted", 1)
                         editor.apply()
                         Log.d("SharedPreferences", "Loading the save data...")
                         Log.d(
