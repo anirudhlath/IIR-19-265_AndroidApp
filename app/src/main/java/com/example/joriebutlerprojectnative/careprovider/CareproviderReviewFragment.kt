@@ -671,12 +671,14 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val q3 = sharedPref.getString("openEndedQuestionnaireQ3", "No response yet")
         val q4 = sharedPref.getString("openEndedQuestionnaireQ4", "No response yet")
         val q5 = sharedPref.getString("openEndedQuestionnaireQ5", "No response yet")
+        val q6 = sharedPref.getString("openEndedQuestionnaireQ6", "No response yet")
 
         binding.q1.hint = q1
         binding.q2.hint = q2
         binding.q3.hint = q3
         binding.q4.hint = q4
         binding.q5.hint = q5
+        binding.q6.hint = q6
 
     }
 

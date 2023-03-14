@@ -1058,6 +1058,64 @@
                                 </LinearLayout>
 
                             </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                style="@style/Widget.Material3.CardView.Elevated"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginEnd="24dp"
+                                app:cardElevation="2dp"
+                                app:contentPadding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.TitleLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Question 6" />
+
+                                    <TextView
+                                        style="@style/TextAppearance.Material3.BodyLarge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:text="How does your cultural background (for example, the branch you served in the military culture or your ethnic or racial background) impact the way you care for your health?" />
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:id="@+id/q6"
+                                        style="?attr/textInputFilledStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"
+                                        android:hint="Response">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:cursorVisible="false"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false"
+                                            android:focusedByDefault="false"
+                                            android:gravity="start"
+                                            android:inputType="textMultiLine"
+                                            android:lines="5"
+                                            android:maxLines="10" />
+
+
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 

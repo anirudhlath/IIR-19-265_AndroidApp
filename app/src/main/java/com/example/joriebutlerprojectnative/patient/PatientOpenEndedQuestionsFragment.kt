@@ -73,6 +73,7 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
             && !binding.q3.editText?.text.isNullOrEmpty()
             && !binding.q4.editText?.text.isNullOrEmpty()
             && !binding.q5.editText?.text.isNullOrEmpty()
+            && !binding.q6.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE)
@@ -82,6 +83,7 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
             editor.putString("openEndedQuestionnaireQ3", binding.q3.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ4", binding.q4.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ5", binding.q5.editText?.text.toString())
+            editor.putString("openEndedQuestionnaireQ6", binding.q5.editText?.text.toString())
             editor.apply()
         }
         else {
