@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~     Created by Anirudh Lath on 2/27/23, 6:16 PM
+  ~     anirudhlath@gmail.com
+  ~     Last modified 2/27/23, 6:16 PM
+  ~     Copyright (c) 2023.
+  ~     All rights reserved.
+  -->
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:textAppearance="@android:style/TextAppearance.Material" />

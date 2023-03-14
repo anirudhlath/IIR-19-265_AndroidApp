@@ -46,7 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="This scale measures the degree to which an individual feels lonely." />
+                android:text="This scale measures the degree of health literacy." />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"

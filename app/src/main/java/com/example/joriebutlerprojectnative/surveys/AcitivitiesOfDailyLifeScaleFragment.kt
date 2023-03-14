@@ -18,6 +18,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ArrayAdapter
 import androidx.annotation.RequiresApi
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
@@ -42,6 +43,7 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,6 +51,13 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
         _binding =
             QuestionnaireAcitivitiesOfDailyLifeScaleBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
+
+        var responses = resources.getStringArray(R.array.Adls_q1_responses_array)
+        var arrayAdapter = ArrayAdapter(requireContext(), R.layout.survey_responses, responses)
+        binding.q1AdlsMenu.setAdapter(arrayAdapter)
+        responses = resources.getStringArray(R.array.Adls_q2_responses_array)
+        arrayAdapter = ArrayAdapter(requireContext(), R.layout.survey_responses, responses)
+        binding.q2AdlsMenu.setAdapter(arrayAdapter)
 
         binding.buttonSubmitSurvey.setOnClickListener {
             submitSurvey()

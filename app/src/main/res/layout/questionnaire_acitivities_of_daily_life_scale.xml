@@ -88,11 +88,11 @@
                         android:hint="Tap here to select your response">
 
                         <AutoCompleteTextView
+                            android:id="@+id/q1AdlsMenu"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="none"
-                            app:simpleItems="@array/Adls_q1_responses_array" />
+                            android:inputType="none" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,6 +138,7 @@
                         android:hint="Tap here to select your response">
 
                         <AutoCompleteTextView
+                            android:id="@+id/q2AdlsMenu"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

@@ -17,6 +17,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ArrayAdapter
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.caregiver.CaregiverSurveysFragment
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireAcitivitiesOfDailyLifeScaleBinding
@@ -56,6 +57,10 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
         _binding =
             QuestionnaireInstrumentalActivitiesOfDailyLifeScaleBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
+
+        var responses = resources.getStringArray(R.array.iAdls_q8_responses_array)
+        var arrayAdapter = ArrayAdapter(requireContext(), R.layout.survey_responses, responses)
+        binding.q8menu.setAdapter(arrayAdapter)
 
         binding.buttonSubmitSurvey.setOnClickListener {
             submitSurvey()
