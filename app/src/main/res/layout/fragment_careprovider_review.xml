@@ -512,6 +512,17 @@
                                 android:text="ADLS"
                                 android:tooltipText="Patient has not completed this task." />
 
+                            <TextView
+                                android:id="@+id/textView8"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Patient"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/patientAdlsProgressBar"
                                 android:layout_width="300dp"
@@ -522,6 +533,17 @@
                                 android:tooltipText="Patient has not completed this task."
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/textView10"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Caregiver"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/caregiverAdlsProgressBar"
@@ -544,6 +566,17 @@
                                 android:text="iADLS"
                                 android:tooltipText="Patient has not completed this task." />
 
+                            <TextView
+                                android:id="@+id/textView12"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Patient"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/iadlsPatientProgressBar"
                                 android:layout_width="300dp"
@@ -554,6 +587,17 @@
                                 android:tooltipText="Patient has not completed this task."
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Caregiver"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/iadlsCaregiverProgressBar"
@@ -575,6 +619,17 @@
                                 android:gravity="center"
                                 android:text="Patient-Caregiver Relationship" />
 
+                            <TextView
+                                android:id="@+id/textView14"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Patient"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/sriPatientProgressBar"
 
@@ -586,6 +641,18 @@
                                 android:tooltipText="Patient has not completed this task."
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Caregiver"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/sriCaregiverProgressBar"
                                 android:layout_width="300dp"
