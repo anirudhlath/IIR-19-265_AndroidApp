@@ -80,7 +80,7 @@ class CaregiverSurveysFragment : Fragment() {
         )
 
         checkCompletion(caregiverSharedPref, "AdlsCompleted", binding.buttonActivitiesOfDailyLifeScale)
-        checkCompletion(caregiverSharedPref, "CBSCompleted", binding.buttonActivitiesOfDailyLifeScale)
+        checkCompletion(caregiverSharedPref, "CBSCompleted", binding.buttonCBS)
         checkCompletion(caregiverSharedPref, "IADLSCompleted", binding.buttonInstrumentalActivitiesOfDailyLifeScale)
         checkCompletion(caregiverSharedPref, "SRICompleted", binding.buttonSRI)
 
