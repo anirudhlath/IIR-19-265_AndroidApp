@@ -12,6 +12,7 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
+import android.graphics.Path
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,6 +32,15 @@ import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.apache.commons.csv.CSVFormat
+import org.apache.commons.csv.CSVPrinter
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileWriter
+import java.io.Writer
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.time.LocalDate
 
 
 /**
@@ -87,10 +97,6 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             updateCaregiverBurdenScaleProgressBar()
             updateIadlsProgressBar()
             updatePatientCaregiverRelationshipProgressBar()
-            requireActivity().runOnUiThread {
-//                requireActivity().findViewById<LinearProgressIndicator>(R.id.caregiverLoadingBar).visibility =
-//                    View.INVISIBLE
-            }
         }
     }
 
@@ -318,7 +324,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val patientScore = sharedPref.getInt("SRIScore", -1)
 
         sharedPref = requireActivity().getSharedPreferences(
-            getString(R.string.caregiverData), Context.MODE_PRIVATE)
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
 
         val caregiverScore = sharedPref.getInt("SRIScore", -1)
 
@@ -329,7 +336,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (patientScore != -1) {
             patientProgressBar.max = 18
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500).start()
+                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500)
+                    .start()
             }
             when (patientScore) {
                 in 14..18 -> {
@@ -345,7 +353,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (caregiverScore != -1) {
             caregiverProgressBar.max = 18
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore)
+                    .setDuration(500).start()
             }
             when (caregiverScore) {
                 in 14..18 -> {
@@ -357,13 +366,12 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             }
         }
 
-        if(patientScore != -1 && caregiverScore!= -1) {
-            label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${patientProgressBar.max}"
-        }
-        else if(patientScore != -1) {
+        if (patientScore != -1 && caregiverScore != -1) {
+            label.tooltipText =
+                "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${patientProgressBar.max}"
+        } else if (patientScore != -1) {
             label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}"
-        }
-        else if(caregiverScore != -1) {
+        } else if (caregiverScore != -1) {
             label.tooltipText = "Caregiver: $caregiverScore/${patientProgressBar.max}"
         }
     }
@@ -376,7 +384,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val patientGender = sharedPref.getString("gender", "")
 
         sharedPref = requireActivity().getSharedPreferences(
-            getString(R.string.caregiverData), Context.MODE_PRIVATE)
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
 
         val caregiverScore = sharedPref.getInt("IADLSScore", -1)
         val caregiverGender = sharedPref.getString("gender", "")
@@ -389,13 +398,13 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             if (patientGender == "Male") {
                 patientProgressBar.max = 5
-            }
-            else {
+            } else {
                 patientProgressBar.max = 8
             }
 
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500).start()
+                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500)
+                    .start()
             }
         }
 
@@ -403,26 +412,25 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             if (caregiverGender == "Male") {
                 caregiverProgressBar.max = 5
-            }
-            else {
+            } else {
                 caregiverProgressBar.max = 8
             }
 
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore)
+                    .setDuration(500).start()
             }
         }
 
 
 
 
-        if(patientScore != -1 && caregiverScore!= -1) {
-            label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${caregiverProgressBar.max}"
-        }
-        else if(patientScore != -1) {
+        if (patientScore != -1 && caregiverScore != -1) {
+            label.tooltipText =
+                "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${caregiverProgressBar.max}"
+        } else if (patientScore != -1) {
             label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}"
-        }
-        else if(caregiverScore != -1)  {
+        } else if (caregiverScore != -1) {
             label.tooltipText = "Caregiver: $caregiverScore/${caregiverProgressBar.max}"
         }
     }
@@ -471,7 +479,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (patientScore != -1) {
             patientProgressBar.max = 6
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500).start()
+                ObjectAnimator.ofInt(patientProgressBar, "progress", patientScore).setDuration(500)
+                    .start()
             }
             patientProgressBar.tooltipText = "$patientScore/${patientProgressBar.max}"
 
@@ -492,7 +501,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         if (caregiverScore != -1) {
             caregiverProgressBar.max = 6
             requireActivity().runOnUiThread {
-                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore).setDuration(500).start()
+                ObjectAnimator.ofInt(caregiverProgressBar, "progress", caregiverScore)
+                    .setDuration(500).start()
             }
             caregiverProgressBar.tooltipText = "$caregiverProgressBar/${caregiverProgressBar.max}"
 
@@ -509,13 +519,12 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             }
         }
 
-        if(patientScore != -1 && caregiverScore!= -1) {
-            label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${caregiverProgressBar.max}"
-        }
-        else if(patientScore != -1) {
+        if (patientScore != -1 && caregiverScore != -1) {
+            label.tooltipText =
+                "Patient: $patientScore/${patientProgressBar.max}\nCaregiver: $caregiverScore/${caregiverProgressBar.max}"
+        } else if (patientScore != -1) {
             label.tooltipText = "Patient: $patientScore/${patientProgressBar.max}"
-        }
-        else if(caregiverScore != -1)  {
+        } else if (caregiverScore != -1) {
             label.tooltipText = "Caregiver: $caregiverScore/${caregiverProgressBar.max}"
         }
     }
@@ -536,7 +545,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             label.tooltipText = "$score/${progressBar.max}"
 
             when (score) {
-                in 17 .. 20 -> {
+                in 17..20 -> {
                     progressBar.setIndicatorColor(Color.parseColor("#69B34C")) // Green
                 }
                 in 13..16 -> {
@@ -579,7 +588,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
     }
 
     private fun updateDifficultyGettingToClinicProgressBar(sharedPref: SharedPreferences) {
-        val score = sharedPref.getInt("ContextScore2", -1)
+        val score = sharedPref.getInt("ContextScore3", -1)
 
         if (score != -1) {
             val progressBar = binding.DifficultyGettingToClinicProgressBar
@@ -607,7 +616,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
     }
 
     private fun updateDifficultyAffordingCareProgressBar(sharedPref: SharedPreferences) {
-        val score = sharedPref.getInt("ContextScore3", -1)
+        val score = sharedPref.getInt("ContextScore2", -1)
 
         if (score != -1) {
             val progressBar = binding.DifficultyAffordingCareProgressBar
@@ -681,6 +690,180 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         binding.q6.hint = q6
 
     }
+
+    fun resetData() {
+        // TODO
+    }
+
+    fun exportData() {
+        val patientPref = requireActivity().getSharedPreferences(
+            getString(R.string.patientData), Context.MODE_PRIVATE
+        )
+        val caregiverPref = requireActivity().getSharedPreferences(
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        )
+        val baseDir = android.os.Environment.DIRECTORY_DOCUMENTS
+        val fileName = LocalDate.now().toString() + "_" + patientPref.getString("fName", "NIL")
+            .toString().uppercase()[0] + patientPref.getString("lName", "NIL").toString().uppercase()[0]
+        val filePath = baseDir + File.separator + fileName
+
+        val writer = Files.newBufferedWriter(Paths.get(filePath))
+
+        val csvPrinter = CSVPrinter(
+            writer, CSVFormat.DEFAULT
+                .withHeader(
+                    "First Name",
+                    "Last Name",
+                    "DOB",
+                    "SSN",
+                    "Travel",
+                    "Caregiver Name",
+                    "Relationship",
+                    "Location",
+                    "Frequency",
+                    "patient_adls_total",
+                    "patient_adls_q1",
+                    "patient_adls_q2",
+                    "patient_adls_q3",
+                    "patient_adls_q4",
+                    "patient_adls_q5",
+                    "patient_adls_q6",
+                    "patient_brief_total",
+                    "patient_brief_q1",
+                    "patient_brief_q2",
+                    "patient_brief_q3",
+                    "patient_brief_q4",
+                    "patient_context_q1",
+                    "patient_context_q2",
+                    "patient_context_q3",
+                    "patient_iadls_total",
+                    "patient_iadls_q1",
+                    "patient_iadls_q2",
+                    "patient_iadls_q3",
+                    "patient_iadls_q4",
+                    "patient_iadls_q5",
+                    "patient_iadls_q6",
+                    "patient_iadls_q7",
+                    "patient_iadls_q8",
+                    "patient_loneliness_total",
+                    "patient_loneliness_q1",
+                    "patient_loneliness_q2",
+                    "patient_loneliness_q3",
+                    "patient_lsns_total",
+                    "patient_lsns_q1",
+                    "patient_lsns_q2",
+                    "patient_lsns_q3",
+                    "patient_lsns_q4",
+                    "patient_lsns_q5",
+                    "patient_lsns_q6",
+                    "patient_pseq_total",
+                    "patient_pseq_q1",
+                    "patient_pseq_q2",
+                    "patient_pseq_q3",
+                    "patient_pseq_q4",
+                    "patient_pseq_q5",
+                    "patient_pseq_q6",
+                    "patient_pseq_q7",
+                    "patient_pseq_q8",
+                    "patient_pseq_q9",
+                    "patient_pseq_q10",
+                    "patient_phq2_total",
+                    "patient_phq2_q1",
+                    "patient_phq2_q2",
+                    "patient_sri_total",
+                    "patient_sri_q1",
+                    "patient_sri_q2",
+                    "patient_sri_q3",
+                    "patient_stai_total",
+                    "patient_stai_q1",
+                    "patient_stai_q2",
+                    "patient_stai_q3",
+                    "patient_stai_q4",
+                    "patient_stai_q5",
+                    "patient_stai_q6",
+                    "patient_thoughtsAboutPain_total",
+                    "patient_thoughtsAboutPain_q1",
+                    "patient_thoughtsAboutPain_q2",
+                    "patient_thoughtsAboutPain_q3",
+                    "patient_thoughtsAboutPain_q4",
+                    "patient_thoughtsAboutPain_q5",
+                    "patient_thoughtsAboutPain_q6",
+                    "patient_thoughtsAboutPain_q7",
+                    "patient_thoughtsAboutPain_q8",
+                    "patient_thoughtsAboutPain_q9",
+                    "patient_thoughtsAboutPain_q10",
+                    "patient_thoughtsAboutPain_q11",
+                    "patient_thoughtsAboutPain_q12",
+                    "patient_thoughtsAboutPain_q13",
+                    "caregiver_cbs_total",
+                    "caregiver_cbs_q1",
+                    "caregiver_cbs_q2",
+                    "caregiver_cbs_q3",
+                    "caregiver_cbs_q4",
+                    "caregiver_cbs_q5",
+                    "caregiver_cbs_q6",
+                    "caregiver_cbs_q7",
+                    "caregiver_cbs_q8",
+                    "caregiver_cbs_q9",
+                    "caregiver_cbs_q10",
+                    "caregiver_cbs_q11",
+                    "caregiver_cbs_q12",
+                    "caregiver_cbs_q13",
+                    "caregiver_cbs_q14",
+                    "caregiver_cbs_q15",
+                    "caregiver_cbs_q16",
+                    "caregiver_cbs_q17",
+                    "caregiver_cbs_q18",
+                    "caregiver_cbs_q19",
+                    "caregiver_cbs_q20",
+                    "caregiver_cbs_q21",
+                    "caregiver_cbs_q22",
+                    "caregiver_adls_total",
+                    "caregiver_adls_q1",
+                    "caregiver_adls_q2",
+                    "caregiver_adls_q3",
+                    "caregiver_adls_q4",
+                    "caregiver_adls_q5",
+                    "caregiver_adls_q6",
+                    "caregiver_iadls_total",
+                    "caregiver_iadls_q1",
+                    "caregiver_iadls_q2",
+                    "caregiver_iadls_q3",
+                    "caregiver_iadls_q4",
+                    "caregiver_iadls_q5",
+                    "caregiver_iadls_q6",
+                    "caregiver_iadls_q7",
+                    "caregiver_iadls_q8",
+                    "caregiver_sri_total",
+                    "caregiver_sri_q1",
+                    "caregiver_sri_q2",
+                    "caregiver_sri_q3"
+                    )
+        )
+
+        csvPrinter.printRecord(
+            patientPref.getString("fName", "NIL"),
+            patientPref.getString("lName", "NIL"),
+            patientPref.getString("dob", "NIL"),
+            patientPref.getString("mrn", "NIL"),
+            patientPref.getString("travel", "NIL"),
+            caregiverPref.getString("fullName", "NIL"),
+            caregiverPref.getString("relationship", "NIL"),
+            caregiverPref.getString("location", "NIL"),
+            caregiverPref.getString("frequency", "NIL"),
+            patientPref.getInt("AdlsScore", -1),
+            patientPref.getInt("adls_q1", -1),
+            patientPref.getInt("adls_q2", -1),
+            patientPref.getInt("adls_q3", -1),
+            patientPref.getInt("adls_q4", -1),
+            patientPref.getInt("adls_q5", -1),
+            patientPref.getInt("adls_q6", -1),
+
+
+        )
+
+    }
+
 
     override fun onClick(v: View?) {
         if (v != null) {

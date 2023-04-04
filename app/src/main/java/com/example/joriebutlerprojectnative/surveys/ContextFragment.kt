@@ -96,8 +96,8 @@ class ContextFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("ContextScore1", calculateScore(binding.q1))
-            editor.putInt("ContextScore2", calculateScore(binding.q3))
-            editor.putInt("ContextScore3", calculateScore(binding.q2))
+            editor.putInt("ContextScore2", calculateScore(binding.q2))
+            editor.putInt("ContextScore3", calculateScore(binding.q3))
             editor.putInt("ContextCompleted", 1)
             editor.apply()
 

@@ -75,7 +75,6 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
         checkCompletion(patientSharedPref, "AdlsCompleted", binding.buttonActivitiesOfDailyLifeScale)
         checkCompletion(patientSharedPref, "BriefCompleted", binding.buttonHealthLiteracy)
-//        checkCompletion(patientSharedPref, "CBSCompleted", binding.buttonActivitiesOfDailyLifeScale)
         checkCompletion(patientSharedPref, "ContextCompleted", binding.buttonContext)
         checkCompletion(patientSharedPref, "IADLSCompleted", binding.buttonInstrumentalActivitiesOfDailyLifeScale)
         checkCompletion(patientSharedPref, "LonelinessCompleted", binding.buttonLoneliness)

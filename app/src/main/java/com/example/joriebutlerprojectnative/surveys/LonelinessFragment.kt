@@ -92,6 +92,9 @@ class LonelinessFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("LonelinessScaleScore", score)
+            editor.putInt("loneliness_q1", calculateScore(binding.q1LonelinessScale))
+            editor.putInt("loneliness_q2", calculateScore(binding.q2LonelinessScale))
+            editor.putInt("loneliness_q3", calculateScore(binding.q3LonelinessScale))
             editor.putInt("LonelinessCompleted", 1)
             editor.apply()
 

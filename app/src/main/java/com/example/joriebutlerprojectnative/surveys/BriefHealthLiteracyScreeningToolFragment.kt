@@ -119,6 +119,10 @@ class BriefHealthLiteracyScreeningToolFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("BriefScore", score)
+            editor.putInt("brief_q1", calculateScore(binding.q1))
+            editor.putInt("brief_q2", calculateScore(binding.q2))
+            editor.putInt("brief_q3", calculateScore(binding.q3))
+            editor.putInt("brief_q4", calculateScore(binding.q4))
             editor.putInt("BriefCompleted", 1)
             editor.apply()
 

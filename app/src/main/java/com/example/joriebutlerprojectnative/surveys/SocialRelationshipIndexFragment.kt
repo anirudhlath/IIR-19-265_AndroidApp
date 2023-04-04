@@ -107,6 +107,9 @@ class SocialRelationshipIndexFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("SRIScore", score)
+            editor.putInt("sri_q1", calculateScore(binding.q1))
+            editor.putInt("sri_q2", calculateScore(binding.q2))
+            editor.putInt("sri_q3", calculateScore(binding.q3))
             editor.putInt("SRICompleted", 1)
             editor.apply()
 

@@ -87,6 +87,8 @@ class Phq2Fragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("Phq2Score", score)
+            editor.putInt("phq2_q1", calculateScore(binding.q1phq2))
+            editor.putInt("phq2_q2", calculateScore(binding.q2phq2))
             editor.putInt("Phq2Completed", 1)
             editor.apply()
 

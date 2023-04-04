@@ -99,6 +99,12 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("LSNS6Score", score)
+            editor.putInt("lsns_q1", calculateScore(binding.q1LSNS6))
+            editor.putInt("lsns_q2", calculateScore(binding.q2LSNS6))
+            editor.putInt("lsns_q3", calculateScore(binding.q3LSNS6))
+            editor.putInt("lsns_q4", calculateScore(binding.q4LSNS6))
+            editor.putInt("lsns_q5", calculateScore(binding.q5LSNS6))
+            editor.putInt("lsns_q6", calculateScore(binding.q6LSNS6))
             editor.putInt("LSNSCompleted", 1)
             editor.apply()
 

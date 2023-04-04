@@ -92,6 +92,16 @@ class PainSelfEfficacyQuestionnaireFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("PseqScore", score)
+            editor.putInt("pseq_q1", calculateScore(binding.q1Pseq))
+            editor.putInt("pseq_q2", calculateScore(binding.q2Pseq))
+            editor.putInt("pseq_q3", calculateScore(binding.q3Pseq))
+            editor.putInt("pseq_q4", calculateScore(binding.q4Pseq))
+            editor.putInt("pseq_q5", calculateScore(binding.q5Pseq))
+            editor.putInt("pseq_q6", calculateScore(binding.q6Pseq))
+            editor.putInt("pseq_q7", calculateScore(binding.q7Pseq))
+            editor.putInt("pseq_q8", calculateScore(binding.q8Pseq))
+            editor.putInt("pseq_q9", calculateScore(binding.q9Pseq))
+            editor.putInt("pseq_q10", calculateScore(binding.q10Pseq))
             editor.putInt("PseqCompleted", 1)
             editor.apply()
 

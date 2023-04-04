@@ -117,6 +117,12 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
 
             val editor = sharedPref.edit()
             editor.putInt("AdlsScore", score)
+            editor.putInt("adls_q1", calculateScore(binding.q1Adls))
+            editor.putInt("adls_q2", calculateScore(binding.q2Adls))
+            editor.putInt("adls_q3", calculateScore(binding.q3Adls))
+            editor.putInt("adls_q4", calculateScore(binding.q4Adls))
+            editor.putInt("adls_q5", calculateScore(binding.q5Adls))
+            editor.putInt("adls_q6", calculateScore(binding.q6Adls))
             editor.putInt("AdlsCompleted", 1)
             editor.apply()
 
