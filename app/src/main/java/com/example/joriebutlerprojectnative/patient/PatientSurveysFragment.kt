@@ -73,26 +73,39 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
             getString(R.string.patientData), Context.MODE_PRIVATE
         )
 
-        checkCompletion(patientSharedPref, "AdlsCompleted", binding.buttonActivitiesOfDailyLifeScale)
+        checkCompletion(
+            patientSharedPref,
+            "AdlsCompleted",
+            binding.buttonActivitiesOfDailyLifeScale
+        )
         checkCompletion(patientSharedPref, "BriefCompleted", binding.buttonHealthLiteracy)
         checkCompletion(patientSharedPref, "ContextCompleted", binding.buttonContext)
-        checkCompletion(patientSharedPref, "IADLSCompleted", binding.buttonInstrumentalActivitiesOfDailyLifeScale)
+        checkCompletion(
+            patientSharedPref,
+            "IADLSCompleted",
+            binding.buttonInstrumentalActivitiesOfDailyLifeScale
+        )
         checkCompletion(patientSharedPref, "LonelinessCompleted", binding.buttonLoneliness)
         checkCompletion(patientSharedPref, "LSNSCompleted", binding.buttonIsolation)
         checkCompletion(patientSharedPref, "PseqCompleted", binding.buttonPSEQ)
         checkCompletion(patientSharedPref, "Phq2Completed", binding.buttonPHQ)
         checkCompletion(patientSharedPref, "SRICompleted", binding.buttonSRI)
         checkCompletion(patientSharedPref, "StaiCompleted", binding.buttonSTAI)
-        checkCompletion(patientSharedPref, "ThoughtsAboutPainCompleted", binding.buttonThoughtsAboutPain)
+        checkCompletion(
+            patientSharedPref,
+            "ThoughtsAboutPainCompleted",
+            binding.buttonThoughtsAboutPain
+        )
 
         return rootView
     }
 
     private fun checkCompletion(sharedPref: SharedPreferences, string: String, button: Button) {
         val completed = sharedPref.getInt(string, 0)
-        if(completed == 1) {
+        if (completed == 1) {
             button.isEnabled = false
-            val img: Drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_check_24)!!
+            val img: Drawable =
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_check_24)!!
             button.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null)
         }
     }
@@ -126,7 +139,8 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
                 R.id.buttonPSEQ -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, PainSelfEfficacyQuestionnaireFragment()).commit()
+                        .replace(R.id.constraintLayout, PainSelfEfficacyQuestionnaireFragment())
+                        .commit()
 
                     return
                 }
@@ -150,7 +164,8 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                 }
                 R.id.buttonActivitiesOfDailyLifeScale -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, AcitivitiesOfDailyLifeScaleFragment()).commit()
+                        .replace(R.id.constraintLayout, AcitivitiesOfDailyLifeScaleFragment())
+                        .commit()
 
                     return
                 }
@@ -158,7 +173,10 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                 R.id.buttonInstrumentalActivitiesOfDailyLifeScale -> {
 
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, InstrumentalActivitiesOfDailyLifeScaleFragment()).commit()
+                        .replace(
+                            R.id.constraintLayout,
+                            InstrumentalActivitiesOfDailyLifeScaleFragment()
+                        ).commit()
 
                     return
                 }
@@ -179,7 +197,8 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                 R.id.buttonHealthLiteracy -> {
 
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, BriefHealthLiteracyScreeningToolFragment()).commit()
+                        .replace(R.id.constraintLayout, BriefHealthLiteracyScreeningToolFragment())
+                        .commit()
 
                     return
                 }

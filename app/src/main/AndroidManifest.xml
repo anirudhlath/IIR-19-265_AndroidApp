@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 4/4/23, 12:22 AM
@@ -10,19 +9,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <supports-screens android:smallScreens="false"
-        android:normalScreens="false"
+    <supports-screens
         android:largeScreens="true"
-        android:xlargeScreens="true"/>
+        android:normalScreens="false"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
 
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-
-
 
 
     <application
@@ -35,7 +35,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="30">
-        
+
         <activity
             android:name=".careprovider.CareproviderActivity"
             android:exported="false"
@@ -74,6 +74,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

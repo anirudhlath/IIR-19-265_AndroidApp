@@ -80,7 +80,8 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
 
                 R.id.openEndedQuestionsButton -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, PatientOpenEndedQuestionsFragment()).commit()
+                        .replace(R.id.constraintLayout, PatientOpenEndedQuestionsFragment())
+                        .commit()
 
                     return
                 }

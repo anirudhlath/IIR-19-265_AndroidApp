@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 2/16/23, 3:11 PM
@@ -703,10 +702,10 @@
                 android:id="@+id/buttonSubmitSurvey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
                 android:layout_marginLeft="24dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="24dp"
+                android:layout_marginBottom="50dp"
                 android:onClick="onClick"
                 android:text="Finish" />
 

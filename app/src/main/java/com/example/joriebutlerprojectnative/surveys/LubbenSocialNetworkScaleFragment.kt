@@ -79,12 +79,12 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
     }
 
     private fun submitSurvey() {
-        if(!binding.q1LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q2LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q3LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q4LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q5LSNS6.editText?.text.isNullOrEmpty()
-            &&!binding.q6LSNS6.editText?.text.isNullOrEmpty()
+        if (!binding.q1LSNS6.editText?.text.isNullOrEmpty()
+            && !binding.q2LSNS6.editText?.text.isNullOrEmpty()
+            && !binding.q3LSNS6.editText?.text.isNullOrEmpty()
+            && !binding.q4LSNS6.editText?.text.isNullOrEmpty()
+            && !binding.q5LSNS6.editText?.text.isNullOrEmpty()
+            && !binding.q6LSNS6.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -113,8 +113,7 @@ class LubbenSocialNetworkScaleFragment : Fragment() {
                 "SharedPreferences",
                 "LSNS6 Score: " + sharedPref.getInt("LSNS6Score", -1).toString()
             )
-        }
-        else {
+        } else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,

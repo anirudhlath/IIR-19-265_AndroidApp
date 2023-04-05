@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val requestMultiplePermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()) { resultsMap ->
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { resultsMap ->
         resultsMap.forEach {
             Log.i(ContentValues.TAG, "Permission: ${it.key}, granted: ${it.value}")
         }
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         applicationContext,
         android.Manifest.permission.WRITE_EXTERNAL_STORAGE
     ) == PackageManager.PERMISSION_GRANTED
+
     private fun hasReadStoragePermission() = ContextCompat.checkSelfPermission(
         applicationContext,
         android.Manifest.permission.READ_EXTERNAL_STORAGE

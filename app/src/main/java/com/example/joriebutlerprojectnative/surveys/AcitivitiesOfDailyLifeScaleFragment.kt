@@ -65,6 +65,7 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
 
         return rootView
     }
+
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         return if (enter) {
             AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
@@ -88,12 +89,12 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     private fun submitSurvey() {
-        if(!binding.q1Adls.editText?.text.isNullOrEmpty()
-            &&!binding.q2Adls.editText?.text.isNullOrEmpty()
-            &&!binding.q3Adls.editText?.text.isNullOrEmpty()
-            &&!binding.q4Adls.editText?.text.isNullOrEmpty()
-            &&!binding.q5Adls.editText?.text.isNullOrEmpty()
-            &&!binding.q6Adls.editText?.text.isNullOrEmpty()
+        if (!binding.q1Adls.editText?.text.isNullOrEmpty()
+            && !binding.q2Adls.editText?.text.isNullOrEmpty()
+            && !binding.q3Adls.editText?.text.isNullOrEmpty()
+            && !binding.q4Adls.editText?.text.isNullOrEmpty()
+            && !binding.q5Adls.editText?.text.isNullOrEmpty()
+            && !binding.q6Adls.editText?.text.isNullOrEmpty()
         ) {
 
             Log.d("ActivityTag", requireActivity()::class.java.simpleName)
@@ -131,8 +132,7 @@ class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
                 "SharedPreferences",
                 "Adls Score: " + sharedPref.getInt("AdlsScore", -1).toString()
             )
-        }
-        else {
+        } else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,

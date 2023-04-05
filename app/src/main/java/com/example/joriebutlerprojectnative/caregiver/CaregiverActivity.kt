@@ -31,10 +31,10 @@ class CaregiverActivity : AppCompatActivity() {
         )
         if (!sharedPref.contains("fullName")) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, CaregiverSignUpFragment() ).commit()
-        }
-        else {
-            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
+                .replace(R.id.fragmentContainerView2, CaregiverSignUpFragment()).commit()
+        } else {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
         }
 
     }

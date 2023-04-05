@@ -71,13 +71,21 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
                             getString(R.string.caregiverData), Context.MODE_PRIVATE
                         )
                         val editor = sharedPref.edit()
-                        editor.putString("fullName", binding.textFieldFullName.editText?.text.toString().trim())
-                        editor.putString("relationship", binding.textFieldRelationship.editText?.text.toString().trim())
+                        editor.putString(
+                            "fullName",
+                            binding.textFieldFullName.editText?.text.toString().trim()
+                        )
+                        editor.putString(
+                            "relationship",
+                            binding.textFieldRelationship.editText?.text.toString().trim()
+                        )
                         editor.putString("location", binding.menuLocation.editText?.text.toString())
-                        editor.putString("frequency",binding.menuFrequencyOfContact.editText?.text.toString())
+                        editor.putString(
+                            "frequency",
+                            binding.menuFrequencyOfContact.editText?.text.toString()
+                        )
                         editor.apply()
-                    }
-                    else {
+                    } else {
                         val contextView = requireView()
                         Snackbar.make(
                             contextView,
@@ -86,7 +94,7 @@ class CaregiverSignUpFragment : Fragment(), View.OnClickListener {
                         ).show()
                         return
                     }
-                        Log.d("UI", "Profile finish button clicked.")
+                    Log.d("UI", "Profile finish button clicked.")
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
                 }

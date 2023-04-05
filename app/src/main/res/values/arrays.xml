@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 3/1/23, 3:49 PM
@@ -32,7 +31,7 @@
         <item>More than twice in a week</item>
     </string-array>
 
-<!--    Questionnaire Responses-->
+    <!--    Questionnaire Responses-->
     <string-array name="STAI_responses_array">
         <item>Not at all</item>
         <item>Somewhat</item>
@@ -226,10 +225,6 @@
         <item>Quite a bit</item>
         <item>Extremely</item>
     </string-array>
-
-
-
-
 
 
 </resources>

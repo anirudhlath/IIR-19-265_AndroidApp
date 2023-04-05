@@ -76,7 +76,8 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
             && !binding.q6.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
-                getString(R.string.patientData), Context.MODE_PRIVATE)
+                getString(R.string.patientData), Context.MODE_PRIVATE
+            )
             val editor = sharedPref.edit()
             editor.putString("openEndedQuestionnaireQ1", binding.q1.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ2", binding.q2.editText?.text.toString())
@@ -85,8 +86,7 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
             editor.putString("openEndedQuestionnaireQ5", binding.q5.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ6", binding.q5.editText?.text.toString())
             editor.apply()
-        }
-        else {
+        } else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,
