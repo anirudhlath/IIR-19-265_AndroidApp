@@ -1,16 +1,16 @@
 /*
- *     Created by Anirudh Lath on 12/16/22, 11:44 AM
+ *     Created by Anirudh Lath on 4/4/23, 8:40 PM
  *     anirudhlath@gmail.com
- *     Last modified 12/16/22, 11:43 AM
- *     Copyright (c) 2022.
+ *     Last modified 4/4/23, 8:40 PM
+ *     Copyright (c) 2023.
  *     All rights reserved.
  */
 
 package com.example.joriebutlerprojectnative.patient
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.joriebutlerprojectnative.R
 
 class PatientActivity : AppCompatActivity() {

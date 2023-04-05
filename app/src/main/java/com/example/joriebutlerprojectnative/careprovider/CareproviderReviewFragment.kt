@@ -1,8 +1,8 @@
 /*
- *     Created by Anirudh Lath on 12/16/22, 11:44 AM
+ *     Created by Anirudh Lath on 4/4/23, 8:40 PM
  *     anirudhlath@gmail.com
- *     Last modified 12/16/22, 11:43 AM
- *     Copyright (c) 2022.
+ *     Last modified 4/4/23, 8:40 PM
+ *     Copyright (c) 2023.
  *     All rights reserved.
  */
 
@@ -12,9 +12,7 @@ import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
-import android.graphics.Path
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
@@ -22,6 +20,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.ImageSliderAdapter
 import com.example.joriebutlerprojectnative.R
@@ -34,10 +33,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVPrinter
-import java.io.BufferedWriter
 import java.io.File
-import java.io.FileWriter
-import java.io.Writer
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.time.LocalDate
@@ -74,7 +70,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         return rootView
     }
 
-    public fun prepareReviewPage() {
+    private fun prepareReviewPage() {
         GlobalScope.launch {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -704,7 +700,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         )
         val baseDir = android.os.Environment.DIRECTORY_DOCUMENTS
         val fileName = LocalDate.now().toString() + "_" + patientPref.getString("fName", "NIL")
-            .toString().uppercase()[0] + patientPref.getString("lName", "NIL").toString().uppercase()[0]
+            .toString().uppercase()[0] + patientPref.getString("lName", "NIL").toString()
+            .uppercase()[0] + ".csv"
         val filePath = baseDir + File.separator + fileName
 
         val writer = Files.newBufferedWriter(Paths.get(filePath))
@@ -838,7 +835,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                     "caregiver_sri_q1",
                     "caregiver_sri_q2",
                     "caregiver_sri_q3"
-                    )
+                )
         )
 
         csvPrinter.printRecord(
@@ -858,8 +855,116 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             patientPref.getInt("adls_q4", -1),
             patientPref.getInt("adls_q5", -1),
             patientPref.getInt("adls_q6", -1),
-
-
+            patientPref.getInt("BriefScore", -1),
+            patientPref.getInt("brief_q1", -1),
+            patientPref.getInt("brief_q2", -1),
+            patientPref.getInt("brief_q3", -1),
+            patientPref.getInt("brief_q4", -1),
+            patientPref.getInt("ContextScore1", -1),
+            patientPref.getInt("ContextScore2", -1),
+            patientPref.getInt("ContextScore3", -1),
+            patientPref.getInt("IADLSScore", -1),
+            patientPref.getInt("iadls_q1", -1),
+            patientPref.getInt("iadls_q2", -1),
+            patientPref.getInt("iadls_q3", -1),
+            patientPref.getInt("iadls_q4", -1),
+            patientPref.getInt("iadls_q5", -1),
+            patientPref.getInt("iadls_q6", -1),
+            patientPref.getInt("iadls_q7", -1),
+            patientPref.getInt("iadls_q8", -1),
+            patientPref.getInt("LonelinessScaleScore", -1),
+            patientPref.getInt("loneliness_q1", -1),
+            patientPref.getInt("loneliness_q2", -1),
+            patientPref.getInt("loneliness_q3", -1),
+            patientPref.getInt("LSNS6Score", -1),
+            patientPref.getInt("lsns_q1", -1),
+            patientPref.getInt("lsns_q2", -1),
+            patientPref.getInt("lsns_q3", -1),
+            patientPref.getInt("lsns_q4", -1),
+            patientPref.getInt("lsns_q5", -1),
+            patientPref.getInt("lsns_q6", -1),
+            patientPref.getInt("PseqScore", -1),
+            patientPref.getInt("pseq_q1", -1),
+            patientPref.getInt("pseq_q2", -1),
+            patientPref.getInt("pseq_q3", -1),
+            patientPref.getInt("pseq_q4", -1),
+            patientPref.getInt("pseq_q5", -1),
+            patientPref.getInt("pseq_q6", -1),
+            patientPref.getInt("pseq_q7", -1),
+            patientPref.getInt("pseq_q8", -1),
+            patientPref.getInt("pseq_q9", -1),
+            patientPref.getInt("pseq_q10", -1),
+            patientPref.getInt("Phq2Score", -1),
+            patientPref.getInt("phq2_q1", -1),
+            patientPref.getInt("phq2_q2", -1),
+            patientPref.getInt("SRIScore", -1),
+            patientPref.getInt("sri_q1", -1),
+            patientPref.getInt("sri_q2", -1),
+            patientPref.getInt("sri_q3", -1),
+            patientPref.getInt("StaiScore", -1),
+            patientPref.getInt("stai_q1", -1),
+            patientPref.getInt("stai_q2", -1),
+            patientPref.getInt("stai_q3", -1),
+            patientPref.getInt("stai_q4", -1),
+            patientPref.getInt("stai_q5", -1),
+            patientPref.getInt("stai_q6", -1),
+            patientPref.getInt("ThoughtsAboutPainScore", -1),
+            patientPref.getInt("thoughtsAboutPain_q1", -1),
+            patientPref.getInt("thoughtsAboutPain_q2", -1),
+            patientPref.getInt("thoughtsAboutPain_q3", -1),
+            patientPref.getInt("thoughtsAboutPain_q4", -1),
+            patientPref.getInt("thoughtsAboutPain_q5", -1),
+            patientPref.getInt("thoughtsAboutPain_q6", -1),
+            patientPref.getInt("thoughtsAboutPain_q7", -1),
+            patientPref.getInt("thoughtsAboutPain_q8", -1),
+            patientPref.getInt("thoughtsAboutPain_q9", -1),
+            patientPref.getInt("thoughtsAboutPain_q10", -1),
+            patientPref.getInt("thoughtsAboutPain_q11", -1),
+            patientPref.getInt("thoughtsAboutPain_q12", -1),
+            patientPref.getInt("thoughtsAboutPain_q13", -1),
+            caregiverPref.getInt("CBSScore", -1),
+            caregiverPref.getInt("cbs_q1", -1),
+            caregiverPref.getInt("cbs_q2", -1),
+            caregiverPref.getInt("cbs_q3", -1),
+            caregiverPref.getInt("cbs_q4", -1),
+            caregiverPref.getInt("cbs_q5", -1),
+            caregiverPref.getInt("cbs_q6", -1),
+            caregiverPref.getInt("cbs_q7", -1),
+            caregiverPref.getInt("cbs_q8", -1),
+            caregiverPref.getInt("cbs_q9", -1),
+            caregiverPref.getInt("cbs_q10", -1),
+            caregiverPref.getInt("cbs_q11", -1),
+            caregiverPref.getInt("cbs_q12", -1),
+            caregiverPref.getInt("cbs_q13", -1),
+            caregiverPref.getInt("cbs_q14", -1),
+            caregiverPref.getInt("cbs_q15", -1),
+            caregiverPref.getInt("cbs_q16", -1),
+            caregiverPref.getInt("cbs_q17", -1),
+            caregiverPref.getInt("cbs_q18", -1),
+            caregiverPref.getInt("cbs_q19", -1),
+            caregiverPref.getInt("cbs_q20", -1),
+            caregiverPref.getInt("cbs_q21", -1),
+            caregiverPref.getInt("cbs_q22", -1),
+            caregiverPref.getInt("AdlsScore", -1),
+            caregiverPref.getInt("adls_q1", -1),
+            caregiverPref.getInt("adls_q2", -1),
+            caregiverPref.getInt("adls_q3", -1),
+            caregiverPref.getInt("adls_q4", -1),
+            caregiverPref.getInt("adls_q5", -1),
+            caregiverPref.getInt("adls_q6", -1),
+            caregiverPref.getInt("IADLSScore", -1),
+            caregiverPref.getInt("iadls_q1", -1),
+            caregiverPref.getInt("iadls_q2", -1),
+            caregiverPref.getInt("iadls_q3", -1),
+            caregiverPref.getInt("iadls_q4", -1),
+            caregiverPref.getInt("iadls_q5", -1),
+            caregiverPref.getInt("iadls_q6", -1),
+            caregiverPref.getInt("iadls_q7", -1),
+            caregiverPref.getInt("iadls_q8", -1),
+            caregiverPref.getInt("SRIScore", -1),
+            caregiverPref.getInt("sri_q1", -1),
+            caregiverPref.getInt("sri_q2", -1),
+            caregiverPref.getInt("sri_q3", -1),
         )
 
     }

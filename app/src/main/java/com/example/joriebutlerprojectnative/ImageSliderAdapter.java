@@ -1,8 +1,8 @@
 /*
- *     Created by Anirudh Lath on 12/16/22, 11:44 AM
+ *     Created by Anirudh Lath on 4/4/23, 8:40 PM
  *     anirudhlath@gmail.com
- *     Last modified 12/16/22, 11:43 AM
- *     Copyright (c) 2022.
+ *     Last modified 4/4/23, 8:40 PM
+ *     Copyright (c) 2023.
  *     All rights reserved.
  */
 
@@ -15,12 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.joriebutlerprojectnative.R;
-import com.example.joriebutlerprojectnative.SliderItem;
 import com.smarteist.autoimageslider.SliderViewAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 public class ImageSliderAdapter extends
