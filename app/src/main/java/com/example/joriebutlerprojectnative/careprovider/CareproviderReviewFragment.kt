@@ -13,6 +13,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
@@ -723,13 +725,18 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val caregiverPref = requireActivity().getSharedPreferences(
             getString(R.string.caregiverData), Context.MODE_PRIVATE
         )
-        val baseDir = android.os.Environment.DIRECTORY_DOCUMENTS
+        val baseDir = android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).absolutePath
         val fileName = LocalDate.now().toString() + "_" + patientPref.getString("fName", "NIL")
             .toString().uppercase()[0] + patientPref.getString("lName", "NIL").toString()
             .uppercase()[0] + ".csv"
         val filePath = baseDir + File.separator + fileName
 
-        val writer = Files.newBufferedWriter(Paths.get(filePath))
+        val writer = try {
+            Files.newBufferedWriter(Paths.get(filePath))
+        } catch (e: Exception) {
+            Log.e("CareproviderReview", "Error creating file: $e")
+            return
+        }
 
         val csvPrinter = CSVPrinter(
             writer, CSVFormat.DEFAULT
@@ -1018,7 +1025,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
                 "Failed to export data.",
                 Snackbar.LENGTH_SHORT
             ).show()
-            e.printStackTrace()
+            Log.d("Export", e.printStackTrace().toString())
+
             return
         }
 
