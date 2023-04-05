@@ -21,11 +21,13 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.ImageSliderAdapter
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.SliderItem
 import com.example.joriebutlerprojectnative.databinding.FragmentCareproviderReviewBinding
+import com.google.android.material.snackbar.Snackbar
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 import com.smarteist.autoimageslider.SliderView
@@ -61,6 +63,14 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         _binding =
             FragmentCareproviderReviewBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
+
+        binding.saveButton.setOnClickListener {
+            exportButton()
+        }
+        binding.deleteButton.setOnClickListener {
+            resetData()
+        }
+        binding.helpButton.setOnClickListener(this)
 
 
         prepareReviewPage()
@@ -687,11 +697,26 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
     }
 
-    fun resetData() {
-        // TODO
+    private fun resetData() {
+        val patientPref = requireActivity().getSharedPreferences(
+            getString(R.string.patientData), Context.MODE_PRIVATE
+        ).edit().clear().apply()
+        val caregiverPref = requireActivity().getSharedPreferences(
+            getString(R.string.caregiverData), Context.MODE_PRIVATE
+        ).edit().clear().apply()
+
+        val contextView = requireView()
+        Snackbar.make(
+            contextView,
+            "Data has been reset successfully.",
+            Snackbar.LENGTH_LONG
+        ).show()
+
+        parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView3, CareproviderReviewFragment()).commit()
+
     }
 
-    fun exportData() {
+    private fun exportData() {
         val patientPref = requireActivity().getSharedPreferences(
             getString(R.string.patientData), Context.MODE_PRIVATE
         )
@@ -967,6 +992,10 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             caregiverPref.getInt("sri_q3", -1),
         )
 
+        csvPrinter.flush()
+        csvPrinter.close()
+
+
     }
 
 
@@ -976,6 +1005,29 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
 
             }
         }
+    }
+
+    fun exportButton() {
+        try {
+            exportData()
+        }
+        catch (e: Exception) {
+            val contextView = requireView()
+            Snackbar.make(
+                contextView,
+                "Failed to export data.",
+                Snackbar.LENGTH_SHORT
+            ).show()
+            e.printStackTrace()
+            return
+        }
+
+        val contextView = requireView()
+        Snackbar.make(
+            contextView,
+            "Data has been exported successfully to your documents folder.",
+            Snackbar.LENGTH_LONG
+        ).show()
     }
 
 }
