@@ -62,35 +62,36 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
     private var getCameraImage: ActivityResultLauncher<Uri>? = null
 
 
+
+
+
+
+
+
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        uri = FileProvider.getUriForFile(
-            requireContext(),
-            "${BuildConfig.APPLICATION_ID}.fileprovider",
-            createImageFile("patient_profile_picture")
-        )
+        uri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", createImageFile("patient_profile_picture"))
 
-        getCameraImage =
-            registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
-                if (success) {
-                    Log.d("Capture Image", "Got image at: $uri")
+        getCameraImage = registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
+                Log.d("Capture Image", "Got image at: $uri")
 
-                    binding.imageButton.setContentPadding(0, 0, 0, 0)
+                binding.imageButton.setContentPadding(0, 0, 0, 0)
 
-                    Glide.with(this).load(uri).centerInside().override(200)
-                        .into(binding.imageButton)
+                Glide.with(this).load(uri).centerInside().override(200).into(binding.imageButton)
 
-                    val sharedPref = requireActivity().getSharedPreferences(
-                        getString(R.string.patientData), Context.MODE_PRIVATE
-                    )
-                    val editor = sharedPref.edit()
-                    editor.putString("profilePhotoURI", uri.toString())
-                    editor.apply()
+                val sharedPref = requireActivity().getSharedPreferences(
+                    getString(R.string.patientData), Context.MODE_PRIVATE
+                )
+                val editor = sharedPref.edit()
+                editor.putString("profilePhotoURI", uri.toString())
+                editor.apply()
 
-                }
             }
+        }
     }
 
     override fun onCreateView(
@@ -121,6 +122,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
 
         return rootView
     }
+
 
 
     // Destroy binding at fragment destroy
@@ -154,11 +156,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
         if (v != null) {
             when (v.id) {
                 R.id.imageButton -> {
-                    uri = FileProvider.getUriForFile(
-                        requireContext(),
-                        "${BuildConfig.APPLICATION_ID}.fileprovider",
-                        createImageFile("patient_profile_picture")
-                    )
+                    uri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", createImageFile("patient_profile_picture"))
 
 
                     getCameraImage!!.launch(uri)
@@ -171,6 +169,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                     val sharedPref = requireActivity().getSharedPreferences(
                         getString(R.string.patientData), Context.MODE_PRIVATE
                     )
+
 
 
                     // Save data
@@ -218,7 +217,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
                         editor.putString("travel", travelMenu?.editText?.text.toString())
                         editor.apply()
 
-                        if (sharedPref.getString("profilePhotoURI", "").isNullOrEmpty()) {
+                        if(sharedPref.getString("profilePhotoURI", "").isNullOrEmpty()) {
                             val contextView = requireView()
                             Snackbar.make(
                                 contextView,

@@ -73,18 +73,18 @@ class ThoughtsAboutPainFragment : Fragment() {
 
     private fun submitSurvey() {
         if (!binding.q1ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q2ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q3ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q4ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q5ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q6ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q7ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q8ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q9ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q10ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q11ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q12ThoughtsAboutPain.editText?.text.isNullOrEmpty()
-            && !binding.q13ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q2ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q3ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q4ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q5ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q6ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q7ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q8ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q9ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q10ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q11ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q12ThoughtsAboutPain.editText?.text.isNullOrEmpty()
+            &&!binding.q13ThoughtsAboutPain.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -140,8 +140,7 @@ class ThoughtsAboutPainFragment : Fragment() {
             Log.d("SharedPreferences", "Loading the save data...")
             Log.d(
                 "SharedPreferences",
-                "Thoughts About Pain Score: " + sharedPref.getInt("ThoughtsAboutPainScore", -1)
-                    .toString()
+                "Thoughts About Pain Score: " + sharedPref.getInt("ThoughtsAboutPainScore", -1).toString()
             )
         } else {
             val contextView = requireView()

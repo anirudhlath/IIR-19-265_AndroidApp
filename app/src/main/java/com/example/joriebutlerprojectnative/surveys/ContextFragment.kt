@@ -38,7 +38,6 @@ class ContextFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
     }
-
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         return if (enter) {
             AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
@@ -91,6 +90,7 @@ class ContextFragment : Fragment() {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
             )
+
 
 
             val editor = sharedPref.edit()

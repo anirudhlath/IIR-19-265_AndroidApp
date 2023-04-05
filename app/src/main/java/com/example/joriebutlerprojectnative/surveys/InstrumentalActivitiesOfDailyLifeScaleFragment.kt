@@ -40,7 +40,6 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
     }
-
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         return if (enter) {
             AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
@@ -55,11 +54,7 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding =
-            QuestionnaireInstrumentalActivitiesOfDailyLifeScaleBinding.inflate(
-                inflater,
-                container,
-                false
-            )
+            QuestionnaireInstrumentalActivitiesOfDailyLifeScaleBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
 
         var responses = resources.getStringArray(R.array.iAdls_q8_responses_array)
@@ -74,23 +69,23 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
     }
 
     private fun calculateScore(textInputLayout: TextInputLayout): Int {
-        if (textInputLayout.editText?.text.toString() == "a. Operates telephone on own initiative-looks up and dials numbers, etc."
-            || textInputLayout.editText?.text.toString() == "b. Dials a few well-known numbers"
-            || textInputLayout.editText?.text.toString() == "c. Answers telephone but does not dial"
-            || textInputLayout.editText?.text.toString() == "a. Takes care of all shopping needs independently"
-            || textInputLayout.editText?.text.toString() == "a. Plans, prepares and serves adequate meals independently"
-            || textInputLayout.editText?.text.toString() == "a. Maintains house alone or with occasional assistance (e.g. \"heavy work domestic help\")"
-            || textInputLayout.editText?.text.toString() == "b. Performs light daily tasks such as dish washing, bed making"
-            || textInputLayout.editText?.text.toString() == "c. Performs light daily tasks but cannot maintain acceptable level of cleanliness"
-            || textInputLayout.editText?.text.toString() == "d. Needs help with all home maintenance tasks"
-            || textInputLayout.editText?.text.toString() == "a. Does personal laundry completely"
-            || textInputLayout.editText?.text.toString() == "b. Launders small items-rinses stockings, etc."
-            || textInputLayout.editText?.text.toString() == "a. Travels independently on public transportation or drives own car"
-            || textInputLayout.editText?.text.toString() == "b. Arranges own travel via taxi, but does not otherwise use public transportation"
-            || textInputLayout.editText?.text.toString() == "c. Travels on public transportation when accompanied by another"
-            || textInputLayout.editText?.text.toString() == "a. Is responsible for taking medication in correct dosages at correct time"
-            || textInputLayout.editText?.text.toString() == "a. Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects/keeps track of income"
-            || textInputLayout.editText?.text.toString() == "b. Manages day-to-day purchases, but needs help with banking, major purchases, etc."
+        if(textInputLayout.editText?.text.toString() ==  "a. Operates telephone on own initiative-looks up and dials numbers, etc."
+            || textInputLayout.editText?.text.toString() ==  "b. Dials a few well-known numbers"
+            || textInputLayout.editText?.text.toString() ==  "c. Answers telephone but does not dial"
+            || textInputLayout.editText?.text.toString() ==  "a. Takes care of all shopping needs independently"
+            || textInputLayout.editText?.text.toString() ==  "a. Plans, prepares and serves adequate meals independently"
+            || textInputLayout.editText?.text.toString() ==  "a. Maintains house alone or with occasional assistance (e.g. \"heavy work domestic help\")"
+            || textInputLayout.editText?.text.toString() ==  "b. Performs light daily tasks such as dish washing, bed making"
+            || textInputLayout.editText?.text.toString() ==  "c. Performs light daily tasks but cannot maintain acceptable level of cleanliness"
+            || textInputLayout.editText?.text.toString() ==  "d. Needs help with all home maintenance tasks"
+            || textInputLayout.editText?.text.toString() ==  "a. Does personal laundry completely"
+            || textInputLayout.editText?.text.toString() ==  "b. Launders small items-rinses stockings, etc."
+            || textInputLayout.editText?.text.toString() ==  "a. Travels independently on public transportation or drives own car"
+            || textInputLayout.editText?.text.toString() ==  "b. Arranges own travel via taxi, but does not otherwise use public transportation"
+            || textInputLayout.editText?.text.toString() ==  "c. Travels on public transportation when accompanied by another"
+            || textInputLayout.editText?.text.toString() ==  "a. Is responsible for taking medication in correct dosages at correct time"
+            || textInputLayout.editText?.text.toString() ==  "a. Manages financial matters independently (budgets, writes checks, pays rent, bills, goes to bank), collects/keeps track of income"
+            || textInputLayout.editText?.text.toString() ==  "b. Manages day-to-day purchases, but needs help with banking, major purchases, etc."
         ) {
             return 1
         }
@@ -98,14 +93,14 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
     }
 
     private fun submitSurvey() {
-        if (!binding.q1.editText?.text.isNullOrEmpty()
-            && !binding.q2.editText?.text.isNullOrEmpty()
-            && !binding.q3.editText?.text.isNullOrEmpty()
-            && !binding.q4.editText?.text.isNullOrEmpty()
-            && !binding.q5.editText?.text.isNullOrEmpty()
-            && !binding.q6.editText?.text.isNullOrEmpty()
-            && !binding.q7.editText?.text.isNullOrEmpty()
-            && !binding.q8.editText?.text.isNullOrEmpty()
+        if(!binding.q1.editText?.text.isNullOrEmpty()
+            &&!binding.q2.editText?.text.isNullOrEmpty()
+            &&!binding.q3.editText?.text.isNullOrEmpty()
+            &&!binding.q4.editText?.text.isNullOrEmpty()
+            &&!binding.q5.editText?.text.isNullOrEmpty()
+            &&!binding.q6.editText?.text.isNullOrEmpty()
+            &&!binding.q7.editText?.text.isNullOrEmpty()
+            &&!binding.q8.editText?.text.isNullOrEmpty()
         ) {
             var sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -144,7 +139,8 @@ class InstrumentalActivitiesOfDailyLifeScaleFragment : Fragment() {
                 "SharedPreferences",
                 "pIADLS Score: " + sharedPref.getInt("IADLSScore", -1).toString()
             )
-        } else {
+        }
+        else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,

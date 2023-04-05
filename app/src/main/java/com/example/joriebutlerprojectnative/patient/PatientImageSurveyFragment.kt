@@ -86,6 +86,8 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
         })
 
 
+
+
     }
 
     override fun onCreateView(
@@ -94,6 +96,7 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
     ): View? {
         _binding = FragmentPatientImageSurveyBinding.inflate(inflater, container, false)
         val rootView = _binding!!.root
+
 
 
         // Initialize all the camera launchers
@@ -198,10 +201,7 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
         }
     }
 
-    private fun setupPhotoActivityResultLauncher(
-        imageName: String,
-        imageView: ImageView
-    ): ActivityResultLauncher<Uri> {
+    private fun setupPhotoActivityResultLauncher(imageName: String, imageView: ImageView): ActivityResultLauncher<Uri> {
 
 
         return (registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
@@ -225,28 +225,17 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
 
     }
 
-    private fun takePicture(
-        imageName: String,
-        activityResultLauncher: ActivityResultLauncher<Uri>?
-    ) {
-        uri = FileProvider.getUriForFile(
-            requireContext(),
-            "${BuildConfig.APPLICATION_ID}.fileprovider",
-            createImageFile(imageName)
-        )
+    private fun takePicture(imageName: String, activityResultLauncher: ActivityResultLauncher<Uri>?) {
+        uri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", createImageFile(imageName))
         activityResultLauncher!!.launch(uri)
     }
 
-    private fun loadImage(
-        imageName: String,
-        imageView: ImageView,
-        sharedPreferences: SharedPreferences
-    ) {
+    private fun loadImage(imageName: String, imageView: ImageView, sharedPreferences: SharedPreferences) {
         try {
-            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside()
-                .override(650).into(imageView)
+            Glide.with(this).load(sharedPreferences.getString(imageName, "")).centerInside().override(650).into(imageView)
 
-        } catch (e: Exception) {
+        }
+        catch (e: Exception) {
             // Handling the null pointer exception
         }
     }

@@ -24,10 +24,12 @@ class PatientActivity : AppCompatActivity() {
         if (!sharedPref.contains("fName")) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.constraintLayout, PatientSignUpFragment()).commit()
-        } else {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.constraintLayout, PatientHomePageFragment()).commit()
         }
+        else {
+            supportFragmentManager.beginTransaction().replace(R.id.constraintLayout, PatientHomePageFragment()).commit()
+        }
+
+
 
 
     }

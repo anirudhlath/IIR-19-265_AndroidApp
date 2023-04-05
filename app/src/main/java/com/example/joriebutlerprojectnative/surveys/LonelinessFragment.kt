@@ -78,9 +78,9 @@ class LonelinessFragment : Fragment() {
     }
 
     private fun submitSurvey() {
-        if (!binding.q1LonelinessScale.editText?.text.isNullOrEmpty()
-            && !binding.q2LonelinessScale.editText?.text.isNullOrEmpty()
-            && !binding.q3LonelinessScale.editText?.text.isNullOrEmpty()
+        if(!binding.q1LonelinessScale.editText?.text.isNullOrEmpty()
+            &&!binding.q2LonelinessScale.editText?.text.isNullOrEmpty()
+            &&!binding.q3LonelinessScale.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -101,10 +101,10 @@ class LonelinessFragment : Fragment() {
             Log.d("SharedPreferences", "Loading the save data...")
             Log.d(
                 "SharedPreferences",
-                "Loneliness Scale Score: " + sharedPref.getInt("LonelinessScaleScore", -1)
-                    .toString()
+                "Loneliness Scale Score: " + sharedPref.getInt("LonelinessScaleScore", -1).toString()
             )
-        } else {
+        }
+        else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,

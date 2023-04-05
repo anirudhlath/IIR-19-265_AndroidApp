@@ -76,8 +76,8 @@ class Phq2Fragment : Fragment() {
     }
 
     private fun submitSurvey() {
-        if (!binding.q1phq2.editText?.text.isNullOrEmpty()
-            && !binding.q2phq2.editText?.text.isNullOrEmpty()
+        if(!binding.q1phq2.editText?.text.isNullOrEmpty()
+            &&!binding.q2phq2.editText?.text.isNullOrEmpty()
         ) {
             val sharedPref = requireActivity().getSharedPreferences(
                 getString(R.string.patientData), Context.MODE_PRIVATE
@@ -97,7 +97,8 @@ class Phq2Fragment : Fragment() {
                 "SharedPreferences",
                 "PHQ2 Score: " + sharedPref.getInt("Phq2Score", -1).toString()
             )
-        } else {
+        }
+        else {
             val contextView = requireView()
             Snackbar.make(
                 contextView,

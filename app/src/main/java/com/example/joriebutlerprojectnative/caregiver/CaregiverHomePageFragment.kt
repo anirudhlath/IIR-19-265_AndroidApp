@@ -49,7 +49,7 @@ class CaregiverHomePageFragment : Fragment(), OnClickListener {
      * @param v The view that was clicked.
      */
     override fun onClick(v: View?) {
-        if (v != null) {
+        if(v != null) {
             when (v.id) {
                 R.id.surveysButton -> {
                     parentFragmentManager.beginTransaction()
@@ -58,7 +58,6 @@ class CaregiverHomePageFragment : Fragment(), OnClickListener {
             }
         }
     }
-
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation? {
         return if (enter) {
             AnimationUtils.loadAnimation(activity, R.anim.slide_in_from_bottom)
