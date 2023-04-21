@@ -18,6 +18,7 @@
     <string name="patientData">com.gapp.joriebutlernative.patientData</string>
     <string name="caregiverData">com.gapp.joriebutlernative.caregiverData</string>
 
-    <string name="careprovider_notice">Hello,\nYour patient Eusebius Montague is participating in a study with Dr Jorie Butler (IIR 19-265 “Enhancing Geriatric Pain Care with Contextual Patient Generated Data Profiles”).\n\nThe purpose of the study is to give clinicians relevant information (e.g., photographs of the home and information on functional status and pain) to help inform your encounter with the patient.\n\nThank you for taking time to review the presented information, you will receive a brief set of questions from the study team after the patient visit about this study.
+    <string name="careprovider_notice">Your patient is participating in a study with Dr Jorie Butler (IIR 19-265 “Enhancing Geriatric Pain Care with Contextual Patient Generated Data Profiles”).\n\nThe purpose of the study is to give clinicians relevant information (e.g., photographs of the home and information on functional status and pain) to help inform your encounter with the patient.\n\nThank you for taking time to review the presented information, you will receive a brief set of questions from the study team after the patient visit about this study.
     </string>
+    <string name="instructions_color">When you click next, you will be taken to a review page. You will see multiple bars that will give you an insight of the patient in the labeled aspect. It is color coded. In most cases, it will either be green or red, which means the score is past the cut off. But in some cases it can be orange, where there are 2 cut-offs. See below for more details on what it means.</string>
 </resources>
