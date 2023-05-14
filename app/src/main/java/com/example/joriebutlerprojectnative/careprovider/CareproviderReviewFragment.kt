@@ -263,10 +263,10 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
             label.tooltipText = "$score/${progressBar.max}"
 
             when (score) {
-                in 0..19 -> {
+                in 0..20 -> {
                     progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
                 }
-                in 20..60 -> {
+                in 21..60 -> {
                     progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
                 }
             }

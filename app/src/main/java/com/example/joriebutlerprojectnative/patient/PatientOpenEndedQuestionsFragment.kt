@@ -83,7 +83,7 @@ class PatientOpenEndedQuestionsFragment : Fragment() {
             editor.putString("openEndedQuestionnaireQ3", binding.q3.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ4", binding.q4.editText?.text.toString())
             editor.putString("openEndedQuestionnaireQ5", binding.q5.editText?.text.toString())
-            editor.putString("openEndedQuestionnaireQ6", binding.q5.editText?.text.toString())
+            editor.putString("openEndedQuestionnaireQ6", binding.q6.editText?.text.toString())
             editor.apply()
         }
         else {
