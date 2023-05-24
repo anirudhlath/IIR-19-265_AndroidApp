@@ -14,6 +14,7 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Environment
+import android.os.FileUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +23,8 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import androidx.camera.core.impl.utils.ContextUtil.getApplicationContext
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.ImageSliderAdapter
 import com.example.joriebutlerprojectnative.R
@@ -38,8 +39,10 @@ import kotlinx.coroutines.launch
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVPrinter
 import java.io.File
+import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.nio.file.StandardCopyOption
 import java.time.LocalDate
 
 
@@ -725,7 +728,7 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         val caregiverPref = requireActivity().getSharedPreferences(
             getString(R.string.caregiverData), Context.MODE_PRIVATE
         )
-        val baseDir = android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).absolutePath
+        val baseDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).absolutePath
         val fileName = LocalDate.now().toString() + "_" + patientPref.getString("fName", "NIL")
             .toString().uppercase()[0] + patientPref.getString("lName", "NIL").toString()
             .uppercase()[0] + ".csv"
@@ -1014,7 +1017,35 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
         csvPrinter.flush()
         csvPrinter.close()
 
+        // Images
+        exportImage("photo1", patientPref)
+        exportImage("photo2", patientPref)
+        exportImage("photo3", patientPref)
+        exportImage("photo4", patientPref)
+        exportImage("photo5", patientPref)
+        exportImage("photo6", patientPref)
+        exportImage("photo7", patientPref)
+        exportImage("photo8", patientPref)
+        exportImage("photo9", patientPref)
+        exportImage("photo10", patientPref)
 
+
+    }
+
+    private fun exportImage(imageName: String, sharedPreferences: SharedPreferences) {
+        val sourcePath = sharedPreferences.getString(imageName, "")
+        if(sourcePath == "") return
+        val fileName = sourcePath!!.split("/".toRegex()).last()
+        val storageDir = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val source = File(storageDir.toString()+ File.separator + fileName)
+
+        val destinationPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).absolutePath + imageName + ".png"
+        val destination = File(destinationPath)
+        try {
+            Files.copy(source.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING)
+        } catch (e: IOException) {
+            Log.d("Export", "Failed to export image: $imageName" + e.printStackTrace().toString())
+        }
     }
 
 

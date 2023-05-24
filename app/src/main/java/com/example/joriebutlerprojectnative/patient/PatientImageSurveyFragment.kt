@@ -8,8 +8,11 @@
 
 package com.example.joriebutlerprojectnative.patient
 
+import android.R.attr.bitmap
 import android.content.Context
+import android.content.ContextWrapper
 import android.content.SharedPreferences
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -24,6 +27,7 @@ import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.camera.core.impl.utils.ContextUtil.getApplicationContext
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -31,6 +35,7 @@ import com.example.joriebutlerprojectnative.BuildConfig
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import java.io.File
+import java.io.IOException
 import java.text.DateFormat
 import java.util.*
 
