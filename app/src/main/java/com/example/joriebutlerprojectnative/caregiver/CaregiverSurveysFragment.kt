@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentCaregiverSurveysBinding
-import com.example.joriebutlerprojectnative.surveys.AcitivitiesOfDailyLifeScaleFragment
+import com.example.joriebutlerprojectnative.surveys.ActivitiesOfDailyLifeScaleFragment
 import com.example.joriebutlerprojectnative.surveys.CaregiverBurdenScaleFragment
 import com.example.joriebutlerprojectnative.surveys.InstrumentalActivitiesOfDailyLifeScaleFragment
 import com.example.joriebutlerprojectnative.surveys.SocialRelationshipIndexFragment
@@ -62,7 +62,7 @@ class CaregiverSurveysFragment : Fragment() {
         }
         binding.buttonActivitiesOfDailyLifeScale.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, AcitivitiesOfDailyLifeScaleFragment()).commit()
+                .replace(R.id.fragmentContainerView2, ActivitiesOfDailyLifeScaleFragment()).commit()
         }
         binding.buttonInstrumentalActivitiesOfDailyLifeScale.setOnClickListener {
             parentFragmentManager.beginTransaction()

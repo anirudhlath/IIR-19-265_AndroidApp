@@ -150,7 +150,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
                 }
                 R.id.buttonActivitiesOfDailyLifeScale -> {
                     parentFragmentManager.beginTransaction()
-                        .replace(R.id.constraintLayout, AcitivitiesOfDailyLifeScaleFragment()).commit()
+                        .replace(R.id.constraintLayout, ActivitiesOfDailyLifeScaleFragment()).commit()
 
                     return
                 }

@@ -27,13 +27,7 @@ import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AcitivitiesOfDailyLifeScaleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class AcitivitiesOfDailyLifeScaleFragment : Fragment() {
+class ActivitiesOfDailyLifeScaleFragment : Fragment() {
 
     private var _binding: QuestionnaireAcitivitiesOfDailyLifeScaleBinding? = null
     private val binding get() = _binding!!
