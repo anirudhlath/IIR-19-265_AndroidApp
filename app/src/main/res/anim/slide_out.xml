@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 2/16/23, 3:11 PM
@@ -9,7 +8,7 @@
 
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="@android:integer/config_shortAnimTime"
-    android:interpolator="@android:anim/decelerate_interpolator"
     android:fromXDelta="0%"
+    android:interpolator="@android:anim/decelerate_interpolator"
     android:toXDelta="100%" />
 

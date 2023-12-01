@@ -1,4 +1,3 @@
-
 <!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
@@ -8,6 +7,7 @@
   -->
 
 <resources>
+
     <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>

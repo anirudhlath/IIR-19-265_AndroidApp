@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 3/14/23, 4:10 PM
@@ -99,6 +98,7 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
@@ -150,6 +150,7 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
@@ -201,6 +202,7 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
@@ -252,6 +254,7 @@
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
@@ -361,10 +364,10 @@
                 android:id="@+id/buttonSubmitSurvey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
                 android:layout_marginLeft="24dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="24dp"
+                android:layout_marginBottom="50dp"
                 android:text="Finish" />
 
         </LinearLayout>

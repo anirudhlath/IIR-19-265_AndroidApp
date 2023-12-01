@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     Created by Anirudh Lath on 4/4/23, 8:40 PM
   ~     anirudhlath@gmail.com
   ~     Last modified 3/1/23, 3:49 PM
@@ -32,7 +31,7 @@
         <item>More than twice in a week</item>
     </string-array>
 
-<!--    Questionnaire Responses-->
+    <!--    Questionnaire Responses-->
     <string-array name="STAI_responses_array">
         <item>Not at all</item>
         <item>Somewhat</item>
@@ -241,9 +240,49 @@
         <item>Extremely</item>
     </string-array>
 
-
-
-
+    <string-array name="CHAMPS_questions_array">
+        <item>Visit with friends or family (other than those you live with)?</item>
+        <item>Go to the senior center?</item>
+        <item>Do volunteer work?</item>
+        <item>Attend church or take part in church activities?</item>
+        <item>Attend other club or group meetings?</item>
+        <item>Use a computer?</item>
+        <item>Dance (such as square, folk, line, ballroom) (do not count aerobic dance here)?</item>
+        <item>Do woodworking, needlework, drawing, or other arts or crafts?</item>
+        <item>Play golf, carrying or pulling your equipment (count walking time only)?</item>
+        <item>Play golf, riding a cart (count walking time only)?</item>
+        <item>Attend a concert, movie, lecture, or sport event?</item>
+        <item>Play cards, bingo, or board games with other people?</item>
+        <item>Shoot pool or billiards?</item>
+        <item>Play singles tennis (do not count doubles)?</item>
+        <item>Play doubles tennis (do not count singles)?</item>
+        <item>Skate (ice, roller, in-line)?</item>
+        <item>Play a musical instrument?</item>
+        <item>Read?</item>
+        <item>Do heavy work around the house (such as washing windows, cleaning gutters)?</item>
+        <item>Do light work around the house (such as sweeping or vacuuming)?</item>
+        <item>Do heavy gardening (such as spading, raking)?</item>
+        <item>Do light gardening (such as watering plants)?</item>
+        <item>Work on your car, truck, lawn mower, or other machinery?</item>
+        <item>Jog or run?</item>
+        <item>Walk uphill or hike uphill (count only uphill part)?</item>
+        <item>Walk fast or briskly for exercise (do not count walking leisurely or uphill)?</item>
+        <item>Walk to do errands (such as to/from a store or to take children to school (count walk time only)?</item>
+        <item>Walk leisurely for exercise or pleasure?</item>
+        <item>Ride a bicycle or stationary cycle?</item>
+        <item>Do other aerobic machines such as rowing, or step machines (do not count treadmill or stationary cycle)?</item>
+        <item>Do water exercises (do not count other swimming)?</item>
+        <item>Swim moderately or fast?</item>
+        <item>Swim gently?</item>
+        <item>Do stretching or flexibility exercises (do not count yoga or Tai-chi)?</item>
+        <item>Do yoga or Tai-chi?</item>
+        <item>Do aerobics or aerobic dancing?</item>
+        <item>Do moderate to heavy strength training (such as hand-held weights of more than 5 lbs., weight machines, or push-ups)?</item>
+        <item>Do light strength training (such as hand-held weights of 5 lbs. or less or elastic bands)?</item>
+        <item>Do general conditioning exercises, such as light calisthenics or chair exercises (do not count strength training)?</item>
+        <item>Play basketball, soccer, or racquetball (do not count time on sidelines)?</item>
+        <item>Do other types of physical activity not previously mentioned (please specify)?</item>
+    </string-array>
 
 
 </resources>

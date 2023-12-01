@@ -16,27 +16,25 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.joriebutlerprojectnative.R
 
 class CaregiverActivity : AppCompatActivity() {
-    private lateinit var attributionContext: Context
+  private lateinit var attributionContext: Context
 
+  @RequiresApi(Build.VERSION_CODES.R)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_caregiver)
+    attributionContext = createAttributionContext("caregiver")
 
-    @RequiresApi(Build.VERSION_CODES.R)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_caregiver)
-        attributionContext = createAttributionContext("caregiver")
-
-
-        val sharedPref = getSharedPreferences(
-            getString(R.string.caregiverData), Context.MODE_PRIVATE
-        )
-        if (!sharedPref.contains("fullName")) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2, CaregiverSignUpFragment() ).commit()
-        }
-        else {
-            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, CaregiverHomePageFragment()).commit()
-        }
-
+    val sharedPref = getSharedPreferences(getString(R.string.caregiverData), Context.MODE_PRIVATE)
+    if (!sharedPref.contains("fullName")) {
+      supportFragmentManager
+        .beginTransaction()
+        .replace(R.id.fragmentContainerView2, CaregiverSignUpFragment())
+        .commit()
+    } else {
+      supportFragmentManager
+        .beginTransaction()
+        .replace(R.id.fragmentContainerView2, CaregiverHomePageFragment())
+        .commit()
     }
-
+  }
 }

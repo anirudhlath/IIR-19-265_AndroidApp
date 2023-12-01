@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.joriebutlerprojectnative.R
 
 class CareproviderActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_careprovider)
-    }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_careprovider)
+  }
 }
