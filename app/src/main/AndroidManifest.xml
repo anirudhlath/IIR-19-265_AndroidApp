@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~     Created by Anirudh Lath in 2021
+  ~     anirudhlath@gmail.com
+  ~     Last modified 11/30/23, 6:38 PM
+  ~     Copyright (c) 2023.
+  ~     All rights reserved.
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 

@@ -1,7 +1,7 @@
 /*
- *     Created by Anirudh Lath on 4/4/23, 8:40 PM
+ *     Created by Anirudh Lath in 2021
  *     anirudhlath@gmail.com
- *     Last modified 4/4/23, 8:40 PM
+ *     Last modified 11/30/23, 6:38 PM
  *     Copyright (c) 2023.
  *     All rights reserved.
  */
@@ -43,10 +43,6 @@ import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
 import java.time.LocalDate
 
-/**
- * A simple [Fragment] subclass. Use the [CareproviderReviewFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CareproviderReviewFragment : Fragment(), OnClickListener {
 
   private var _binding: FragmentCareproviderReviewBinding? = null
