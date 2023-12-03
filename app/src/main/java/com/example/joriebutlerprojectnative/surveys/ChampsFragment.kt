@@ -22,6 +22,9 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.stringArrayResource
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
+import com.example.joriebutlerprojectnative.ui.theme.AppTheme
+import com.example.joriebutlerprojectnative.ui.theme.ChampsResponse
+import com.example.joriebutlerprojectnative.ui.theme.ChampsSurvey
 import com.example.joriebutlerprojectnative.ui.theme.Survey
 import com.google.android.material.textfield.TextInputLayout
 
@@ -37,14 +40,19 @@ class ChampsFragment : Fragment() {
       setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
 
       setContent {
-        MaterialTheme {
-          val responses = stringArrayResource(id = R.array.LonelinessScale_responses_array)
+        AppTheme {
           val questions = stringArrayResource(id = R.array.CHAMPS_questions_array)
-          Survey(
+          val timeResponses = stringArrayResource(id = R.array.CHAMPS_time_responses_array)
+          val hourResponses = stringArrayResource(id = R.array.CHAMPS_hour_responses_array)
+          val results = MutableList(questions.size) { ChampsResponse() }
+
+          ChampsSurvey(
             "CHAMPS Activities",
             "This questionnaire is about activities that you may have done in the past 4 weeks. In a typical week during the past 4 weeks, did you…",
             questions,
-            responses
+            timeResponses,
+            hourResponses,
+            results
           )
         }
       }
