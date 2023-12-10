@@ -45,7 +45,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
                 android:gravity="center"
-                android:text="Over the past two weeks, how often have you been bothered by the following problems?" />
+                android:text="Today, how often have you been bothered by the following problems?" />
 
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
@@ -89,7 +89,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PHQ2_responses_array" />
+                            app:simpleItems="@array/PHQ2_daily_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,7 +139,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="none"
-                            app:simpleItems="@array/PHQ2_responses_array" />
+                            app:simpleItems="@array/PHQ2_daily_responses_array" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 

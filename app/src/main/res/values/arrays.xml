@@ -46,6 +46,13 @@
         <item>Nearly every day</item>
     </string-array>
 
+    <string-array name="PHQ2_daily_responses_array">
+        <item>Not at all</item>
+        <item>Several times</item>
+        <item>More than half the day</item>
+        <item>Nearly all day</item>
+    </string-array>
+
     <string-array name="PSEQ_responses_array">
         <item>0 - Not confident at all</item>
         <item>1</item>
@@ -252,10 +259,10 @@
 
     <string-array name="CHAMPS_hour_responses_array">
         <item>Less than 1 hour</item>
-        <item>1–2.5 hours</item>
-        <item>3–4.5 hours</item>
-        <item>5–6.5 hours</item>
-        <item>7–8.5 hours</item>
+        <item>1-2.5 hours</item>
+        <item>3-4.5 hours</item>
+        <item>5-6.5 hours</item>
+        <item>7-8.5 hours</item>
         <item>9 or more hours</item>
     </string-array>
 
@@ -300,7 +307,7 @@
         <item>Do light strength training (such as hand-held weights of 5 lbs. or less or elastic bands)?</item>
         <item>Do general conditioning exercises, such as light calisthenics or chair exercises (do not count strength training)?</item>
         <item>Play basketball, soccer, or racquetball (do not count time on sidelines)?</item>
-        <item>Do other types of physical activity not previously mentioned (please specify)?</item>
+        <item>Do any other types of physical activity not previously mentioned?</item>
     </string-array>
 
 </resources>

@@ -73,6 +73,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
     binding.buttonContext.setOnClickListener(this)
     binding.buttonHealthLiteracy.setOnClickListener(this)
     binding.buttonSRI.setOnClickListener(this)
+    binding.buttonCHAMPS.setOnClickListener(this)
 
     // Check which questionnaires have been completed already.
     val patientSharedPref =
@@ -97,6 +98,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
       "ThoughtsAboutPainCompleted",
       binding.buttonThoughtsAboutPain
     )
+    checkCompletion(patientSharedPref, "CHAMPSCompleted", binding.buttonCHAMPS)
 
     return rootView
   }
@@ -125,7 +127,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
         R.id.buttonSTAI -> {
           parentFragmentManager
             .beginTransaction()
-            .replace(R.id.constraintLayout, ChampsFragment())
+            .replace(R.id.constraintLayout, StateTraitAnxietyInventoryFragment())
             .commit()
 
           return
@@ -208,6 +210,15 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, BriefHealthLiteracyScreeningToolFragment())
+            .commit()
+
+          return
+        }
+        R.id.buttonCHAMPS -> {
+
+          parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.constraintLayout, ChampsFragment())
             .commit()
 
           return
