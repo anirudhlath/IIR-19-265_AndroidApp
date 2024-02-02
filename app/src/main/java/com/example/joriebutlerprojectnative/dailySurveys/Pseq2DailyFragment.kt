@@ -16,9 +16,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnairePseq2DailyBinding
-import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
+import com.example.joriebutlerprojectnative.patient.PatientDailySurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import java.time.LocalDate
 
 class Pseq2DailyFragment : Fragment() {
   private var _binding: QuestionnairePseq2DailyBinding? = null
@@ -39,24 +40,7 @@ class Pseq2DailyFragment : Fragment() {
   }
 
   private fun calculateScore(textInputLayout: TextInputLayout): Int {
-    when (textInputLayout.editText?.text.toString()) {
-      "Very hard" -> {
-        return 3
-      }
-      "Somewhat hard" -> {
-        return 2
-      }
-      "Not hard at all" -> {
-        return 1
-      }
-      "Yes" -> {
-        return 1
-      }
-      "No" -> {
-        return 0
-      }
-    }
-    return 0
+    return textInputLayout.editText?.text.toString().split(' ')[0].toInt()
   }
 
   private fun submitSurvey() {
@@ -65,10 +49,17 @@ class Pseq2DailyFragment : Fragment() {
         requireActivity()
           .getSharedPreferences(getString(R.string.patientData), Context.MODE_PRIVATE)
 
+      val date = LocalDate.now().toString()
+
       val editor = sharedPref.edit()
-      editor.putInt("ContextScore1", calculateScore(binding.q1))
-      editor.putInt("ContextScore2", calculateScore(binding.q2))
-      editor.putInt("ContextCompleted", 1)
+      editor.putInt("Pseq2DailyQ1_$date", calculateScore(binding.q1))
+      editor.putInt("Pseq2DailyQ2_$date", calculateScore(binding.q2))
+      editor.putInt(
+        "Pseq2DailyTotal_$date",
+        (calculateScore(binding.q1) + calculateScore(binding.q2)) / 2
+      )
+      editor.putInt("Pseq2DailyCompleted", 1)
+      editor.putString("Pseq2DailyCompletedTimestamp", date)
       editor.apply()
     } else {
       val contextView = requireView()
@@ -77,7 +68,7 @@ class Pseq2DailyFragment : Fragment() {
     }
     parentFragmentManager
       .beginTransaction()
-      .replace(R.id.constraintLayout, PatientSurveysFragment())
+      .replace(R.id.constraintLayout, PatientDailySurveysFragment())
       .commit()
     return
   }

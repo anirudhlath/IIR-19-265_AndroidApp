@@ -15,8 +15,10 @@
     </string-array>
     <string-array name="travel_array">
 
-        <item>Public Transport</item>
-        <item>Personal Vehicle</item>
+        <item>I drove a car</item>
+        <item>Someone I know drove me in a car</item>
+        <item>I came in a taxi</item>
+        <item>I took public transportation</item>
     </string-array>
     <string-array name="location_array">
 

@@ -32,6 +32,7 @@ import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientImageSurveyBinding
 import java.io.File
 import java.text.DateFormat
+import java.time.LocalDate
 import java.util.*
 
 /**
@@ -62,7 +63,7 @@ class PatientImageSurveyFragment : Fragment(), OnClickListener {
   // Create image file
   fun createImageFile(filename: String): File {
 
-    val timeStamp: String = DateFormat.getDateInstance().format(Date())
+    val timeStamp: String = LocalDate.now().toString()
     val storageDir = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
 
     return File.createTempFile(filename + timeStamp, ".png", storageDir).apply {

@@ -36,6 +36,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.io.File
 import java.text.DateFormat.getDateInstance
+import java.time.LocalDate
 import java.util.*
 
 /**
@@ -129,7 +130,7 @@ class PatientSignUpFragment : Fragment(), OnClickListener {
   // Create image file
   fun createImageFile(filename: String): File {
 
-    val timeStamp: String = getDateInstance().format(Date())
+    val timeStamp: String = LocalDate.now().toString()
     val storageDir = requireActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
 
     return File.createTempFile(filename + timeStamp, ".png", storageDir).apply {

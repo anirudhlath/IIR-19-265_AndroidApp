@@ -18,9 +18,10 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireGad2DailyBinding
-import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
+import com.example.joriebutlerprojectnative.patient.PatientDailySurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import java.time.LocalDate
 
 class Gad2DailyFragment : Fragment() {
 
@@ -50,21 +51,21 @@ class Gad2DailyFragment : Fragment() {
   }
 
   private fun calculateScore(textInputLayout: TextInputLayout): Int {
-    when (textInputLayout.editText?.text.toString()) {
-      "Very hard" -> {
-        return 3
+    when (textInputLayout.editText?.text.toString().lowercase()) {
+      "Not at all".lowercase() -> {
+        return 0
       }
-      "Somewhat hard" -> {
+
+      "several times".lowercase() -> {
+        return 1
+      }
+
+      "more than half the day".lowercase() -> {
         return 2
       }
-      "Not hard at all" -> {
-        return 1
-      }
-      "Yes" -> {
-        return 1
-      }
-      "No" -> {
-        return 0
+
+      "nearly all day".lowercase() -> {
+        return 3
       }
     }
     return 0
@@ -76,10 +77,14 @@ class Gad2DailyFragment : Fragment() {
         requireActivity()
           .getSharedPreferences(getString(R.string.patientData), Context.MODE_PRIVATE)
 
+      val date = LocalDate.now().toString()
+
       val editor = sharedPref.edit()
-      editor.putInt("ContextScore1", calculateScore(binding.q1))
-      editor.putInt("ContextScore2", calculateScore(binding.q2))
-      editor.putInt("ContextCompleted", 1)
+      editor.putInt("Gad2DailyQ1_$date", calculateScore(binding.q1))
+      editor.putInt("Gad2DailyQ2_$date", calculateScore(binding.q2))
+      editor.putInt("Gad2DailyTotal_$date", calculateScore(binding.q2) + calculateScore(binding.q2))
+      editor.putInt("Gad2DailyCompleted", 1)
+      editor.putString("Gad2DailyCompletedTimestamp", date)
       editor.apply()
     } else {
       val contextView = requireView()
@@ -88,7 +93,7 @@ class Gad2DailyFragment : Fragment() {
     }
     parentFragmentManager
       .beginTransaction()
-      .replace(R.id.constraintLayout, PatientSurveysFragment())
+      .replace(R.id.constraintLayout, PatientDailySurveysFragment())
       .commit()
     return
   }

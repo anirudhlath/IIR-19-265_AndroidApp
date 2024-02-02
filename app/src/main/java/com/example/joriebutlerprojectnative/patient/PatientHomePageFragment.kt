@@ -43,6 +43,7 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
     imagesButton.setOnClickListener(this)
     binding.surveysButton.setOnClickListener(this)
     binding.openEndedQuestionsButton.setOnClickListener(this)
+    binding.dailySurveysButton.setOnClickListener(this)
 
     return rootView
   }
@@ -64,24 +65,32 @@ class PatientHomePageFragment : Fragment(), OnClickListener {
             .replace(R.id.constraintLayout, PatientImageSurveyFragment())
             .commit()
 
-          return
         }
+
         R.id.surveysButton -> {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, PatientSurveysFragment())
             .commit()
 
-          return
         }
+
         R.id.openEndedQuestionsButton -> {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, PatientOpenEndedQuestionsFragment())
             .commit()
 
-          return
         }
+
+        R.id.dailySurveysButton -> {
+          parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.constraintLayout, PatientDailySurveysFragment())
+            .commit()
+
+        }
+
       }
     }
   }

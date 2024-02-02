@@ -18,9 +18,10 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireZbi4DailyBinding
-import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
+import com.example.joriebutlerprojectnative.patient.PatientDailySurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import java.time.LocalDate
 
 class Zbi4DailyFragment : Fragment() {
 
@@ -51,20 +52,24 @@ class Zbi4DailyFragment : Fragment() {
 
   private fun calculateScore(textInputLayout: TextInputLayout): Int {
     when (textInputLayout.editText?.text.toString()) {
-      "Very hard" -> {
-        return 3
+      "Never" -> {
+        return 0
       }
-      "Somewhat hard" -> {
+
+      "Rarely" -> {
+        return 1
+      }
+
+      "Sometimes" -> {
         return 2
       }
-      "Not hard at all" -> {
-        return 1
+
+      "Frequently" -> {
+        return 3
       }
-      "Yes" -> {
-        return 1
-      }
-      "No" -> {
-        return 0
+
+      "Nearly Always" -> {
+        return 4
       }
     }
     return 0
@@ -73,18 +78,29 @@ class Zbi4DailyFragment : Fragment() {
   private fun submitSurvey() {
     if (
       !binding.q1.editText?.text.isNullOrEmpty() &&
-        !binding.q2.editText?.text.isNullOrEmpty() &&
-        !binding.q3.editText?.text.isNullOrEmpty()
+      !binding.q2.editText?.text.isNullOrEmpty() &&
+      !binding.q3.editText?.text.isNullOrEmpty() &&
+      !binding.q4.editText?.text.isNullOrEmpty()
     ) {
       val sharedPref =
         requireActivity()
           .getSharedPreferences(getString(R.string.patientData), Context.MODE_PRIVATE)
 
+      val date = LocalDate.now().toString()
+
       val editor = sharedPref.edit()
-      editor.putInt("ContextScore1", calculateScore(binding.q1))
-      editor.putInt("ContextScore2", calculateScore(binding.q2))
-      editor.putInt("ContextScore3", calculateScore(binding.q3))
-      editor.putInt("ContextCompleted", 1)
+      editor.putInt("Zbi4DailyQ1_$date", calculateScore(binding.q1))
+      editor.putInt("Zbi4DailyQ2_$date", calculateScore(binding.q2))
+      editor.putInt("Zbi4DailyQ3_$date", calculateScore(binding.q3))
+      editor.putInt("Zbi4DailyQ4_$date", calculateScore(binding.q4))
+      editor.putInt(
+        "Zbi4DailyTotal_$date",
+        calculateScore(binding.q1) + calculateScore(binding.q2) + calculateScore(binding.q3) + calculateScore(
+          binding.q4
+        )
+      )
+      editor.putInt("Zbi4DailyCompleted", 1)
+      editor.putString("Zbi4DailyCompletedTimestamp", date)
       editor.apply()
     } else {
       val contextView = requireView()
@@ -93,7 +109,7 @@ class Zbi4DailyFragment : Fragment() {
     }
     parentFragmentManager
       .beginTransaction()
-      .replace(R.id.constraintLayout, PatientSurveysFragment())
+      .replace(R.id.constraintLayout, PatientDailySurveysFragment())
       .commit()
     return
   }

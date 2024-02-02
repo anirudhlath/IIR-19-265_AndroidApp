@@ -18,9 +18,11 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.R
 import com.example.joriebutlerprojectnative.databinding.QuestionnaireLonelinessDailyBinding
+import com.example.joriebutlerprojectnative.patient.PatientDailySurveysFragment
 import com.example.joriebutlerprojectnative.patient.PatientSurveysFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import java.time.LocalDate
 
 class LonelinessDailyFragment : Fragment() {
 
@@ -51,20 +53,16 @@ class LonelinessDailyFragment : Fragment() {
 
   private fun calculateScore(textInputLayout: TextInputLayout): Int {
     when (textInputLayout.editText?.text.toString()) {
-      "Very hard" -> {
-        return 3
+      "Hardly Ever" -> {
+        return 1
       }
-      "Somewhat hard" -> {
+
+      "Some of the time" -> {
         return 2
       }
-      "Not hard at all" -> {
-        return 1
-      }
-      "Yes" -> {
-        return 1
-      }
-      "No" -> {
-        return 0
+
+      "Often" -> {
+        return 3
       }
     }
     return 0
@@ -72,19 +70,17 @@ class LonelinessDailyFragment : Fragment() {
 
   private fun submitSurvey() {
     if (
-      !binding.q1.editText?.text.isNullOrEmpty() &&
-        !binding.q2.editText?.text.isNullOrEmpty() &&
-        !binding.q3.editText?.text.isNullOrEmpty()
+      !binding.q1.editText?.text.isNullOrEmpty()
     ) {
       val sharedPref =
         requireActivity()
           .getSharedPreferences(getString(R.string.patientData), Context.MODE_PRIVATE)
-
+      val date = LocalDate.now().toString()
       val editor = sharedPref.edit()
-      editor.putInt("ContextScore1", calculateScore(binding.q1))
-      editor.putInt("ContextScore2", calculateScore(binding.q2))
-      editor.putInt("ContextScore3", calculateScore(binding.q3))
-      editor.putInt("ContextCompleted", 1)
+      editor.putInt("LonelinessDailyQ1_$date", calculateScore(binding.q1))
+      editor.putInt("LonelinessDailyTotal_$date", calculateScore(binding.q1))
+      editor.putInt("LonelinessDailyCompleted", 1)
+      editor.putString("LonelinessDailyCompletedTimestamp", date)
       editor.apply()
     } else {
       val contextView = requireView()
@@ -93,7 +89,7 @@ class LonelinessDailyFragment : Fragment() {
     }
     parentFragmentManager
       .beginTransaction()
-      .replace(R.id.constraintLayout, PatientSurveysFragment())
+      .replace(R.id.constraintLayout, PatientDailySurveysFragment())
       .commit()
     return
   }

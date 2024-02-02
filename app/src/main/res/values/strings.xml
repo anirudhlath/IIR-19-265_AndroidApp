@@ -7,11 +7,10 @@
   -->
 
 <resources>
-    <string name="app_name">PGD Study</string>
+    <string name="app_name">DHP Study</string>
     <string name="patient_label">Patient</string>
     <string name="caregiver_label">Caregiver</string>
     <string name="careprovider_label">Care Provider</string>
-    <string name="apptitle_label">PGD Study</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_photo">Profile Photo</string>

@@ -108,8 +108,8 @@ class ChampsFragment : Fragment() {
     results.forEachIndexed { index, response ->
       val number = index + 1
       if (response.isCompleted()) {
-        editor.putString("champs_q$number.1", response.times)
-        editor.putString("champs_q$number.2", response.hours)
+        editor.putString("CHAMPS_q$number.1", response.times)
+        editor.putString("CHAMPS_q$number.2", response.hours)
       } else {
         val contextView = requireView()
         Snackbar.make(

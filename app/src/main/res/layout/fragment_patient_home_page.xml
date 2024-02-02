@@ -149,6 +149,23 @@
                         android:paddingBottom="10dp"
                         app:srcCompat="@drawable/i_exam_multiple_choice"
                         tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <ImageButton
+                        android:id="@+id/dailySurveysButton"
+                        style="@android:style/Widget.Material.ImageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:backgroundTint="#43FFFFFF"
+                        android:contentDescription="@string/careprovider_label"
+                        android:cropToPadding="false"
+                        android:paddingStart="25dp"
+                        android:paddingEnd="25dp"
+                        android:paddingBottom="10dp"
+                        app:srcCompat="@drawable/i_daily_surveys_black"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
                 </TableRow>
 
                 <TableRow
@@ -182,6 +199,16 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:text="Surveys"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <TextView
+                        android:id="@+id/dailySurveysTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:text="Daily Surveys"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
                 </TableRow>
