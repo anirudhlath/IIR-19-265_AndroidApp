@@ -202,7 +202,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="16dp"
                                 android:gravity="center"
-                                android:text="Today" />
+                                android:text="Mentation" />
 
                             <TextView
                                 android:id="@+id/anxietyLabel"
@@ -246,29 +246,26 @@
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
 
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        style="@style/Widget.Material3.CardView.Elevated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
                             <TextView
-                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:id="@+id/thoughtsAboutPainLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
+                                android:layout_marginBottom="10dp"
                                 android:gravity="center"
-                                android:text="Pain" />
+                                android:text="Thoughts About Pain"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/thoughtsAboutPainProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
 
                             <TextView
                                 android:id="@+id/selfEfficacyLabel"
@@ -291,27 +288,6 @@
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
 
-                            <TextView
-                                android:id="@+id/thoughtsAboutPainLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Thoughts About Pain"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/thoughtsAboutPainProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -334,7 +310,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="16dp"
                                 android:gravity="center"
-                                android:text="Social" />
+                                android:text="What Matters" />
 
                             <TextView
                                 android:id="@+id/LonelinessLabel"
@@ -369,6 +345,277 @@
 
                             <com.google.android.material.progressindicator.LinearProgressIndicator
                                 android:id="@+id/SocialIsolationProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+
+
+
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Mobility" />
+
+                            <TextView
+                                android:id="@+id/patientAdlsLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="ADLS"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Patient"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/patientAdlsProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/textView10"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Caregiver"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/caregiverAdlsProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/iadlsLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="iADLS"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Patient"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/iadlsPatientProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                style="@android:style/TextAppearance.Material.Small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Caregiver"
+                                android:textAlignment="center"
+                                android:textColor="#686868"
+                                android:textSize="12sp" />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/iadlsCaregiverProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Medication" />
+
+                            <TextView
+                                android:id="@+id/DifficultyGettingMedicationLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Getting Medication"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/DifficultyGettingMedicationProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Widget.Material3.CardView.Elevated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.TitleMedium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:gravity="center"
+                                android:text="Demographics" />
+
+
+
+                            <TextView
+                                android:id="@+id/DifficultyGettingToClinicLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Getting to Clinic"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/DifficultyGettingToClinicProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+
+                            <TextView
+                                android:id="@+id/DifficultyAffordingCareLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Difficulty Affording Care"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/DifficultyAffordingCareProgressBar"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:indeterminate="false"
+                                android:indeterminateBehavior="cycle"
+                                android:tooltipText="Patient has not completed this task."
+                                app:indeterminateAnimationType="disjoint"
+                                app:trackCornerRadius="20dp" />
+                            <TextView
+                                android:id="@+id/HealthLiteracyLabel"
+                                style="@style/TextAppearance.Material3.TitleSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center"
+                                android:text="Health Literacy"
+                                android:tooltipText="Patient has not completed this task." />
+
+                            <com.google.android.material.progressindicator.LinearProgressIndicator
+                                android:id="@+id/HealthLiteracyProgressBar"
                                 android:layout_width="300dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="24dp"
@@ -511,139 +758,6 @@
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
 
-                        </LinearLayout>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        style="@style/Widget.Material3.CardView.Elevated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/TextAppearance.Material3.TitleMedium"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:gravity="center"
-                                android:text="Function" />
-
-                            <TextView
-                                android:id="@+id/patientAdlsLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="ADLS"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <TextView
-                                android:id="@+id/textView8"
-                                style="@android:style/TextAppearance.Material.Small"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:text="Patient"
-                                android:textAlignment="center"
-                                android:textColor="#686868"
-                                android:textSize="12sp" />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/patientAdlsProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/textView10"
-                                style="@android:style/TextAppearance.Material.Small"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:text="Caregiver"
-                                android:textAlignment="center"
-                                android:textColor="#686868"
-                                android:textSize="12sp" />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/caregiverAdlsProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/iadlsLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="iADLS"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <TextView
-                                android:id="@+id/textView12"
-                                style="@android:style/TextAppearance.Material.Small"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:text="Patient"
-                                android:textAlignment="center"
-                                android:textColor="#686868"
-                                android:textSize="12sp" />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/iadlsPatientProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/textView13"
-                                style="@android:style/TextAppearance.Material.Small"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
-                                android:text="Caregiver"
-                                android:textAlignment="center"
-                                android:textColor="#686868"
-                                android:textSize="12sp" />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/iadlsCaregiverProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
                             <TextView
                                 android:id="@+id/sriLabel"
                                 style="@style/TextAppearance.Material3.TitleSmall"
@@ -699,115 +813,7 @@
                                 app:trackCornerRadius="20dp" />
 
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
 
-
-                    <com.google.android.material.card.MaterialCardView
-                        style="@style/Widget.Material3.CardView.Elevated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/TextAppearance.Material3.TitleMedium"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="16dp"
-                                android:gravity="center"
-                                android:text="Context" />
-
-                            <TextView
-                                android:id="@+id/DifficultyGettingMedicationLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Difficulty Getting Medication"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/DifficultyGettingMedicationProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/DifficultyGettingToClinicLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Difficulty Getting to Clinic"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/DifficultyGettingToClinicProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/DifficultyAffordingCareLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Difficulty Affording Care"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/DifficultyAffordingCareProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                            <TextView
-                                android:id="@+id/HealthLiteracyLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Health Literacy"
-                                android:tooltipText="Patient has not completed this task." />
-
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/HealthLiteracyProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
-
-                        </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
 
