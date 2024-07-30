@@ -63,7 +63,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
     val rootView = _binding!!.root
 
     binding.buttonSTAI.setOnClickListener(this)
-    binding.buttonPHQ.setOnClickListener(this)
+    binding.buttonGDS.setOnClickListener(this)
     binding.buttonPSEQ.setOnClickListener(this)
     binding.buttonThoughtsAboutPain.setOnClickListener(this)
     binding.buttonLoneliness.setOnClickListener(this)
@@ -90,7 +90,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
     checkCompletion(patientSharedPref, "LonelinessCompleted", binding.buttonLoneliness)
     checkCompletion(patientSharedPref, "LSNSCompleted", binding.buttonIsolation)
     checkCompletion(patientSharedPref, "PseqCompleted", binding.buttonPSEQ)
-    checkCompletion(patientSharedPref, "Phq2Completed", binding.buttonPHQ)
+    checkCompletion(patientSharedPref, "GdsCompleted", binding.buttonGDS)
     checkCompletion(patientSharedPref, "SRICompleted", binding.buttonSRI)
     checkCompletion(patientSharedPref, "StaiCompleted", binding.buttonSTAI)
     checkCompletion(
@@ -132,10 +132,18 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
           return
         }
-        R.id.buttonPHQ -> {
+//        R.id.buttonPHQ -> {
+//          parentFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.constraintLayout, Phq2Fragment())
+//            .commit()
+//
+//          return
+//        }
+        R.id.buttonGDS -> {
           parentFragmentManager
             .beginTransaction()
-            .replace(R.id.constraintLayout, Phq2Fragment())
+            .replace(R.id.constraintLayout, GdsFragment())
             .commit()
 
           return

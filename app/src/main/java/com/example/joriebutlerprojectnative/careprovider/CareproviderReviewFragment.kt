@@ -203,14 +203,39 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
     }
   }
 
+//  private fun updateDepressionProgressBar(sharedPref: SharedPreferences) {
+//    val score = sharedPref.getInt("Phq2Score", -1)
+//
+//    if (score != -1) {
+//      val progressBar = binding.depressionProgressBar
+//      val label = binding.depressionLabel
+//
+//      progressBar.max = 6
+//      requireActivity().runOnUiThread {
+//        ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+//      }
+//      progressBar.tooltipText = "$score/${progressBar.max}"
+//      label.tooltipText = "$score/${progressBar.max}"
+//
+//      when (score) {
+//        in 0..2 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
+//        }
+//        in 3..6 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
+//        }
+//      }
+//    }
+//  }
+
   private fun updateDepressionProgressBar(sharedPref: SharedPreferences) {
-    val score = sharedPref.getInt("Phq2Score", -1)
+    val score = sharedPref.getInt("GdsScore", -1)
 
     if (score != -1) {
       val progressBar = binding.depressionProgressBar
       val label = binding.depressionLabel
 
-      progressBar.max = 6
+      progressBar.max = 15
       requireActivity().runOnUiThread {
         ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
       }
@@ -218,10 +243,10 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
       label.tooltipText = "$score/${progressBar.max}"
 
       when (score) {
-        in 0..2 -> {
+        in 0..4 -> {
           progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
         }
-        in 3..6 -> {
+        in 5..15 -> {
           progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
         }
       }

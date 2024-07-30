@@ -59,15 +59,25 @@
                 android:onClick="onClick"
                 android:text="State-Trait Anxiety Inventory" />
 
+<!--            <Button-->
+<!--                android:id="@+id/buttonPHQ"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="24dp"-->
+<!--                android:layout_marginRight="24dp"-->
+<!--                android:layout_marginBottom="24dp"-->
+<!--                android:onClick="onClick"-->
+<!--                android:text="PHQ-2" />-->
+
             <Button
-                android:id="@+id/buttonPHQ"
+                android:id="@+id/buttonGDS"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
                 android:onClick="onClick"
-                android:text="PHQ-2" />
+                android:text="Geriatric Depression Scale" />
 
             <Button
                 android:id="@+id/buttonPSEQ"
