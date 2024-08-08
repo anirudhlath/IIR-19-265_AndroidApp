@@ -87,7 +87,7 @@
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
                 android:onClick="onClick"
-                android:text="Pain Self Efficacy Questionnaire" />
+                android:text="Pain Self Efficacy" />
 
             <Button
                 android:id="@+id/buttonThoughtsAboutPain"
