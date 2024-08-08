@@ -473,7 +473,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="I can’t see to keep it out of my mind." />
+                        android:text="I can’t seem to keep it out of my mind." />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q9ThoughtsAboutPain"
