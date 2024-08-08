@@ -65,8 +65,8 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
     binding.buttonSTAI.setOnClickListener(this)
     binding.buttonGDS.setOnClickListener(this)
-    binding.buttonPSEQ.setOnClickListener(this)
-    binding.buttonThoughtsAboutPain.setOnClickListener(this)
+//    binding.buttonPSEQ.setOnClickListener(this)
+//    binding.buttonThoughtsAboutPain.setOnClickListener(this)
     binding.buttonLoneliness.setOnClickListener(this)
     binding.buttonIsolation.setOnClickListener(this)
     binding.buttonActivitiesOfDailyLifeScale.setOnClickListener(this)
@@ -91,15 +91,15 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
     )
     checkCompletion(patientSharedPref, "LonelinessCompleted", binding.buttonLoneliness)
     checkCompletion(patientSharedPref, "LSNSCompleted", binding.buttonIsolation)
-    checkCompletion(patientSharedPref, "PseqCompleted", binding.buttonPSEQ)
+//    checkCompletion(patientSharedPref, "PseqCompleted", binding.buttonPSEQ)
     checkCompletion(patientSharedPref, "GdsCompleted", binding.buttonGDS)
     checkCompletion(patientSharedPref, "SRICompleted", binding.buttonSRI)
     checkCompletion(patientSharedPref, "StaiCompleted", binding.buttonSTAI)
-    checkCompletion(
-      patientSharedPref,
-      "ThoughtsAboutPainCompleted",
-      binding.buttonThoughtsAboutPain
-    )
+//    checkCompletion(
+//      patientSharedPref,
+//      "ThoughtsAboutPainCompleted",
+//      binding.buttonThoughtsAboutPain
+//    )
     checkCompletion(patientSharedPref, "CHAMPSCompleted", binding.buttonCHAMPS)
     checkCompletion(patientSharedPref, "MedicationCompleted", binding.buttonMedication)
 
@@ -151,22 +151,22 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
 
           return
         }
-        R.id.buttonPSEQ -> {
-          parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.constraintLayout, PainSelfEfficacyQuestionnaireFragment())
-            .commit()
-
-          return
-        }
-        R.id.buttonThoughtsAboutPain -> {
-          parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.constraintLayout, ThoughtsAboutPainFragment())
-            .commit()
-
-          return
-        }
+//        R.id.buttonPSEQ -> {
+//          parentFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.constraintLayout, PainSelfEfficacyQuestionnaireFragment())
+//            .commit()
+//
+//          return
+//        }
+//        R.id.buttonThoughtsAboutPain -> {
+//          parentFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.constraintLayout, ThoughtsAboutPainFragment())
+//            .commit()
+//
+//          return
+//        }
         R.id.buttonLoneliness -> {
           parentFragmentManager
             .beginTransaction()

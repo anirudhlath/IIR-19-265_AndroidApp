@@ -7,7 +7,7 @@
   -->
 
 <resources>
-    <string name="app_name">DHP Study</string>
+    <string name="app_name">PGHD Study</string>
     <string name="patient_label">Patient</string>
     <string name="caregiver_label">Caregiver</string>
     <string name="careprovider_label">Care Provider</string>

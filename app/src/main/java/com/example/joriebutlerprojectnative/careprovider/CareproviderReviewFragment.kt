@@ -77,8 +77,8 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
       updateCaregiverData()
       updateAnxietyProgressBar(sharedPref)
       updateDepressionProgressBar(sharedPref)
-      updateSelfEfficacyProgressBar(sharedPref)
-      updateThoughtsAboutPainProgressBar(sharedPref)
+//      updateSelfEfficacyProgressBar(sharedPref)
+//      updateThoughtsAboutPainProgressBar(sharedPref)
       updateLonelinessScoreProgressBar(sharedPref)
       updateSocialIsolationProgressBar(sharedPref)
       updateDifficultyGettingMedicationProgressBar(sharedPref)
@@ -253,55 +253,55 @@ class CareproviderReviewFragment : Fragment(), OnClickListener {
     }
   }
 
-  private fun updateSelfEfficacyProgressBar(sharedPref: SharedPreferences) {
-    val score = sharedPref.getInt("PseqScore", -1)
+//  private fun updateSelfEfficacyProgressBar(sharedPref: SharedPreferences) {
+//    val score = sharedPref.getInt("PseqScore", -1)
+//
+//    if (score != -1) {
+//      val progressBar = binding.selfEfficacyProgressBar
+//      val label = binding.selfEfficacyLabel
+//
+//      progressBar.max = 60
+//      requireActivity().runOnUiThread {
+//        ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+//      }
+//      progressBar.tooltipText = "$score/${progressBar.max}"
+//      label.tooltipText = "$score/${progressBar.max}"
+//
+//      when (score) {
+//        in 0..20 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
+//        }
+//        in 21..60 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
+//        }
+//      }
+//    }
+//  }
 
-    if (score != -1) {
-      val progressBar = binding.selfEfficacyProgressBar
-      val label = binding.selfEfficacyLabel
-
-      progressBar.max = 60
-      requireActivity().runOnUiThread {
-        ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
-      }
-      progressBar.tooltipText = "$score/${progressBar.max}"
-      label.tooltipText = "$score/${progressBar.max}"
-
-      when (score) {
-        in 0..20 -> {
-          progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
-        }
-        in 21..60 -> {
-          progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
-        }
-      }
-    }
-  }
-
-  private fun updateThoughtsAboutPainProgressBar(sharedPref: SharedPreferences) {
-    val score = sharedPref.getInt("ThoughtsAboutPainScore", -1)
-
-    if (score != -1) {
-      val progressBar = binding.thoughtsAboutPainProgressBar
-      val label = binding.thoughtsAboutPainLabel
-
-      progressBar.max = 52
-      requireActivity().runOnUiThread {
-        ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
-      }
-      progressBar.tooltipText = "$score/${progressBar.max}"
-      label.tooltipText = "$score/${progressBar.max}"
-
-      when (score) {
-        in 0..29 -> {
-          progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
-        }
-        in 30..52 -> {
-          progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
-        }
-      }
-    }
-  }
+//  private fun updateThoughtsAboutPainProgressBar(sharedPref: SharedPreferences) {
+//    val score = sharedPref.getInt("ThoughtsAboutPainScore", -1)
+//
+//    if (score != -1) {
+//      val progressBar = binding.thoughtsAboutPainProgressBar
+//      val label = binding.thoughtsAboutPainLabel
+//
+//      progressBar.max = 52
+//      requireActivity().runOnUiThread {
+//        ObjectAnimator.ofInt(progressBar, "progress", score).setDuration(500).start()
+//      }
+//      progressBar.tooltipText = "$score/${progressBar.max}"
+//      label.tooltipText = "$score/${progressBar.max}"
+//
+//      when (score) {
+//        in 0..29 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#69B34C"))
+//        }
+//        in 30..52 -> {
+//          progressBar.setIndicatorColor(Color.parseColor("#FF0D0D"))
+//        }
+//      }
+//    }
+//  }
 
   private fun updateLonelinessScoreProgressBar(sharedPref: SharedPreferences) {
     val score = sharedPref.getInt("LonelinessScaleScore", -1)

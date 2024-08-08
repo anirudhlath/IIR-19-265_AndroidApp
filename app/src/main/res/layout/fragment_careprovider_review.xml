@@ -246,47 +246,47 @@
                                 app:indeterminateAnimationType="disjoint"
                                 app:trackCornerRadius="20dp" />
 
-                            <TextView
-                                android:id="@+id/thoughtsAboutPainLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Thoughts About Pain"
-                                android:tooltipText="Patient has not completed this task." />
+<!--                            <TextView-->
+<!--                                android:id="@+id/thoughtsAboutPainLabel"-->
+<!--                                style="@style/TextAppearance.Material3.TitleSmall"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="10dp"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Thoughts About Pain"-->
+<!--                                android:tooltipText="Patient has not completed this task." />-->
 
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/thoughtsAboutPainProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
+<!--                            <com.google.android.material.progressindicator.LinearProgressIndicator-->
+<!--                                android:id="@+id/thoughtsAboutPainProgressBar"-->
+<!--                                android:layout_width="300dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="24dp"-->
+<!--                                android:indeterminate="false"-->
+<!--                                android:indeterminateBehavior="cycle"-->
+<!--                                android:tooltipText="Patient has not completed this task."-->
+<!--                                app:indeterminateAnimationType="disjoint"-->
+<!--                                app:trackCornerRadius="20dp" />-->
 
-                            <TextView
-                                android:id="@+id/selfEfficacyLabel"
-                                style="@style/TextAppearance.Material3.TitleSmall"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="10dp"
-                                android:gravity="center"
-                                android:text="Self-Efficacy"
-                                android:tooltipText="Patient has not completed this task." />
+<!--                            <TextView-->
+<!--                                android:id="@+id/selfEfficacyLabel"-->
+<!--                                style="@style/TextAppearance.Material3.TitleSmall"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="10dp"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Self-Efficacy"-->
+<!--                                android:tooltipText="Patient has not completed this task." />-->
 
-                            <com.google.android.material.progressindicator.LinearProgressIndicator
-                                android:id="@+id/selfEfficacyProgressBar"
-                                android:layout_width="300dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="24dp"
-                                android:indeterminate="false"
-                                android:indeterminateBehavior="cycle"
-                                android:tooltipText="Patient has not completed this task."
-                                app:indeterminateAnimationType="disjoint"
-                                app:trackCornerRadius="20dp" />
+<!--                            <com.google.android.material.progressindicator.LinearProgressIndicator-->
+<!--                                android:id="@+id/selfEfficacyProgressBar"-->
+<!--                                android:layout_width="300dp"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="24dp"-->
+<!--                                android:indeterminate="false"-->
+<!--                                android:indeterminateBehavior="cycle"-->
+<!--                                android:tooltipText="Patient has not completed this task."-->
+<!--                                app:indeterminateAnimationType="disjoint"-->
+<!--                                app:trackCornerRadius="20dp" />-->
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>

@@ -101,9 +101,9 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
 
     binding.buttonGAD2.setOnClickListener(this)
     binding.buttonDailyLoneliness.setOnClickListener(this)
-    binding.buttonPCS3.setOnClickListener(this)
+//    binding.buttonPCS3.setOnClickListener(this)
     binding.buttonPHQ2.setOnClickListener(this)
-    binding.buttonPSEQ2.setOnClickListener(this)
+//    binding.buttonPSEQ2.setOnClickListener(this)
     binding.buttonZBI4.setOnClickListener(this)
     binding.buttonMobility.setOnClickListener(this)
     binding.buttonMedication.setOnClickListener(this)
@@ -118,9 +118,9 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
 
     checkCompletion(patientSharedPref, "Gad2DailyCompleted", binding.buttonGAD2)
     checkCompletion(patientSharedPref, "LonelinessDailyCompleted", binding.buttonDailyLoneliness)
-    checkCompletion(patientSharedPref, "Pcs3DailyCompleted", binding.buttonPCS3)
+//    checkCompletion(patientSharedPref, "Pcs3DailyCompleted", binding.buttonPCS3)
     checkCompletion(patientSharedPref, "Phq2DailyCompleted", binding.buttonPHQ2)
-    checkCompletion(patientSharedPref, "Pseq2DailyCompleted", binding.buttonPSEQ2)
+//    checkCompletion(patientSharedPref, "Pseq2DailyCompleted", binding.buttonPSEQ2)
     checkCompletion(patientSharedPref, "Zbi4DailyCompleted", binding.buttonZBI4)
     checkCompletion(patientSharedPref, "MobilityDailyCompleted", binding.buttonMobility)
     checkCompletion(patientSharedPref, "MedicationDailyCompleted", binding.buttonMedication)
@@ -205,24 +205,24 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
             .replace(R.id.constraintLayout, LonelinessDailyFragment())
             .commit()
         }
-        R.id.buttonPCS3 -> {
-          parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.constraintLayout, Pcs3DailyFragment())
-            .commit()
-        }
+//        R.id.buttonPCS3 -> {
+//          parentFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.constraintLayout, Pcs3DailyFragment())
+//            .commit()
+//        }
         R.id.buttonPHQ2 -> {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, Phq2DailyFragment())
             .commit()
         }
-        R.id.buttonPSEQ2 -> {
-          parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.constraintLayout, Pseq2DailyFragment())
-            .commit()
-        }
+//        R.id.buttonPSEQ2 -> {
+//          parentFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.constraintLayout, Pseq2DailyFragment())
+//            .commit()
+//        }
         R.id.buttonZBI4 -> {
           parentFragmentManager
             .beginTransaction()
