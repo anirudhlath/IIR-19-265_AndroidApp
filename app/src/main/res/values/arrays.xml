@@ -60,6 +60,19 @@
         <item>Nearly all day</item>
     </string-array>
 
+    <string-array name="mobility_daily_responses_array1">
+        <item>Mild</item>
+        <item>Moderate</item>
+        <item>Strenuous</item>
+    </string-array>
+
+    <string-array name="mobility_daily_responses_array2">
+        <item>Less than 20 minutes</item>
+        <item>20–40 minutes</item>
+        <item>40–60 minutes</item>
+        <item>Longer than 60 minutes</item>
+    </string-array>
+
     <string-array name="PSEQ_responses_array">
         <item>0 - Not confident at all</item>
         <item>1</item>
