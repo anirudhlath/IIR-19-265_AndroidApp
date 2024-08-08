@@ -182,7 +182,7 @@
                 style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="How did you travel to the clinic today?">
+                android:hint="How did you get to clinic at your most recent visit?">
 
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
