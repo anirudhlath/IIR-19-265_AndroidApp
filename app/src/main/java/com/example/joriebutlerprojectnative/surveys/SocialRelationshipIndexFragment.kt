@@ -50,26 +50,26 @@ class SocialRelationshipIndexFragment : Fragment() {
     return rootView
   }
 
-  private fun calculateScore(textInputLayout: TextInputLayout): Int {
+  private fun calculateScore(textInputLayout: TextInputLayout, inverted: Boolean = false): Int {
     Log.d("CalculateScores", textInputLayout.editText?.text.toString()[0].toString())
     when (textInputLayout.editText?.text.toString()[0].toString()) {
       "N" -> {
-        return 1
+        return if (inverted) 6 else 1
       }
       "A" -> {
-        return 2
+        return if (inverted) 5 else 2
       }
       "S" -> {
-        return 3
+        return if (inverted) 4 else 3
       }
       "M" -> {
-        return 4
+        return if (inverted) 3 else 4
       }
       "V" -> {
-        return 5
+        return if (inverted) 2 else 5
       }
       "E" -> {
-        return 6
+        return if (inverted) 1 else 6
       }
     }
     return 0
@@ -97,8 +97,8 @@ class SocialRelationshipIndexFragment : Fragment() {
       val editor = sharedPref.edit()
       editor.putInt("SRIScore", score)
       editor.putInt("sri_q1", calculateScore(binding.q1))
-      editor.putInt("sri_q2", calculateScore(binding.q2))
-      editor.putInt("sri_q3", calculateScore(binding.q3))
+      editor.putInt("sri_q2", calculateScore(binding.q2, true))
+      editor.putInt("sri_q3", calculateScore(binding.q3, true))
       editor.putInt("SRICompleted", 1)
       editor.apply()
 
