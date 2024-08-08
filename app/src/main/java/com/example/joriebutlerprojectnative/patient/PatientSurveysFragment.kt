@@ -23,6 +23,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.joriebutlerprojectnative.*
+import com.example.joriebutlerprojectnative.dailySurveys.MedicationDailyFragment
 import com.example.joriebutlerprojectnative.databinding.FragmentPatientSurveysBinding
 import com.example.joriebutlerprojectnative.surveys.*
 
@@ -74,6 +75,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
     binding.buttonHealthLiteracy.setOnClickListener(this)
     binding.buttonSRI.setOnClickListener(this)
     binding.buttonCHAMPS.setOnClickListener(this)
+    binding.buttonMedication.setOnClickListener(this)
 
     // Check which questionnaires have been completed already.
     val patientSharedPref =
@@ -99,6 +101,7 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
       binding.buttonThoughtsAboutPain
     )
     checkCompletion(patientSharedPref, "CHAMPSCompleted", binding.buttonCHAMPS)
+    checkCompletion(patientSharedPref, "MedicationCompleted", binding.buttonMedication)
 
     return rootView
   }
@@ -227,6 +230,15 @@ class PatientSurveysFragment : Fragment(), OnClickListener {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, ChampsFragment())
+            .commit()
+
+          return
+        }
+        R.id.buttonMedication -> {
+
+          parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.constraintLayout, MedicationFragment())
             .commit()
 
           return

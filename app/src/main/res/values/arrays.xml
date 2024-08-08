@@ -251,6 +251,12 @@
         <item>No</item>
     </string-array>
 
+    <string-array name="daily_meds_responses_array">
+        <item>Yes</item>
+        <item>No</item>
+        <item>I am not taking any prescribed medications</item>
+    </string-array>
+
     <string-array name="BRIEF_firstSet_responses_array">
         <item>Always</item>
         <item>Often</item>

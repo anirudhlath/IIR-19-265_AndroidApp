@@ -33,6 +33,7 @@ import com.bumptech.glide.Glide
 import com.example.joriebutlerprojectnative.*
 import com.example.joriebutlerprojectnative.dailySurveys.Gad2DailyFragment
 import com.example.joriebutlerprojectnative.dailySurveys.LonelinessDailyFragment
+import com.example.joriebutlerprojectnative.dailySurveys.MedicationDailyFragment
 import com.example.joriebutlerprojectnative.dailySurveys.MobilityDailyFragment
 import com.example.joriebutlerprojectnative.dailySurveys.Pcs3DailyFragment
 import com.example.joriebutlerprojectnative.dailySurveys.Phq2DailyFragment
@@ -105,6 +106,7 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
     binding.buttonPSEQ2.setOnClickListener(this)
     binding.buttonZBI4.setOnClickListener(this)
     binding.buttonMobility.setOnClickListener(this)
+    binding.buttonMedication.setOnClickListener(this)
 
     // Check which questionnaires have been completed already.
     val patientSharedPref =
@@ -121,6 +123,7 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
     checkCompletion(patientSharedPref, "Pseq2DailyCompleted", binding.buttonPSEQ2)
     checkCompletion(patientSharedPref, "Zbi4DailyCompleted", binding.buttonZBI4)
     checkCompletion(patientSharedPref, "MobilityDailyCompleted", binding.buttonMobility)
+    checkCompletion(patientSharedPref, "MedicationDailyCompleted", binding.buttonMedication)
     checkDailyPhotoCompletion(patientSharedPref, "dailyPhoto", binding.dailyPhotoButton)
 
     return rootView
@@ -230,6 +233,12 @@ class PatientDailySurveysFragment : Fragment(), OnClickListener {
           parentFragmentManager
             .beginTransaction()
             .replace(R.id.constraintLayout, MobilityDailyFragment())
+            .commit()
+        }
+        R.id.buttonMedication -> {
+          parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.constraintLayout, MedicationDailyFragment())
             .commit()
         }
         R.id.dailyPhotoButton -> {
