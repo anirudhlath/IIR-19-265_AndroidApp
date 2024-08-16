@@ -333,7 +333,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="How does your cultural background (for example, the branch you served in the military culture or your ethnic or racial background) impact the way you care for your health?" />
+                        android:text="How does your cultural background (for example, your ethnic or racial background or the branch you served in the military culture) impact the way you care for your health?" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/q6"
