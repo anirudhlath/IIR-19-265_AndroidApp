@@ -67,7 +67,7 @@
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
                 android:onClick="onClick"
-                android:text="Loneliness" />
+                android:text="Connectedness" />
 
             <Button
                 android:id="@+id/buttonPCS3"
